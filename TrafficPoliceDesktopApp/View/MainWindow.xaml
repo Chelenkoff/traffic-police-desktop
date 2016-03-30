@@ -1,0 +1,91 @@
+﻿<Controls:MetroWindow x:Class="TrafficPoliceDesktopApp.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="КАТ - Главно меню" Height="500" Width="700"
+                     ResizeMode="CanMinimize"     
+                     GlowBrush="{DynamicResource AccentColorBrush}"
+                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top">
+    <!--Window resources-->
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
+
+    <!--Window Top Right Menu Items-->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Label x:Name="lblLoggedUserName" Foreground="#FFFFEFEF"  />
+            <Button x:Name="btnLogout" Click="btnLogout_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 4 0"
+                   VerticalAlignment="Center"
+                   Text="Изход" />
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_connect}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </StackPanel>
+            </Button>
+
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+
+    <Grid >
+
+
+
+        <TabControl Margin="0,0,-674,0"  >
+
+            <Controls:MetroTabItem Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
+                <Grid Margin="224,-42,671,0">
+
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
+                <Grid Margin="224,-42,671,0">
+                    
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Справка по номер" Controls:ControlsHelper.HeaderFontSize="22" Margin="-327,124,332,-124" >
+                <Grid Margin="224,-42,671,0">
+                    
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
+                <Grid Margin="224,-42,671,0">
+                    
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >
+                <Grid Margin="224,-42,671,0">
+
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Нов служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-885,347,890,-347" >
+                <Grid Margin="224,-42,671,0">
+
+                </Grid>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >
+                <Grid Margin="224,-42,671,0">
+
+                </Grid>
+            </Controls:MetroTabItem>
+            
+        </TabControl>
+        
+        <Label Content="МПС" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="80" FontSize="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="214" FontSize="25"><Run Text="Водач"/><Run Text="/"/><Run Text="Собственик"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="127" FontSize="25" Text="Служители"/>
+
+    </Grid>
+</Controls:MetroWindow>

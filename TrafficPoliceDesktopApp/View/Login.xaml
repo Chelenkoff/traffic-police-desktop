@@ -1,0 +1,25 @@
+﻿<Controls:MetroWindow x:Name="LoginWindow" x:Class="TrafficPoliceDesktopApp.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="КАТ - Вход" Height="300" Width="500"
+        ResizeMode="CanMinimize"     
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowStartupLocation="CenterScreen" VerticalAlignment="Top">
+    <Grid>
+        <Label Content="Вход в системата"  HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,234,0" VerticalAlignment="Top" Height="41" Width="250" Foreground="#FF2D75DE" FontSize="24"/>
+
+        <TextBox x:Name="txtBoxEGN" Controls:TextBoxHelper.Watermark="Въведете вашето ЕГН" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,70,166,164" TextWrapping="Wrap"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="7402214241"/>
+        <PasswordBox x:Name="pswdBoxPass" Controls:TextBoxHelper.Watermark="Въведете вашата парола" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,130,166,104"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Password="qwerty"/>
+
+        <Label Content="ЕГН" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="60" Foreground="#FF2D75DE" FontSize="20"/>
+        <Label Content="Парола" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="90" Foreground="#FF2D75DE" FontSize="20"/>
+
+        <Button x:Name="btnLogin" Style="{StaticResource AccentedSquareButtonStyle}" Content="Влез" HorizontalContentAlignment="Center" Margin="188,211,166,10" VerticalContentAlignment="Center" Width="140" Height="50" Click="Button_Click" FontSize="25" Controls:ButtonHelper.PreserveTextCase="True" ClickMode="Press"/>
+        <Controls:ProgressRing x:Name="progressRingLoading" Margin="133,211,311,10" Height="50" Width="50" IsActive="False" />
+
+        <Image HorizontalAlignment="Left" Height="98" Margin="373,163,0,0" VerticalAlignment="Top" Width="98" Source="/TrafficPoliceDesktopApp;component/Resources/Images/kat.png"/>
+        <Image HorizontalAlignment="Left" Height="138" Margin="391,15,0,0" VerticalAlignment="Top" Width="57" Source="/TrafficPoliceDesktopApp;component/Resources/Images/mvr.png" Stretch="UniformToFill"/>
+
+    </Grid>
+</Controls:MetroWindow>
