@@ -71,31 +71,40 @@ namespace WCFDBService
         }
 
 
-        public bool UpdateDriverOwner()
+        public int UpdateUser(User user)
         {
-            string query = "UPDATE driver_owners SET first_name ='Гергана' WHERE first_name = 'Гергава';";
+            string updateQuery =String.Format(("UPDATE users SET first_name =\"{0}\",second_name = \"{1}\", last_name = \"{2}\"," + 
+                "is_traffic_policeman = {3},password = \"{4}\" WHERE user_id = {5}"),user.FirstName,user.SecondName,user.LastName,user.IsTrafficPoliceman,user.UserPassword,user.UserId);
 
             //Open connection
             if (this.OpenConnection() == true)
             {
-                //MessageBox.Show("Connectnah se");
                 //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = updateQuery;
+                    cmd.Connection = connection;
 
-                //Execute query
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    //DB-OK User - Updated
+                    return 1;
+                }
+                catch (Exception)
+                {
+                    //DB-OK User -Not updated
+                    return 2;
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
 
-                //close connection
-                this.CloseConnection();
-                return true;
+            
             }
             else
             {
-                return false;
+                return 0;
             }
         }
 

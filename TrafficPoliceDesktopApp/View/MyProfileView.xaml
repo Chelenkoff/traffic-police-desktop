@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="TrafficPoliceDesktopApp.View.MyProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="467" d:DesignWidth="471" Loaded="UserControl_Loaded">
+
+
+    <!--Window resources-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <Label x:Name="lblUserGreeting" Content="Здравейте, Георги Челенков" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
+        <GroupBox Header="Данни за вашия профил" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
+            <Grid>
+                <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,63,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="53,115,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="ЕГН:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,167,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsEnabled="False" Content="Пътен полицай" HorizontalAlignment="Left" Margin="169,272,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA"/>
+                <TextBox x:Name="txtBoxSecondName" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="170,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <TextBox x:Name="txtBoxFirstName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <TextBox x:Name="txtBoxLastName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <TextBox x:Name="txtBoxId" MaxLength="10"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <Label Content="Парола:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,218,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <PasswordBox x:Name="pswdBoxPassword" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <TextBox x:Name="txtBoxVisiblePassword" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False" Visibility="Hidden"/>
+
+                <Button x:Name="btnEdit" Content="Редактирай"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="327,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Click="btnEdit_Click"/>
+                <Button x:Name="btnSave" Content="Запамети"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Click="btnSave_Click" Visibility="Hidden" />
+                <Button x:Name="btnShowPass" Content="{DynamicResource appbar_unlock}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="361,218,0,0" VerticalAlignment="Top" Width="45" Height="43" ToolTip="Натиснете и задръжте левият бутон на мишката, за да видите паролата" PreviewMouseDown="btnShowPass_PreviewMouseDown" PreviewMouseUp="btnShowPass_PreviewMouseUp" MouseDown="btnShowPass_MouseDown"/>
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="10,249,379,67" Height="50" Width="50" IsActive="False" />
+                <Button x:Name="btnCancelEdit" Content="Прекрати"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="117,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Visibility="Hidden" Click="btnCancelEdit_Click" />
+                <Button HorizontalAlignment="Left" Margin="290,331,0,0" VerticalAlignment="Top" Width="32" Click="Button_Click">
+                </Button>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -9,8 +9,8 @@
     <Grid>
         <Label Content="Вход в системата"  HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,234,0" VerticalAlignment="Top" Height="41" Width="250" Foreground="#FF2D75DE" FontSize="24"/>
 
-        <TextBox x:Name="txtBoxEGN" Controls:TextBoxHelper.Watermark="Въведете вашето ЕГН" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,70,166,164" TextWrapping="Wrap"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="7402214241"/>
-        <PasswordBox x:Name="pswdBoxPass" Controls:TextBoxHelper.Watermark="Въведете вашата парола" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,130,166,104"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Password="qwerty"/>
+        <TextBox x:Name="txtBoxEGN" MaxLength="10" Controls:TextBoxHelper.Watermark="Въведете вашето ЕГН" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,70,166,164" TextWrapping="Wrap"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="7402214241"/>
+        <PasswordBox x:Name="pswdBoxPass" MaxLength="12" Controls:TextBoxHelper.Watermark="Въведете вашата парола" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,130,166,104"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Password="qwerty"/>
 
         <Label Content="ЕГН" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="60" Foreground="#FF2D75DE" FontSize="20"/>
         <Label Content="Парола" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="90" Foreground="#FF2D75DE" FontSize="20"/>

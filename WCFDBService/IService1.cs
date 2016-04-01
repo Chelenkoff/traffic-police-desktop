@@ -14,7 +14,7 @@ namespace WCFDBService
 
 
       [OperationContract]
-        bool UpdateDriverOwner();
+        int UpdateUser(User user);
 
       [OperationContract]
       User GetUserByIdAndPass(string id, string password);

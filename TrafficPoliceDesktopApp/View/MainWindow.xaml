@@ -1,7 +1,8 @@
 ﻿<Controls:MetroWindow x:Class="TrafficPoliceDesktopApp.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:View="clr-namespace:TrafficPoliceDesktopApp.View"
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
                      GlowBrush="{DynamicResource AccentColorBrush}"
@@ -43,40 +44,41 @@
 
 
 
-        <TabControl Margin="0,0,-674,0"  >
+        <TabControl Margin="0,0,-674,0" SelectionChanged="TabControl_SelectionChanged"  >
 
-            <Controls:MetroTabItem Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
-                <Grid Margin="224,-42,671,0">
+            <Controls:MetroTabItem Name="myProfileTabItem" Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
+                <Grid Margin="224,-38,671,-3">
+                    <View:MyProfileView x:Name="viewMyProfile"/>
 
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
                     
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по номер" Controls:ControlsHelper.HeaderFontSize="22" Margin="-327,124,332,-124" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
                     
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
                     
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
 
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Нов служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-885,347,890,-347" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
 
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >
-                <Grid Margin="224,-42,671,0">
+                <Grid Margin="224,-38,671,-3">
 
                 </Grid>
             </Controls:MetroTabItem>

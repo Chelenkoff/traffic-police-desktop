@@ -142,8 +142,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDriverOwner", ReplyAction="http://tempuri.org/IService1/UpdateDriverOwnerResponse")]
-        bool UpdateDriverOwner();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        int UpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByIdAndPass", ReplyAction="http://tempuri.org/IService1/GetUserByIdAndPassResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password);
@@ -176,8 +176,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public bool UpdateDriverOwner() {
-            return base.Channel.UpdateDriverOwner();
+        public int UpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user) {
+            return base.Channel.UpdateUser(user);
         }
         
         public TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password) {

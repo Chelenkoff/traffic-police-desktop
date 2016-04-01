@@ -23,14 +23,23 @@ namespace TrafficPoliceDesktopApp
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        User user;
+        
+
+        public User User { get; set; }
+
         public MainWindow(User usr)
         {
             InitializeComponent();
-            user = usr;
-            lblLoggedUserName.Content = String.Format("{0} {1}", user.FirstName, user.LastName);
             
+            User = usr;
+
+            //Passing User to default tab item view
+            //viewMyProfile.User = User;
+
+            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);   
         }
+        
+        
 
 
 
@@ -55,5 +64,28 @@ namespace TrafficPoliceDesktopApp
             if (e.ClosingTabItem.Header.ToString().StartsWith("sizes"))
                 e.Cancel = true;
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (myProfileTabItem.IsSelected == true)
+            {
+                viewMyProfile.User = User;
+                viewMyProfile.ParentWindow = this;
+                
+            }
+
+        }
+
+        public void updateLoggedUsername()
+        {
+            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
+        }
+
+
+
+
+
+
+
     }
 }
