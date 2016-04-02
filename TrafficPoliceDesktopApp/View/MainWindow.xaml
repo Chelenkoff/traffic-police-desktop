@@ -72,9 +72,9 @@
 
                 </Grid>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Нов служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-885,347,890,-347" >
+            <Controls:MetroTabItem x:Name="newUserTabItem" Header="Нов служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-885,347,890,-347" >
                 <Grid Margin="224,-38,671,-3">
-
+                    <View:NewUserView x:Name="viewNewUser"/>
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >

@@ -30,29 +30,27 @@ namespace TrafficPoliceDesktopApp.View
     public partial class MyProfileView : UserControl
     {
 
-        Service1Client service;
-        
+
         public MainWindow ParentWindow { get; set; }
-        public User User { get; set; }
-        
-        
+
         public MyProfileView()
         {
-            service = new Service1Client();
+           
             InitializeComponent();
+            
         }
 
 
 
         public void defaultFulfillForm()
         {
-            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", User.FirstName, User.LastName);
-            txtBoxFirstName.Text = User.FirstName;
-            txtBoxSecondName.Text = User.SecondName;
-            txtBoxLastName.Text = User.LastName;
-            txtBoxId.Text = User.UserId.ToString();
-            pswdBoxPassword.Password = User.UserPassword;
-            checkBoxIsTrafficPoliceman.IsChecked = (User.IsTrafficPoliceman ? true : false);
+            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
+            txtBoxFirstName.Text = ParentWindow.User.FirstName;
+            txtBoxSecondName.Text = ParentWindow.User.SecondName;
+            txtBoxLastName.Text = ParentWindow.User.LastName;
+            txtBoxId.Text = ParentWindow.User.UserId.ToString();
+            pswdBoxPassword.Password = ParentWindow.User.UserPassword;
+            checkBoxIsTrafficPoliceman.IsChecked = (ParentWindow.User.IsTrafficPoliceman ? true : false);
             
         }
 
@@ -158,15 +156,15 @@ namespace TrafficPoliceDesktopApp.View
                 return;
             }
 
-            User.FirstName = txtBoxFirstName.Text;
-            User.SecondName = txtBoxSecondName.Text;
-            User.LastName = txtBoxLastName.Text;
-            User.UserId = Convert.ToInt64(txtBoxId.Text);
-            User.UserPassword = txtBoxVisiblePassword.Text;
-            User.IsTrafficPoliceman = check;
+            ParentWindow.User.FirstName = txtBoxFirstName.Text;
+            ParentWindow.User.SecondName = txtBoxSecondName.Text;
+            ParentWindow.User.LastName = txtBoxLastName.Text;
+            ParentWindow.User.UserId = Convert.ToInt64(txtBoxId.Text);
+            ParentWindow.User.UserPassword = txtBoxVisiblePassword.Text;
+            ParentWindow.User.IsTrafficPoliceman = check;
 
-            ParentWindow.lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
-            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", User.FirstName, User.LastName);
+            ParentWindow.lblLoggedUserName.Content = String.Format("{0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
+            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
             disableEdit();
 
             await Task.Factory.StartNew(() =>
@@ -176,7 +174,7 @@ namespace TrafficPoliceDesktopApp.View
 
                 //Constructing USER from DB
 
-                service.UpdateUser(User);
+                ParentWindow.Service.UpdateUser(ParentWindow.User);
 
 
                 // invoke user code on the main UI thread

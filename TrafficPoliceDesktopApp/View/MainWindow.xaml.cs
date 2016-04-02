@@ -24,11 +24,13 @@ namespace TrafficPoliceDesktopApp
     public partial class MainWindow : MetroWindow
     {
         
+        public Service1Client Service { get; set; }
 
         public User User { get; set; }
 
         public MainWindow(User usr)
         {
+            Service = new Service1Client();
             InitializeComponent();
             
             User = usr;
@@ -68,11 +70,14 @@ namespace TrafficPoliceDesktopApp
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (myProfileTabItem.IsSelected == true)
-            {
-                viewMyProfile.User = User;
+            {  
                 viewMyProfile.ParentWindow = this;
-                
             }
+            if(newUserTabItem.IsSelected == true)
+            {
+                viewNewUser.ParentWindow = this;
+            }
+            
 
         }
 

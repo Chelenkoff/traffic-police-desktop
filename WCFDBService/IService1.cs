@@ -12,15 +12,18 @@ namespace WCFDBService
     public interface IService1
     {
 
-
+        // TODO: Add your service operations here
       [OperationContract]
         int UpdateUser(User user);
 
       [OperationContract]
       User GetUserByIdAndPass(string id, string password);
 
+      [OperationContract]
+      int InsertUser(User usr);
 
-        // TODO: Add your service operations here
+
+       
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

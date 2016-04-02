@@ -169,6 +169,40 @@ namespace WCFDBService
 
         }
 
+
+
+        public int InsertUser(User usr)
+        {
+            string insertQuery = String.Format(("INSERT INTO users (user_id,first_name,second_name,last_name,is_traffic_policeman,password)"+
+                                               " VALUES({0},\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\")"),
+                                                usr.UserId,usr.FirstName,usr.SecondName,usr.LastName,usr.IsTrafficPoliceman,usr.UserPassword);
+            //DB - Connected
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);                 
+                    cmd.ExecuteNonQuery();
+                    return 0;
+                }
+                catch
+                {   //User is already present with the given credentials
+                    return 2;
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                //DB - Not connected
+                return 1;
+            }                              
+
+        }
+
         
 
         

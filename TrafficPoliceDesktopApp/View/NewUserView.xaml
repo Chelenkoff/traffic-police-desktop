@@ -1,0 +1,43 @@
+﻿<UserControl x:Name="viewNewUser" x:Class="TrafficPoliceDesktopApp.View.NewUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="467" d:DesignWidth="471" >
+
+    <!--Window resources-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Label x:Name="lblUserGreeting" Content="Здравейте, Георги Челенков" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
+        <GroupBox Header="Добавяне на нов потребител" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
+            <Grid>
+                <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="187" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="252,135,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="169,218,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="ЕГН:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="56,10,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsEnabled="True" Content="Пътен полицай" HorizontalAlignment="Left" Margin="133,322,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="187"/>
+                <TextBox x:Name="txtBoxSecondName" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="252,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
+                <TextBox x:Name="txtBoxFirstName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="0,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
+                <TextBox x:Name="txtBoxLastName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="38" Margin="133,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
+                <TextBox x:Name="txtBoxId" MaxLength="10"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="171,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
+                <Label Content="Парола:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="54,68,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <PasswordBox x:Name="pswdBoxPassword" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="171,68,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
+                <TextBox x:Name="txtBoxVisiblePassword" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="38" Margin="33,249,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False" Visibility="Hidden"/>
+
+                <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="327,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Click="btnClear_Click" />
+                <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Click="btnSave_Click"  />
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="10,249,379,67" Height="50" Width="50" IsActive="False" />
+
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>
