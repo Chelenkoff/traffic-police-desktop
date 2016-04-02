@@ -25,6 +25,7 @@ namespace TrafficPoliceDesktopApp
     {
         
         public Service1Client Service { get; set; }
+        public Login LoginWindow { get; set; }
 
         public User User { get; set; }
 
@@ -51,14 +52,16 @@ namespace TrafficPoliceDesktopApp
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
             logout();
         }
 
         private void logout()
         {
-            Login loginForm = new Login();
-            loginForm.Show();
-            this.Close();
+            
+            
+            LoginWindow.Show();
+            this.Hide();
         }
 
         private void MetroTabControl_TabItemClosingEvent(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
@@ -89,6 +92,16 @@ namespace TrafficPoliceDesktopApp
         {
             lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
         }
+
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //Service.Close();
+            //Environment.Exit(0);
+        }
+
+
+
+
 
 
 

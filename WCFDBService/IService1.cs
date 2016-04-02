@@ -20,6 +20,9 @@ namespace WCFDBService
       User GetUserByIdAndPass(string id, string password);
 
       [OperationContract]
+      User GetReadOnlyUserById(string id);
+
+      [OperationContract]
       int InsertUser(User usr);
 
 

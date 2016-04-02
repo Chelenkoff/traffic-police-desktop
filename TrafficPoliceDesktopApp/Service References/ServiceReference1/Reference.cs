@@ -148,6 +148,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByIdAndPass", ReplyAction="http://tempuri.org/IService1/GetUserByIdAndPassResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetReadOnlyUserById", ReplyAction="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse")]
+        TrafficPoliceDesktopApp.ServiceReference1.User GetReadOnlyUserById(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUser", ReplyAction="http://tempuri.org/IService1/InsertUserResponse")]
         int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr);
     }
@@ -185,6 +188,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password) {
             return base.Channel.GetUserByIdAndPass(id, password);
+        }
+        
+        public TrafficPoliceDesktopApp.ServiceReference1.User GetReadOnlyUserById(string id) {
+            return base.Channel.GetReadOnlyUserById(id);
         }
         
         public int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr) {

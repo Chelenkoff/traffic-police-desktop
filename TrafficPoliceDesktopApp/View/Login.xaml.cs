@@ -27,6 +27,8 @@ namespace TrafficPoliceDesktopApp.View
     {
         const int maxIdLength = 10;
         Service1Client service;
+
+        public MainWindow NextWindow { get; set; }
         public Login()
         {
             service = new Service1Client();
@@ -65,11 +67,10 @@ namespace TrafficPoliceDesktopApp.View
 
                     if (!dbResponseValidation(user)) return;
                    
-
-                    //DB - OK, USER - FOUND
-                    var newForm = new MainWindow(user); //create your new form.
-                    newForm.Show(); //show the new form.
-                    this.Hide(); //only if you want to close the current form.
+                    NextWindow = new MainWindow(user);
+                    NextWindow.LoginWindow = this;
+                    NextWindow.Show();
+                    this.Hide();
                 }));
             });
    
@@ -130,6 +131,12 @@ namespace TrafficPoliceDesktopApp.View
             txtBoxEGN.IsEnabled = true;
             pswdBoxPass.IsEnabled = true;
             btnLogin.IsEnabled = true;
+        }
+
+        private void LoginWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            service.Close();
+            Environment.Exit(0);
         }
 
     }

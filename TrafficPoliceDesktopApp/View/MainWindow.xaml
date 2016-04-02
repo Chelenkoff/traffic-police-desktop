@@ -7,7 +7,7 @@
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
                      GlowBrush="{DynamicResource AccentColorBrush}"
-                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top">
+                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Closing="MetroWindow_Closing">
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>

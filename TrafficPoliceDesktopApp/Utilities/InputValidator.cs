@@ -10,7 +10,7 @@ namespace TrafficPoliceDesktopApp.Utilities
     {
         static string message;
         static Regex specialCharactersRegex = new Regex(@"[~`!@#$%^&*()+=|\{}':;.,<>/?[\]""_-]");
-
+        const int ID_LENGTH = 10;
         //Name Validator
        public static string validateName(string name)
         {
@@ -42,5 +42,30 @@ namespace TrafficPoliceDesktopApp.Utilities
                message = null;
            return message;
        }
+
+        public static string validateId(string id)
+       {
+           if (String.IsNullOrWhiteSpace(id))
+               message = "Не сте въвели ЕГН!";
+           else if (id.Contains(" "))
+               message = "Не е възможно да имате интервали в ЕГН!";
+           else if (specialCharactersRegex.IsMatch(id) || !IsDigitsOnly(id))
+               message = "ЕГН се състои само от цифри!";
+           else if (id.Length != ID_LENGTH)
+               message = "ЕГН се състои от точно 10 цифри!";
+           else   message = null;
+           return message;
+       }
+
+       static bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

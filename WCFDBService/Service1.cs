@@ -203,6 +203,63 @@ namespace WCFDBService
 
         }
 
+       public User GetReadOnlyUserById(string id)
+        {
+            string query = String.Format("SELECT * FROM users WHERE user_id ={0} ", id);
+
+            string userId;
+            string firstName;
+            string secondName;
+            string lastName;
+            string isTrafficPoliceman;
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                User usr = new User();
+                MySqlDataReader dataReader;
+                try
+                {
+                    //Create Command
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    //Create a data reader and Execute the command                    
+                    dataReader = cmd.ExecuteReader();
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        userId = dataReader["user_id"] + "";
+                        firstName = dataReader["first_name"] + "";
+                        secondName = dataReader["second_name"] + "";
+                        lastName = dataReader["last_name"] + "";
+                        isTrafficPoliceman = dataReader["is_traffic_policeman"] + "";
+
+                        usr.IsTrafficPoliceman = isTrafficPoliceman == "1" ? true : false;
+                        usr.UserId = long.Parse(userId);
+                        usr.FirstName = firstName;
+                        usr.SecondName = secondName;
+                        usr.LastName = lastName;
+                    }
+                    dataReader.Close();
+                    return usr;
+                }
+                catch
+                {   //Returning empty user with uninitialized properties (UserId = 0)
+                    return new User();
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         
 
         

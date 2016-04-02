@@ -19,6 +19,12 @@
   <wsdl:message name="IService1_GetUserByIdAndPass_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserByIdAndPassResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetReadOnlyUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadOnlyUserById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetReadOnlyUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadOnlyUserByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_InsertUser_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertUser" />
   </wsdl:message>
@@ -33,6 +39,10 @@
     <wsdl:operation name="GetUserByIdAndPass">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserByIdAndPass" message="tns:IService1_GetUserByIdAndPass_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserByIdAndPassResponse" message="tns:IService1_GetUserByIdAndPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReadOnlyUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetReadOnlyUserById" message="tns:IService1_GetReadOnlyUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse" message="tns:IService1_GetReadOnlyUserById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUser" message="tns:IService1_InsertUser_InputMessage" />
@@ -52,6 +62,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserByIdAndPass">
       <soap:operation soapAction="http://tempuri.org/IService1/GetUserByIdAndPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReadOnlyUserById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetReadOnlyUserById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
