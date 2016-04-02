@@ -77,6 +77,10 @@ namespace TrafficPoliceDesktopApp
             {
                 viewNewUser.ParentWindow = this;
             }
+            if(searchUserTabItem.IsSelected == true)
+            {
+                viewSearchUser.ParentWindow = this;
+            }
             
 
         }

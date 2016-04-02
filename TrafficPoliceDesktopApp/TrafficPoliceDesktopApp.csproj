@@ -93,6 +93,12 @@
     <Compile Include="View\NewUserView.xaml.cs">
       <DependentUpon>NewUserView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchUserView.xaml.cs">
+      <DependentUpon>SearchUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchUserWindow.xaml.cs">
+      <DependentUpon>SearchUserWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -132,6 +138,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

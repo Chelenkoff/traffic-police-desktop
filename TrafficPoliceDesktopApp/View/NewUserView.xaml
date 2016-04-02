@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="467" d:DesignWidth="471" >
+             d:DesignHeight="467" d:DesignWidth="471"  >
 
     <!--Window resources-->
     <UserControl.Resources>
@@ -16,8 +16,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <Label x:Name="lblUserGreeting" Content="Здравейте, Георги Челенков" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
-        <GroupBox Header="Добавяне на нов потребител" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
+        <Label x:Name="lblViewMessage" Content="Добавяне на нов служител" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
+        <GroupBox Header="Данни на служителя" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
             <Grid>
                 <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="187" Foreground="#CC119EDA" FontSize="20"/>
                 <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="252,135,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>

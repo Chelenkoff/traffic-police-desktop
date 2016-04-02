@@ -3,6 +3,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:View="clr-namespace:TrafficPoliceDesktopApp.View"
+                    
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
                      GlowBrush="{DynamicResource AccentColorBrush}"
@@ -77,9 +78,9 @@
                     <View:NewUserView x:Name="viewNewUser"/>
                 </Grid>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >
+            <Controls:MetroTabItem x:Name="searchUserTabItem" Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >
                 <Grid Margin="224,-38,671,-3">
-
+                    <View:SearchUserView x:Name="viewSearchUser"/>
                 </Grid>
             </Controls:MetroTabItem>
             
