@@ -28,7 +28,7 @@ namespace TrafficPoliceDesktopApp.View
         const int maxIdLength = 10;
         Service1Client service;
 
-        public MainWindow NextWindow { get; set; }
+        public MainWindow testWindow { get; set; }
         public Login()
         {
             service = new Service1Client();
@@ -67,10 +67,22 @@ namespace TrafficPoliceDesktopApp.View
 
                     if (!dbResponseValidation(user)) return;
                    
-                    NextWindow = new MainWindow(user);
-                    NextWindow.LoginWindow = this;
-                    NextWindow.Show();
+                    //Creating MainWindow only once and reusing
+                    if (testWindow != null)
+                    {
+                        testWindow.LoginWindow = this;
+                        testWindow.User = user;
+                        testWindow.updateLoggedUsername();
+                        
+                    }
+                    else
+                    {
+                        testWindow = new MainWindow(user);
+                        testWindow.LoginWindow = this;
+                    }
+                    testWindow.Show();
                     this.Hide();
+
                 }));
             });
    

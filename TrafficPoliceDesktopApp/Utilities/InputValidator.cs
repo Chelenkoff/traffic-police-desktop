@@ -17,7 +17,7 @@ namespace TrafficPoliceDesktopApp.Utilities
 
 
             if (String.IsNullOrWhiteSpace(name))
-               message = "Невалиден формат на име!";
+               message = "Не сте въвели име!";
             else if (name.Any(char.IsDigit))
                message = "Не е възможно в името да се съдържат цифри!";
             else if (name.Contains(" "))
@@ -35,7 +35,7 @@ namespace TrafficPoliceDesktopApp.Utilities
 
 
            if (String.IsNullOrWhiteSpace(pass))
-               message = "Въведете парола!";
+               message = "Паролата не може да съдържа само интервали!";
            else if (pass.Contains(" "))
                message = "Не е възможно да имате интервали в паролата!";
            else

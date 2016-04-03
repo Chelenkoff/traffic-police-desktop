@@ -16,6 +16,7 @@ using TrafficPoliceDesktopApp.Utilities;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.View;
 
+
 namespace TrafficPoliceDesktopApp
 {
     /// <summary>
@@ -35,11 +36,9 @@ namespace TrafficPoliceDesktopApp
             InitializeComponent();
             
             User = usr;
+            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
 
-            //Passing User to default tab item view
-            //viewMyProfile.User = User;
 
-            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);   
         }
         
         
@@ -52,7 +51,7 @@ namespace TrafficPoliceDesktopApp
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            myProfileTabItem.IsSelected = false;
             logout();
         }
 
@@ -62,6 +61,7 @@ namespace TrafficPoliceDesktopApp
             
             LoginWindow.Show();
             this.Hide();
+           
         }
 
         private void MetroTabControl_TabItemClosingEvent(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
@@ -73,16 +73,20 @@ namespace TrafficPoliceDesktopApp
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (myProfileTabItem.IsSelected == true)
-            {  
+            {
                 viewMyProfile.ParentWindow = this;
+                return;
+                
             }
-            if(newUserTabItem.IsSelected == true)
+            if (newUserTabItem.IsSelected == true)
             {
                 viewNewUser.ParentWindow = this;
+                return;
             }
-            if(searchUserTabItem.IsSelected == true)
+            if (searchUserTabItem.IsSelected == true)
             {
                 viewSearchUser.ParentWindow = this;
+                return;
             }
             
 
@@ -95,18 +99,17 @@ namespace TrafficPoliceDesktopApp
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //Service.Close();
-            //Environment.Exit(0);
+            Service.Close();
+            Environment.Exit(0);
         }
 
-
-
-
-
-
-
-
-
+        private void MetroWindow_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (this.Visibility == Visibility.Visible)
+            {
+                Dispatcher.BeginInvoke((Action)(() => tabControl.SelectedItem = myProfileTabItem));
+            }
+        }
 
 
     }

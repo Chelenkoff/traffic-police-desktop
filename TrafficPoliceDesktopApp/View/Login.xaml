@@ -1,4 +1,4 @@
-﻿<Controls:MetroWindow x:Name="LoginWindow" x:Class="TrafficPoliceDesktopApp.View.Login"
+﻿<Controls:MetroWindow  x:Class="TrafficPoliceDesktopApp.View.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"

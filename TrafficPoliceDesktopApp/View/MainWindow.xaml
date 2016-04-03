@@ -7,7 +7,7 @@
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
                      GlowBrush="{DynamicResource AccentColorBrush}"
-                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Closing="MetroWindow_Closing">
+                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Closing="MetroWindow_Closing" IsVisibleChanged="MetroWindow_IsVisibleChanged"  >
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -45,7 +45,7 @@
 
 
 
-        <TabControl Margin="0,0,-674,0" SelectionChanged="TabControl_SelectionChanged"  >
+        <TabControl Name="tabControl" Margin="0,0,-674,0" SelectionChanged="TabControl_SelectionChanged"  >
 
             <Controls:MetroTabItem Name="myProfileTabItem" Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
                 <Grid Margin="224,-38,671,-3">
@@ -55,17 +55,17 @@
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
                 <Grid Margin="224,-38,671,-3">
-                    
+
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по номер" Controls:ControlsHelper.HeaderFontSize="22" Margin="-327,124,332,-124" >
                 <Grid Margin="224,-38,671,-3">
-                    
+
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
                 <Grid Margin="224,-38,671,-3">
-                    
+
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >
@@ -83,9 +83,9 @@
                     <View:SearchUserView x:Name="viewSearchUser"/>
                 </Grid>
             </Controls:MetroTabItem>
-            
+
         </TabControl>
-        
+
         <Label Content="МПС" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="80" FontSize="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="214" FontSize="25"><Run Text="Водач"/><Run Text="/"/><Run Text="Собственик"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="127" FontSize="25" Text="Служители"/>

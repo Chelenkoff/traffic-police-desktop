@@ -18,7 +18,7 @@ namespace WCFDBService
         [DataMember]
         public string LastName { get; set; }
         [DataMember]
-        public string Sex { get; set; }
+        public SexEnum Sex { get; set; }
         [DataMember]
         public string Nationality { get; set; }
         [DataMember]
@@ -39,6 +39,15 @@ namespace WCFDBService
         public string LicenceIssuedBy { get; set; }
       
         //public Categories Categories { get; set; }
+
+    }
+    [DataContract(Name = "Sex")]
+    public enum SexEnum
+    {
+        [EnumMember]
+        Man = 'М',
+        [EnumMember]
+        Woman = 'Ж'
 
     }
 }

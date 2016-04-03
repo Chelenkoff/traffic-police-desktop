@@ -53,10 +53,15 @@ namespace TrafficPoliceDesktopApp.View
 
         private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
 
-            //if (!uiDataValidation(txtBoxFirstName.Text, txtBoxSecondName.Text, txtBoxLastName.Text, check, txtBoxVisiblePassword.Text))
-            //    return;
+            string id = txtBoxId.Text;
+            string firstName = txtBoxFirstName.Text;
+            string secondName = txtBoxSecondName.Text;
+            string lastName = txtBoxLastName.Text;
+            string pass = pswdBoxPassword.Password;
+
+            if (!uiDataValidation(id, firstName, secondName, lastName, pass))
+                return;
 
             MessageDialogResult msgDialog = await ParentWindow.ShowMessageAsync("Внимание", "Сигурни ли сте, че искате да добавите потребител?", MessageDialogStyle.AffirmativeAndNegative);
             if (msgDialog == MessageDialogResult.Negative)
@@ -107,6 +112,45 @@ namespace TrafficPoliceDesktopApp.View
 
                 }));
             });
+        }
+
+        private bool uiDataValidation(string id, string firstName, string secondName, string lastName, string pass)
+        {
+            string idValidation = InputValidator.validateId(id);
+            //Id validation
+            if (idValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в ЕГН", idValidation);
+                return false;
+            }
+            string passValidation = InputValidator.validatePass(pass);
+            if (passValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в паролата", passValidation);
+                return false;
+            }
+           string firstNameValidation = InputValidator.validateName(firstName);
+           if (firstNameValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в името", firstNameValidation);
+                return false;
+            }
+           string secondNameValidation = InputValidator.validateName(secondName);
+           if (secondNameValidation != null)
+           {
+               ParentWindow.ShowMessageAsync("Грешка в презимето", secondNameValidation);
+               return false;
+           }
+           string lastNameValidation = InputValidator.validateName(lastName);
+           if (lastNameValidation != null)
+           {
+               ParentWindow.ShowMessageAsync("Грешка във фамилията", lastNameValidation);
+               return false;
+           }
+           
+
+
+            return true;
         }
 
         private void startLoading()

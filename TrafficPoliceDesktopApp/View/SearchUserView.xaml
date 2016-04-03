@@ -7,6 +7,15 @@
              mc:Ignorable="d" 
               d:DesignHeight="467" d:DesignWidth="471">
     <!--Window resources-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    
 
     <Grid>
         <Label x:Name="lblViewMessage" Content="Справка за служител" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
