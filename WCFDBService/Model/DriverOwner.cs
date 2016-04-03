@@ -37,8 +37,8 @@ namespace WCFDBService
         public DateTime LicenceExpiryDate { get; set; }
         [DataMember]
         public string LicenceIssuedBy { get; set; }
-      
-        //public Categories Categories { get; set; }
+         [DataMember]
+        public Categories Categories { get; set; }
 
     }
     [DataContract(Name = "Sex")]

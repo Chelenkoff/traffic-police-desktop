@@ -87,6 +87,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Utilities\InputValidator.cs" />
+    <Compile Include="View\AddDriverOwnerView.xaml.cs">
+      <DependentUpon>AddDriverOwnerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MyProfileView.xaml.cs">
       <DependentUpon>MyProfileView.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AddDriverOwnerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>

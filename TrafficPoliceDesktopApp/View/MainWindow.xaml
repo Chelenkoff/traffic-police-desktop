@@ -63,9 +63,9 @@
 
                 </Grid>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
+            <Controls:MetroTabItem Name="addDriverOwnerTabItem" Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
                 <Grid Margin="224,-38,671,-3">
-
+                    <View:AddDriverOwnerView x:Name="viewAddDriverOwner"/>
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >
