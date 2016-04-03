@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -23,5 +25,37 @@ namespace TrafficPoliceDesktopApp.View
         {
             InitializeComponent();
         }
+
+  
+
+        
+
+        public List<string> getCountryList()
+        {
+            List<string> LogList = new List<string>();
+            try
+            {
+                var logFile = File.ReadAllLines(@"Resources\Textfiles\CountryListCyrillic.txt");
+                LogList = new List<string>(logFile);
+            }
+            catch
+            {
+                MessageBox.Show("hahah");
+            }
+            
+             
+            return LogList;
+
+        }
+
+
+
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
+            comboBoxCountries.ItemsSource = getCountryList();
+            comboBoxCountries.SelectedItem = "България";
+        }
+
+
     }
 }
