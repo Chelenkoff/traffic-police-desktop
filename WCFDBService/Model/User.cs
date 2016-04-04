@@ -7,6 +7,7 @@ using System.Text;
 
 namespace WCFDBService
 {
+    [DataContract]
    public  class User
     {
         [DataMember]

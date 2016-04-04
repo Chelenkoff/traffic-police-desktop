@@ -260,6 +260,11 @@ namespace WCFDBService
 
         }
 
+       public int InsertCat(Categories categ)
+       {
+           return 1;
+       }
+
         
 
         

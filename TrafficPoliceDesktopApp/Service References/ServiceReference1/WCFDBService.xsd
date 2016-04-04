@@ -11,4 +11,60 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="Categories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a1AcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="a1ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="a1Restrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="aAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="aExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="aRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="b1AcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="b1ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="b1Restrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="beAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="beExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="beRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c1AcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="c1ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="c1Restrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c1eAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="c1eExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="c1eRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ceAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ceExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ceRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d1AcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="d1ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="d1Restrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d1eAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="d1eExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="d1eRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="mRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tktAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="tktExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="tktRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ttbAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ttbExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ttbRestrictions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ttmAcquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ttmExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ttmRestrictions" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categories" nillable="true" type="tns:Categories" />
 </xs:schema>

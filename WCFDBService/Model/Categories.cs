@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.ServiceModel;
 using System.Text;
 
 namespace WCFDBService
 {
-    [DataContract]
-    public class Categories
+     [DataContract]
+    public  class Categories
     {
         [DataMember]
         public DateTime a1AcquiryDate { get; set; }

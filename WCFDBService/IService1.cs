@@ -25,6 +25,9 @@ namespace WCFDBService
       [OperationContract]
       int InsertUser(User usr);
 
+      [OperationContract]
+      int InsertCat(Categories categ);
+
 
        
     }

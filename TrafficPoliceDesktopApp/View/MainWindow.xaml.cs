@@ -88,6 +88,10 @@ namespace TrafficPoliceDesktopApp
                 viewSearchUser.ParentWindow = this;
                 return;
             }
+            if(addDriverOwnerTabItem.IsSelected == true)
+            {
+                viewAddDriverOwner.ParentWindow = this;
+            }
             
 
         }

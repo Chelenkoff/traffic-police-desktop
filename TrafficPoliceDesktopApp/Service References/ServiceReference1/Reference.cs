@@ -138,6 +138,851 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/WCFDBService")]
+    [System.SerializableAttribute()]
+    public partial class Categories : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime a1AcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime a1ExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string a1RestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime aAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime aExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string aRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime b1AcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime b1ExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string b1RestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime bAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime bExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime beAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime beExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string beRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime c1AcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime c1ExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string c1RestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime c1eAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime c1eExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string c1eRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime cAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime cExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ceAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ceExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ceRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime d1AcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime d1ExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string d1RestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime d1eAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime d1eExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string d1eRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime deAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime deExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string deRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime mAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime mExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime tktAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime tktExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tktRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ttbAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ttbExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ttbRestrictionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ttmAcquiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ttmExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ttmRestrictionsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime a1AcquiryDate {
+            get {
+                return this.a1AcquiryDateField;
+            }
+            set {
+                if ((this.a1AcquiryDateField.Equals(value) != true)) {
+                    this.a1AcquiryDateField = value;
+                    this.RaisePropertyChanged("a1AcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime a1ExpiryDate {
+            get {
+                return this.a1ExpiryDateField;
+            }
+            set {
+                if ((this.a1ExpiryDateField.Equals(value) != true)) {
+                    this.a1ExpiryDateField = value;
+                    this.RaisePropertyChanged("a1ExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string a1Restrictions {
+            get {
+                return this.a1RestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.a1RestrictionsField, value) != true)) {
+                    this.a1RestrictionsField = value;
+                    this.RaisePropertyChanged("a1Restrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime aAcquiryDate {
+            get {
+                return this.aAcquiryDateField;
+            }
+            set {
+                if ((this.aAcquiryDateField.Equals(value) != true)) {
+                    this.aAcquiryDateField = value;
+                    this.RaisePropertyChanged("aAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime aExpiryDate {
+            get {
+                return this.aExpiryDateField;
+            }
+            set {
+                if ((this.aExpiryDateField.Equals(value) != true)) {
+                    this.aExpiryDateField = value;
+                    this.RaisePropertyChanged("aExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string aRestrictions {
+            get {
+                return this.aRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.aRestrictionsField, value) != true)) {
+                    this.aRestrictionsField = value;
+                    this.RaisePropertyChanged("aRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime b1AcquiryDate {
+            get {
+                return this.b1AcquiryDateField;
+            }
+            set {
+                if ((this.b1AcquiryDateField.Equals(value) != true)) {
+                    this.b1AcquiryDateField = value;
+                    this.RaisePropertyChanged("b1AcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime b1ExpiryDate {
+            get {
+                return this.b1ExpiryDateField;
+            }
+            set {
+                if ((this.b1ExpiryDateField.Equals(value) != true)) {
+                    this.b1ExpiryDateField = value;
+                    this.RaisePropertyChanged("b1ExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string b1Restrictions {
+            get {
+                return this.b1RestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.b1RestrictionsField, value) != true)) {
+                    this.b1RestrictionsField = value;
+                    this.RaisePropertyChanged("b1Restrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime bAcquiryDate {
+            get {
+                return this.bAcquiryDateField;
+            }
+            set {
+                if ((this.bAcquiryDateField.Equals(value) != true)) {
+                    this.bAcquiryDateField = value;
+                    this.RaisePropertyChanged("bAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime bExpiryDate {
+            get {
+                return this.bExpiryDateField;
+            }
+            set {
+                if ((this.bExpiryDateField.Equals(value) != true)) {
+                    this.bExpiryDateField = value;
+                    this.RaisePropertyChanged("bExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bRestrictions {
+            get {
+                return this.bRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bRestrictionsField, value) != true)) {
+                    this.bRestrictionsField = value;
+                    this.RaisePropertyChanged("bRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime beAcquiryDate {
+            get {
+                return this.beAcquiryDateField;
+            }
+            set {
+                if ((this.beAcquiryDateField.Equals(value) != true)) {
+                    this.beAcquiryDateField = value;
+                    this.RaisePropertyChanged("beAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime beExpiryDate {
+            get {
+                return this.beExpiryDateField;
+            }
+            set {
+                if ((this.beExpiryDateField.Equals(value) != true)) {
+                    this.beExpiryDateField = value;
+                    this.RaisePropertyChanged("beExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string beRestrictions {
+            get {
+                return this.beRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.beRestrictionsField, value) != true)) {
+                    this.beRestrictionsField = value;
+                    this.RaisePropertyChanged("beRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime c1AcquiryDate {
+            get {
+                return this.c1AcquiryDateField;
+            }
+            set {
+                if ((this.c1AcquiryDateField.Equals(value) != true)) {
+                    this.c1AcquiryDateField = value;
+                    this.RaisePropertyChanged("c1AcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime c1ExpiryDate {
+            get {
+                return this.c1ExpiryDateField;
+            }
+            set {
+                if ((this.c1ExpiryDateField.Equals(value) != true)) {
+                    this.c1ExpiryDateField = value;
+                    this.RaisePropertyChanged("c1ExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string c1Restrictions {
+            get {
+                return this.c1RestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.c1RestrictionsField, value) != true)) {
+                    this.c1RestrictionsField = value;
+                    this.RaisePropertyChanged("c1Restrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime c1eAcquiryDate {
+            get {
+                return this.c1eAcquiryDateField;
+            }
+            set {
+                if ((this.c1eAcquiryDateField.Equals(value) != true)) {
+                    this.c1eAcquiryDateField = value;
+                    this.RaisePropertyChanged("c1eAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime c1eExpiryDate {
+            get {
+                return this.c1eExpiryDateField;
+            }
+            set {
+                if ((this.c1eExpiryDateField.Equals(value) != true)) {
+                    this.c1eExpiryDateField = value;
+                    this.RaisePropertyChanged("c1eExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string c1eRestrictions {
+            get {
+                return this.c1eRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.c1eRestrictionsField, value) != true)) {
+                    this.c1eRestrictionsField = value;
+                    this.RaisePropertyChanged("c1eRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime cAcquiryDate {
+            get {
+                return this.cAcquiryDateField;
+            }
+            set {
+                if ((this.cAcquiryDateField.Equals(value) != true)) {
+                    this.cAcquiryDateField = value;
+                    this.RaisePropertyChanged("cAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime cExpiryDate {
+            get {
+                return this.cExpiryDateField;
+            }
+            set {
+                if ((this.cExpiryDateField.Equals(value) != true)) {
+                    this.cExpiryDateField = value;
+                    this.RaisePropertyChanged("cExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cRestrictions {
+            get {
+                return this.cRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cRestrictionsField, value) != true)) {
+                    this.cRestrictionsField = value;
+                    this.RaisePropertyChanged("cRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ceAcquiryDate {
+            get {
+                return this.ceAcquiryDateField;
+            }
+            set {
+                if ((this.ceAcquiryDateField.Equals(value) != true)) {
+                    this.ceAcquiryDateField = value;
+                    this.RaisePropertyChanged("ceAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ceExpiryDate {
+            get {
+                return this.ceExpiryDateField;
+            }
+            set {
+                if ((this.ceExpiryDateField.Equals(value) != true)) {
+                    this.ceExpiryDateField = value;
+                    this.RaisePropertyChanged("ceExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ceRestrictions {
+            get {
+                return this.ceRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ceRestrictionsField, value) != true)) {
+                    this.ceRestrictionsField = value;
+                    this.RaisePropertyChanged("ceRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime d1AcquiryDate {
+            get {
+                return this.d1AcquiryDateField;
+            }
+            set {
+                if ((this.d1AcquiryDateField.Equals(value) != true)) {
+                    this.d1AcquiryDateField = value;
+                    this.RaisePropertyChanged("d1AcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime d1ExpiryDate {
+            get {
+                return this.d1ExpiryDateField;
+            }
+            set {
+                if ((this.d1ExpiryDateField.Equals(value) != true)) {
+                    this.d1ExpiryDateField = value;
+                    this.RaisePropertyChanged("d1ExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string d1Restrictions {
+            get {
+                return this.d1RestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.d1RestrictionsField, value) != true)) {
+                    this.d1RestrictionsField = value;
+                    this.RaisePropertyChanged("d1Restrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime d1eAcquiryDate {
+            get {
+                return this.d1eAcquiryDateField;
+            }
+            set {
+                if ((this.d1eAcquiryDateField.Equals(value) != true)) {
+                    this.d1eAcquiryDateField = value;
+                    this.RaisePropertyChanged("d1eAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime d1eExpiryDate {
+            get {
+                return this.d1eExpiryDateField;
+            }
+            set {
+                if ((this.d1eExpiryDateField.Equals(value) != true)) {
+                    this.d1eExpiryDateField = value;
+                    this.RaisePropertyChanged("d1eExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string d1eRestrictions {
+            get {
+                return this.d1eRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.d1eRestrictionsField, value) != true)) {
+                    this.d1eRestrictionsField = value;
+                    this.RaisePropertyChanged("d1eRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime dAcquiryDate {
+            get {
+                return this.dAcquiryDateField;
+            }
+            set {
+                if ((this.dAcquiryDateField.Equals(value) != true)) {
+                    this.dAcquiryDateField = value;
+                    this.RaisePropertyChanged("dAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime dExpiryDate {
+            get {
+                return this.dExpiryDateField;
+            }
+            set {
+                if ((this.dExpiryDateField.Equals(value) != true)) {
+                    this.dExpiryDateField = value;
+                    this.RaisePropertyChanged("dExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dRestrictions {
+            get {
+                return this.dRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dRestrictionsField, value) != true)) {
+                    this.dRestrictionsField = value;
+                    this.RaisePropertyChanged("dRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime deAcquiryDate {
+            get {
+                return this.deAcquiryDateField;
+            }
+            set {
+                if ((this.deAcquiryDateField.Equals(value) != true)) {
+                    this.deAcquiryDateField = value;
+                    this.RaisePropertyChanged("deAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime deExpiryDate {
+            get {
+                return this.deExpiryDateField;
+            }
+            set {
+                if ((this.deExpiryDateField.Equals(value) != true)) {
+                    this.deExpiryDateField = value;
+                    this.RaisePropertyChanged("deExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string deRestrictions {
+            get {
+                return this.deRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.deRestrictionsField, value) != true)) {
+                    this.deRestrictionsField = value;
+                    this.RaisePropertyChanged("deRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime mAcquiryDate {
+            get {
+                return this.mAcquiryDateField;
+            }
+            set {
+                if ((this.mAcquiryDateField.Equals(value) != true)) {
+                    this.mAcquiryDateField = value;
+                    this.RaisePropertyChanged("mAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime mExpiryDate {
+            get {
+                return this.mExpiryDateField;
+            }
+            set {
+                if ((this.mExpiryDateField.Equals(value) != true)) {
+                    this.mExpiryDateField = value;
+                    this.RaisePropertyChanged("mExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mRestrictions {
+            get {
+                return this.mRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mRestrictionsField, value) != true)) {
+                    this.mRestrictionsField = value;
+                    this.RaisePropertyChanged("mRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime tktAcquiryDate {
+            get {
+                return this.tktAcquiryDateField;
+            }
+            set {
+                if ((this.tktAcquiryDateField.Equals(value) != true)) {
+                    this.tktAcquiryDateField = value;
+                    this.RaisePropertyChanged("tktAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime tktExpiryDate {
+            get {
+                return this.tktExpiryDateField;
+            }
+            set {
+                if ((this.tktExpiryDateField.Equals(value) != true)) {
+                    this.tktExpiryDateField = value;
+                    this.RaisePropertyChanged("tktExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tktRestrictions {
+            get {
+                return this.tktRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tktRestrictionsField, value) != true)) {
+                    this.tktRestrictionsField = value;
+                    this.RaisePropertyChanged("tktRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ttbAcquiryDate {
+            get {
+                return this.ttbAcquiryDateField;
+            }
+            set {
+                if ((this.ttbAcquiryDateField.Equals(value) != true)) {
+                    this.ttbAcquiryDateField = value;
+                    this.RaisePropertyChanged("ttbAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ttbExpiryDate {
+            get {
+                return this.ttbExpiryDateField;
+            }
+            set {
+                if ((this.ttbExpiryDateField.Equals(value) != true)) {
+                    this.ttbExpiryDateField = value;
+                    this.RaisePropertyChanged("ttbExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ttbRestrictions {
+            get {
+                return this.ttbRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ttbRestrictionsField, value) != true)) {
+                    this.ttbRestrictionsField = value;
+                    this.RaisePropertyChanged("ttbRestrictions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ttmAcquiryDate {
+            get {
+                return this.ttmAcquiryDateField;
+            }
+            set {
+                if ((this.ttmAcquiryDateField.Equals(value) != true)) {
+                    this.ttmAcquiryDateField = value;
+                    this.RaisePropertyChanged("ttmAcquiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ttmExpiryDate {
+            get {
+                return this.ttmExpiryDateField;
+            }
+            set {
+                if ((this.ttmExpiryDateField.Equals(value) != true)) {
+                    this.ttmExpiryDateField = value;
+                    this.RaisePropertyChanged("ttmExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ttmRestrictions {
+            get {
+                return this.ttmRestrictionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ttmRestrictionsField, value) != true)) {
+                    this.ttmRestrictionsField = value;
+                    this.RaisePropertyChanged("ttmRestrictions");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -153,6 +998,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUser", ReplyAction="http://tempuri.org/IService1/InsertUserResponse")]
         int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
+        int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -196,6 +1044,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr) {
             return base.Channel.InsertUser(usr);
+        }
+        
+        public int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ) {
+            return base.Channel.InsertCat(categ);
         }
     }
 }

@@ -31,6 +31,12 @@
   <wsdl:message name="IService1_InsertUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InsertCat_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCat" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCatResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="InsertUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUser" message="tns:IService1_InsertUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUserResponse" message="tns:IService1_InsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCat" message="tns:IService1_InsertCat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCatResponse" message="tns:IService1_InsertCat_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -80,6 +90,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertUser">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCat">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertCat" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
