@@ -89,16 +89,15 @@ namespace TrafficPoliceDesktopApp.View
             string nationality = comboBoxCountries.SelectedItem.ToString();
             string birthPlace = txtBoxBirthPlace.Text;
             string residence = txtBoxResidence.Text;
-            string licenceNum = txtBoxLicenceNum.Text;
             string remainingPts = upDownRemainingPts.Value.ToString();
             string issuedBy = txtBoxIssuedBy.Text;
             string issuedDate = datePickerIssuedDate.SelectedDate.ToString();
             string expiryDate = datePickerExpiryDate.SelectedDate.ToString();
 
             //needs to be finished
-           Categories cat = getCategories();
-            
+           
 
+        
             //if (!uiDataValidation(id, firstName, secondName, lastName, pass))
             //    return;
 
@@ -108,16 +107,10 @@ namespace TrafficPoliceDesktopApp.View
                 return;
             }
 
-            /* bool checkIsTrafficPoliceman = checkBoxIsTrafficPoliceman.IsChecked == true;
+            DriverOwner driverOwner = getDriverOwner();
 
-            User userToAdd = new User();
-            userToAdd.UserId = Convert.ToInt64(txtBoxId.Text);
-            userToAdd.FirstName = txtBoxFirstName.Text;
-            userToAdd.SecondName = txtBoxSecondName.Text;
-            userToAdd.LastName = txtBoxLastName.Text;
-            userToAdd.UserPassword = pswdBoxPassword.Password;
-            userToAdd.IsTrafficPoliceman = checkIsTrafficPoliceman;
-            */
+
+
             int check;
             await Task.Factory.StartNew(() =>
             {
@@ -125,30 +118,28 @@ namespace TrafficPoliceDesktopApp.View
                 this.Dispatcher.Invoke((Action)(() => startLoading()));
 
                 //Receiving REST api response
-                //check = ParentWindow.Service.InsertUser(userToAdd);
-
+                //check = ParentWindow.Service.registerDriverOwner(driverOwner);
+                ParentWindow.Service.registerDriverOwner(driverOwner);
 
                 // invoke user code on the main UI thread
                 Dispatcher.Invoke(new Action(() =>
                 {
                     //stopLoading logic
                     this.Dispatcher.Invoke((Action)(() => stopLoading()));
-                    check = 2;
-                    switch (check)
-                    {
-                        case 1:
-                            ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
-                            break;
-                        case 2:
-                            //string message = String.Format("Съществува потребител с ЕГН: {0}", userToAdd.UserId);
-                            string message = ";";
-                            ParentWindow.ShowMessageAsync("Внимание", message, MessageDialogStyle.Affirmative);
-                            break;
-                        case 0:
-                            ParentWindow.ShowMessageAsync("Внимание", "Потребителят бе успешно добавен", MessageDialogStyle.Affirmative);
-                            break;
+                    //switch (check)
+                    //{
+                    //    case 1:
+                    //        ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
+                    //        break;
+                    //    case 2:
+                    //        string message = String.Format("Проблем със заявката");
+                    //        ParentWindow.ShowMessageAsync("Внимание", message, MessageDialogStyle.Affirmative);
+                    //        break;
+                    //    case 0:
+                    //        ParentWindow.ShowMessageAsync("Внимание", "Потребителят бе успешно добавен", MessageDialogStyle.Affirmative);
+                    //        break;
 
-                    }
+                    //}
 
                 }));
             });
@@ -214,7 +205,6 @@ namespace TrafficPoliceDesktopApp.View
             txtBoxBirthPlace.Text = "";
             txtBoxResidence.Text = "";
             upDownRemainingPts.Value = 39;
-            txtBoxLicenceNum.Text = "";
             txtBoxIssuedBy.Text = "";
             datePickerIssuedDate.SelectedDate = null;
             datePickerExpiryDate.SelectedDate = null;
@@ -299,44 +289,100 @@ namespace TrafficPoliceDesktopApp.View
 
         private Categories getCategories()
         {
-            string a1AcquiryDate = datePickerA1AcquiryDate.SelectedDate.ToString();
-            string a1ExpiryDate = datePickerA1ExpiryDate.SelectedDate.ToString();
-            string a1Restrictions = txtBoxA1Restrictions.Text;
 
-            string aAcquiryDate = datePickerAAcquiryDate.SelectedDate.ToString();
-            string aExpiryDate = datePickerAExpiryDate.SelectedDate.ToString();
-            string aRestrictions = txtBoxARestrictions.Text;
+            Categories cat = new Categories();
 
-            string b1AcquiryDate = datePickerB1AcquiryDate.SelectedDate.ToString();
-            string b1ExpiryDate = datePickerB1ExpiryDate.SelectedDate.ToString();
-            string b1Restrictions = txtBoxB1Restrictions.Text;
+            cat.a1AcquiryDate = datePickerA1AcquiryDate.SelectedDate;
+            cat.a1ExpiryDate = datePickerA1ExpiryDate.SelectedDate;
+            cat.a1Restrictions = txtBoxA1Restrictions.Text;
 
-            string bAcquiryDate = datePickerBAcquiryDate.SelectedDate.ToString();
-            string bExpiryDate = datePickerBExpiryDate.SelectedDate.ToString();
-            string bRestrictions = txtBoxBRestrictions.Text;
+            cat.aAcquiryDate = datePickerAAcquiryDate.SelectedDate;
+            cat.aExpiryDate = datePickerAExpiryDate.SelectedDate;
+            cat.aRestrictions = txtBoxARestrictions.Text;
 
-            string c1AcquiryDate = datePickerC1AcquiryDate.SelectedDate.ToString();
-            string c1ExpiryDate = datePickerC1ExpiryDate.SelectedDate.ToString();
-            string c1Restrictions = txtBoxC1Restrictions.Text;
 
-            string cAcquiryDate = datePickerCAcquiryDate.SelectedDate.ToString();
-            string cExpiryDate = datePickerCExpiryDate.SelectedDate.ToString();
-            string cRestrictions = txtBoxCRestrictions.Text;
+            cat.b1AcquiryDate = datePickerB1AcquiryDate.SelectedDate;
+            cat.b1ExpiryDate = datePickerB1ExpiryDate.SelectedDate;
+            cat.b1Restrictions = txtBoxB1Restrictions.Text;
 
-            string d1AcquiryDate = datePickerD1AcquiryDate.SelectedDate.ToString();
-            string d1ExpiryDate = datePickerD1ExpiryDate.SelectedDate.ToString();
-            string d1Restrictions = txtBoxD1Restrictions.Text;
+            cat.bAcquiryDate = datePickerBAcquiryDate.SelectedDate;
+            cat.bExpiryDate = datePickerBExpiryDate.SelectedDate;
+            cat.bRestrictions = txtBoxBRestrictions.Text;
 
-            string dAcquiryDate = datePickerDAcquiryDate.SelectedDate.ToString();
-            string dExpiryDate = datePickerDExpiryDate.SelectedDate.ToString();
-            string dRestrictions = txtBoxDRestrictions.Text;
+            cat.c1AcquiryDate = datePickerC1AcquiryDate.SelectedDate;
+            cat.c1ExpiryDate = datePickerC1ExpiryDate.SelectedDate;
+            cat.c1Restrictions = txtBoxC1Restrictions.Text;
 
-            string beAcquiryDate = datePickerBEAcquiryDate.SelectedDate.ToString();
-            string beExpiryDate = datePickerBEExpiryDate.SelectedDate.ToString();
-            string beRestrictions = txtBoxBERestrictions.Text;
-            ///NEEDS TO BE FINISHED!
-            ///
-            return new Categories();
+            cat.cAcquiryDate = datePickerCAcquiryDate.SelectedDate;
+            cat.cExpiryDate = datePickerCExpiryDate.SelectedDate;
+            cat.cRestrictions = txtBoxCRestrictions.Text;
+
+            cat.d1AcquiryDate = datePickerD1AcquiryDate.SelectedDate;
+            cat.d1ExpiryDate = datePickerD1ExpiryDate.SelectedDate;
+            cat.d1Restrictions = txtBoxD1Restrictions.Text;
+
+            cat.dAcquiryDate = datePickerDAcquiryDate.SelectedDate;
+            cat.dExpiryDate = datePickerDExpiryDate.SelectedDate;
+            cat.dRestrictions = txtBoxDRestrictions.Text;
+
+            cat.beAcquiryDate = datePickerBEAcquiryDate.SelectedDate;
+            cat.beExpiryDate = datePickerBEExpiryDate.SelectedDate;
+            cat.beRestrictions = txtBoxBERestrictions.Text;
+
+            cat.c1eAcquiryDate = datePickerC1EAcquiryDate.SelectedDate;
+            cat.c1eExpiryDate = datePickerC1EExpiryDate.SelectedDate;
+            cat.c1eRestrictions = txtBoxC1ERestrictions.Text;
+
+            cat.ceAcquiryDate = datePickerCEAcquiryDate.SelectedDate;
+            cat.ceExpiryDate = datePickerCEExpiryDate.SelectedDate;
+            cat.ceRestrictions = txtBoxCERestrictions.Text;
+
+            cat.d1eAcquiryDate = datePickerD1EAcquiryDate.SelectedDate;
+            cat.d1eExpiryDate = datePickerD1EExpiryDate.SelectedDate;
+            cat.d1eRestrictions = txtBoxD1ERestrictions.Text;
+
+            cat.deAcquiryDate = datePickerDEAcquiryDate.SelectedDate;
+            cat.deExpiryDate = datePickerDEExpiryDate.SelectedDate;
+            cat.deRestrictions = txtBoxDERestrictions.Text;
+
+            cat.ttbAcquiryDate = datePickerTtbAcquiryDate.SelectedDate;
+            cat.ttbExpiryDate = datePickerTtbExpiryDate.SelectedDate;
+            cat.ttbRestrictions = txtBoxTtbRestrictions.Text;
+
+            cat.ttmAcquiryDate = datePickerTtmAcquiryDate.SelectedDate;
+            cat.ttmExpiryDate = datePickerTtmExpiryDate.SelectedDate;
+            cat.ttmRestrictions = txtBoxTtmRestrictions.Text;
+
+            cat.tktAcquiryDate = datePickerTktAcquiryDate.SelectedDate;
+            cat.tktExpiryDate = datePickerTktExpiryDate.SelectedDate;
+            cat.tktRestrictions = txtBoxTktRestrictions.Text;
+
+            cat.mAcquiryDate = datePickerMAcquiryDate.SelectedDate;
+            cat.mExpiryDate = datePickerMExpiryDate.SelectedDate;
+            cat.mRestrictions = txtBoxMRestrictions.Text;
+
+            return cat;
+        }
+        
+        private DriverOwner getDriverOwner()
+        {
+            DriverOwner driverOwner = new DriverOwner();
+
+            driverOwner.DriverOwnerId = Convert.ToInt64(txtBoxId.Text);
+            driverOwner.FirstName = txtBoxFirstName.Text;
+            driverOwner.SecondName = txtBoxSecondName.Text;
+            driverOwner.LastName = txtBoxLastName.Text;
+            driverOwner.Sex = (radioBtnMan.IsChecked == true ? Sex.Man : Sex.Woman);
+            driverOwner.Nationality = comboBoxCountries.SelectedItem.ToString();
+            driverOwner.BirthDate =Convert.ToDateTime(String.Format("{0}/{1}/{2}", txtBoxId.Text.Substring(4, 2), txtBoxId.Text.Substring(2, 2), txtBoxId.Text.Substring(0, 2)));
+            driverOwner.BirthPlace = txtBoxBirthPlace.Text;
+            driverOwner.Residence = txtBoxResidence.Text;
+            driverOwner.RemainingPts = Convert.ToByte(upDownRemainingPts.Value);
+            driverOwner.LicenceIssueDate = datePickerIssuedDate.SelectedDate ?? DateTime.Now;
+            driverOwner.LicenceExpiryDate = datePickerExpiryDate.SelectedDate ?? DateTime.Now.AddYears(10);
+            driverOwner.LicenceIssuedBy = txtBoxIssuedBy.Text;
+            driverOwner.Categories = getCategories();
+            return driverOwner;
         }
 
     }

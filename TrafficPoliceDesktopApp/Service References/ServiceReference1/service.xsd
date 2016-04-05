@@ -72,4 +72,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="registerDriverOwner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="drOwner" nillable="true" type="q6:DriverOwner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerDriverOwnerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

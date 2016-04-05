@@ -11,121 +11,121 @@ namespace WCFDBService
     public  class Categories
     {
         [DataMember]
-        public DateTime a1AcquiryDate { get; set; }
+        public DateTime? a1AcquiryDate { get; set; }
         [DataMember]
-        public DateTime a1ExpiryDate { get; set; }
+        public DateTime? a1ExpiryDate { get; set; }
         [DataMember]
         public string a1Restrictions { get; set; }
 
         [DataMember]
-        public DateTime aAcquiryDate { get; set; }
+        public DateTime? aAcquiryDate { get; set; }
         [DataMember]
-        public DateTime aExpiryDate { get; set; }
+        public DateTime? aExpiryDate { get; set; }
         [DataMember]
         public string aRestrictions { get; set; }
 
         [DataMember]
-        public DateTime b1AcquiryDate { get; set; }
+        public DateTime? b1AcquiryDate { get; set; }
         [DataMember]
-        public DateTime b1ExpiryDate { get; set; }
+        public DateTime? b1ExpiryDate { get; set; }
         [DataMember]
         public string b1Restrictions { get; set; }
 
         [DataMember]
-        public DateTime bAcquiryDate { get; set; }
+        public DateTime? bAcquiryDate { get; set; }
         [DataMember]
-        public DateTime bExpiryDate { get; set; }
+        public DateTime? bExpiryDate { get; set; }
         [DataMember]
         public string bRestrictions { get; set; }
 
         [DataMember]
-        public DateTime c1AcquiryDate { get; set; }
+        public DateTime? c1AcquiryDate { get; set; }
         [DataMember]
-        public DateTime c1ExpiryDate { get; set; }
+        public DateTime? c1ExpiryDate { get; set; }
         [DataMember]
         public string c1Restrictions { get; set; }
 
         [DataMember]
-        public DateTime cAcquiryDate { get; set; }
+        public DateTime? cAcquiryDate { get; set; }
         [DataMember]
-        public DateTime cExpiryDate { get; set; }
+        public DateTime? cExpiryDate { get; set; }
         [DataMember]
         public string cRestrictions { get; set; }
 
         [DataMember]
-        public DateTime d1AcquiryDate { get; set; }
+        public DateTime? d1AcquiryDate { get; set; }
         [DataMember]
-        public DateTime d1ExpiryDate { get; set; }
+        public DateTime? d1ExpiryDate { get; set; }
         [DataMember]
         public string d1Restrictions { get; set; }
 
         [DataMember]
-        public DateTime dAcquiryDate { get; set; }
+        public DateTime? dAcquiryDate { get; set; }
         [DataMember]
-        public DateTime dExpiryDate { get; set; }
+        public DateTime? dExpiryDate { get; set; }
         [DataMember]
         public string dRestrictions { get; set; }
 
         [DataMember]
-        public DateTime beAcquiryDate { get; set; }
+        public DateTime? beAcquiryDate { get; set; }
         [DataMember]
-        public DateTime beExpiryDate { get; set; }
+        public DateTime? beExpiryDate { get; set; }
         [DataMember]
         public string beRestrictions { get; set; }
 
         [DataMember]
-        public DateTime c1eAcquiryDate { get; set; }
+        public DateTime? c1eAcquiryDate { get; set; }
         [DataMember]
-        public DateTime c1eExpiryDate { get; set; }
+        public DateTime? c1eExpiryDate { get; set; }
         [DataMember]
         public string c1eRestrictions { get; set; }
 
         [DataMember]
-        public DateTime ceAcquiryDate { get; set; }
+        public DateTime? ceAcquiryDate { get; set; }
         [DataMember]
-        public DateTime ceExpiryDate { get; set; }
+        public DateTime? ceExpiryDate { get; set; }
         [DataMember]
         public string ceRestrictions { get; set; }
 
         [DataMember]
-        public DateTime d1eAcquiryDate { get; set; }
+        public DateTime? d1eAcquiryDate { get; set; }
         [DataMember]
-        public DateTime d1eExpiryDate { get; set; }
+        public DateTime? d1eExpiryDate { get; set; }
         [DataMember]
         public string d1eRestrictions { get; set; }
 
         [DataMember]
-        public DateTime deAcquiryDate { get; set; }
+        public DateTime? deAcquiryDate { get; set; }
         [DataMember]
-        public DateTime deExpiryDate { get; set; }
+        public DateTime? deExpiryDate { get; set; }
         [DataMember]
         public string deRestrictions { get; set; }
 
         [DataMember]
-        public DateTime ttbAcquiryDate { get; set; }
+        public DateTime? ttbAcquiryDate { get; set; }
         [DataMember]
-        public DateTime ttbExpiryDate { get; set; }
+        public DateTime? ttbExpiryDate { get; set; }
         [DataMember]
         public string ttbRestrictions { get; set; }
 
         [DataMember]
-        public DateTime ttmAcquiryDate { get; set; }
+        public DateTime? ttmAcquiryDate { get; set; }
         [DataMember]
-        public DateTime ttmExpiryDate { get; set; }
+        public DateTime? ttmExpiryDate { get; set; }
         [DataMember]
         public string ttmRestrictions { get; set; }
 
         [DataMember]
-        public DateTime tktAcquiryDate { get; set; }
+        public DateTime? tktAcquiryDate { get; set; }
         [DataMember]
-        public DateTime tktExpiryDate { get; set; }
+        public DateTime? tktExpiryDate { get; set; }
         [DataMember]
         public string tktRestrictions { get; set; }
 
         [DataMember]
-        public DateTime mAcquiryDate { get; set; }
+        public DateTime? mAcquiryDate { get; set; }
         [DataMember]
-        public DateTime mExpiryDate { get; set; }
+        public DateTime? mExpiryDate { get; set; }
         [DataMember]
         public string mRestrictions { get; set; }
     }

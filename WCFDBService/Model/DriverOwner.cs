@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.ServiceModel;
 using System.Text;
 
 namespace WCFDBService
@@ -27,8 +28,7 @@ namespace WCFDBService
         public string BirthPlace { get; set; }
         [DataMember]
         public string Residence { get; set; }
-        [DataMember]
-        public long LicenceNum { get; set; }
+
         [DataMember]
         public byte RemainingPts { get; set; }
         [DataMember]

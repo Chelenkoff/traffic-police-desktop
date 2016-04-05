@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace WCFDBService
 {
@@ -264,6 +266,143 @@ namespace WCFDBService
        {
            return 1;
        }
+
+
+      public void registerDriverOwner(DriverOwner drOwner)
+       {
+           //0 - driver_owner_id            
+           //1 - first_name
+           //2 - second_name
+           //3 - last_name
+           //4 - sex
+           //5 - nationality
+           //6 - birth_date
+           //7 - birth_place
+           //8 - residence
+           //9 - licence_num
+           //10 - remaining_pts
+           //11 - licence_issue_date
+           //12 - licence_expiry_date
+           //13 - licence_issued_by
+
+
+
+           //string dtTest = drOwner.Categories.a1AcquiryDate;
+           string insertQuery = String.Format(("INSERT INTO driver_owners (driver_owner_id,first_name,second_name,last_name," +
+                                             "sex,nationality,birth_date,birth_place,residence,remaining_pts,licence_issue_date,"+
+                                             "licence_expiry_date,licence_issued_by," +
+                                             "a1_acquiry_date,a1_expiry_date,a1_restrictions,"+
+                                             "a_acquiry_date,a_expiry_date,a_restrictions,"+
+                                             "b1_acquiry_date,b1_expiry_date,b1_restrictions,"+
+                                             "b_acquiry_date,b_expiry_date,b_restrictions,"+
+                                             "c1_acquiry_date,c1_expiry_date,c1_restrictions,"+
+                                             "c_acquiry_date,c_expiry_date,c_restrictions,"+
+                                             "d1_acquiry_date,d1_expiry_date,d1_restrictions,"+
+                                             "d_acquiry_date,d_expiry_date,d_restrictions,"+
+                                             "be_acquiry_date,be_expiry_date,be_restrictions,"+
+                                             "c1e_acquiry_date,c1e_expiry_date,c1e_restrictions,"+
+                                             "ce_acquiry_date,ce_expiry_date,ce_restrictions,"+
+                                             "d1e_acquiry_date,d1e_expiry_date,d1e_restrictions,"+
+                                             "de_acquiry_date,de_expiry_date,de_restrictions,"+
+                                             "ttb_acquiry_date,ttb_expiry_date,ttb_restrictions,"+
+                                             "ttm_acquiry_date,ttm_expiry_date,ttm_restrictions,"+
+                                             "tkt_acquiry_date,tkt_expiry_date,tkt_restrictions,"+
+                                             "m_acquiry_date,m_expiry_date,m_restrictions)"+
+                                            
+                                             "VALUES({0},\"{1}\",\"{2}\",\"{3}\"," +
+                                             "\"{4}\",\"{5}\",\'{6}\',\"{7}\",\"{8}\",{9},\'{10}\', "+
+                                             "\'{11}\',\"{12}\", "+
+                                             //Categories
+                                             "{13},{14},{15}, "+    //a1
+                                             "{16},{17},{18}, "+    //a
+                                             "{19},{20},{21}, "+    //b1
+                                             "{22},{23},{24}, "+    //b
+                                             "{25},{26},{27}, "+    //c1
+                                             "{28},{29},{30}, "+    //c
+                                             "{31},{32},{33}, "+    //d1
+                                             "{34},{35},{36}, "+    //d
+                                             "{37},{38},{39}, "+    //be
+                                             "{40},{41},{42}, "+    //c1e
+                                             "{43},{44},{45}, "+    //ce
+                                             "{46},{47},{48}, "+    //d1e
+                                             "{49},{50},{51}, "+    //de
+                                             "{52},{53},{54}, "+    //ttb
+                                             "{55},{56},{57}, "+    //ttm
+                                             "{58},{59},{60}, "+    //tkt
+                                             "{61},{62},{63} )"),    //m
+                                     drOwner.DriverOwnerId, drOwner.FirstName, drOwner.SecondName, drOwner.LastName,
+                                     parseSexSqlFormat(drOwner.Sex), drOwner.Nationality, parseDateSqlFormat(drOwner.BirthDate), drOwner.BirthPlace, drOwner.Residence, drOwner.RemainingPts, parseDateSqlFormat(drOwner.LicenceIssueDate),
+                                     parseDateSqlFormat(drOwner.LicenceExpiryDate), drOwner.LicenceIssuedBy,
+                                     parseDateSqlFormat(drOwner.Categories.a1AcquiryDate), parseDateSqlFormat(drOwner.Categories.a1ExpiryDate),parseSqlRestrictions(drOwner.Categories.a1Restrictions),
+                                      parseDateSqlFormat(drOwner.Categories.aAcquiryDate), parseDateSqlFormat(drOwner.Categories.aExpiryDate), parseSqlRestrictions(drOwner.Categories.aRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.b1AcquiryDate), parseDateSqlFormat(drOwner.Categories.b1ExpiryDate), parseSqlRestrictions(drOwner.Categories.b1Restrictions),
+                                     parseDateSqlFormat(drOwner.Categories.bAcquiryDate), parseDateSqlFormat(drOwner.Categories.bExpiryDate), parseSqlRestrictions(drOwner.Categories.bRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.c1AcquiryDate), parseDateSqlFormat(drOwner.Categories.c1ExpiryDate), parseSqlRestrictions(drOwner.Categories.c1Restrictions),
+                                     parseDateSqlFormat(drOwner.Categories.cAcquiryDate), parseDateSqlFormat(drOwner.Categories.cExpiryDate), parseSqlRestrictions(drOwner.Categories.cRestrictions),
+                                    parseDateSqlFormat(drOwner.Categories.d1AcquiryDate), parseDateSqlFormat(drOwner.Categories.d1ExpiryDate),parseSqlRestrictions(drOwner.Categories.d1Restrictions),
+                                    parseDateSqlFormat(drOwner.Categories.dAcquiryDate), parseDateSqlFormat(drOwner.Categories.dExpiryDate), parseSqlRestrictions(drOwner.Categories.dRestrictions),
+                                    parseDateSqlFormat(drOwner.Categories.beAcquiryDate), parseDateSqlFormat(drOwner.Categories.beExpiryDate), parseSqlRestrictions(drOwner.Categories.beRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.c1eAcquiryDate), parseDateSqlFormat(drOwner.Categories.c1eExpiryDate), parseSqlRestrictions(drOwner.Categories.c1eRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.ceAcquiryDate), parseDateSqlFormat(drOwner.Categories.ceExpiryDate), parseSqlRestrictions(drOwner.Categories.ceRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.d1eAcquiryDate), parseDateSqlFormat(drOwner.Categories.d1eExpiryDate), parseSqlRestrictions(drOwner.Categories.d1eRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.deAcquiryDate), parseDateSqlFormat(drOwner.Categories.deExpiryDate), parseSqlRestrictions(drOwner.Categories.deRestrictions),
+                                    parseDateSqlFormat(drOwner.Categories.ttbAcquiryDate), parseDateSqlFormat(drOwner.Categories.ttbExpiryDate), parseSqlRestrictions(drOwner.Categories.ttbRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.ttmAcquiryDate), parseDateSqlFormat(drOwner.Categories.ttmExpiryDate), parseSqlRestrictions(drOwner.Categories.ttmRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.tktAcquiryDate), parseDateSqlFormat(drOwner.Categories.tktExpiryDate), parseSqlRestrictions(drOwner.Categories.tktRestrictions),
+                                     parseDateSqlFormat(drOwner.Categories.mAcquiryDate), parseDateSqlFormat(drOwner.Categories.mExpiryDate), parseSqlRestrictions(drOwner.Categories.mRestrictions)
+                                     );
+           //DB - Connected
+           if (this.OpenConnection() == true)
+           {
+               try
+               {
+                   MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                   cmd.ExecuteNonQuery();
+                   //return 0;
+               }
+               catch
+               {   //User is already present with the given credentials
+                   throw;
+                   //return 2;
+               }
+               finally
+               {
+                   this.CloseConnection();
+               }
+
+           }
+           else
+           {
+               //DB - Not connected
+               //return 1;
+           }                       
+       }
+
+      private string parseDateSqlFormat(DateTime dt)
+      {
+          return dt.ToString("yyyy-MM-dd");
+      }
+      private string parseDateSqlFormat(DateTime? dt)
+      {
+          return (dt != null ? String.Format("\"{0}\"",dt.Value.ToString("yyyy-MM-dd")) : "NULL");
+      }
+
+      private string parseSexSqlFormat(SexEnum sex)
+      {
+          return (sex == SexEnum.Man ? 'М' : 'Ж').ToString();
+      }
+
+        private string parseSqlRestrictions(string rest)
+      {
+            if(String.IsNullOrWhiteSpace(rest))
+            {
+                return "NULL";
+            }
+            else
+            {
+                return String.Format("\"{0}\"", rest);
+            }
+      }
 
         
 

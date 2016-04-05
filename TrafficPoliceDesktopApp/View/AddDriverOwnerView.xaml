@@ -20,7 +20,7 @@
         <GroupBox Header="Данни на водач/собственик" HorizontalAlignment="Left" Margin="10,52,0,-1294" VerticalAlignment="Top" Height="405" Width="451">
             <ScrollViewer>
                 <Grid Height="1650" >
-                    <TextBox x:Name="txtBoxId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="100,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="True"/>
+                    <TextBox x:Name="txtBoxId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="100,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="True"/>
 
                     <Label Content="ЕГН на водач:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="100,13,0,0" VerticalAlignment="Top" Width="208" Foreground="#CC119EDA" FontSize="18"/>
 
@@ -39,16 +39,14 @@
                     <TextBox x:Name="txtBoxBirthPlace" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="184,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="True"/>
                     <Label Content="Постоянен адрес:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" Width="145" Foreground="#CC119EDA" FontSize="16"/>
                     <TextBox x:Name="txtBoxResidence"  MaxLength="50" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalAlignment="Left" Height="62" Margin="184,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="16" IsEnabled="True"/>
-                    <Label Content="Номер на документ:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top" Width="160" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxLicenceNum" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="184,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="True"/>
                     <Controls:NumericUpDown x:Name="upDownRemainingPts" Minimum = "0" Maximum = "39" InterceptMouseWheel="True" Interval = "1"  Margin="184,361,163,1258"  FontSize="16" Value="39" UseLayoutRounding="False" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="78"/>
                     <Label Content="Контролни точки:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Width="160" Foreground="#CC119EDA" FontSize="16"/>
-                    <Label Content="Издаден от:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,432,0,0" VerticalAlignment="Top" Width="146" Foreground="#CC119EDA" FontSize="16" Height="28"/>
-                    <TextBox x:Name="txtBoxIssuedBy" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="184,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="True"/>
+                    <Label Content="Документът е издаден от:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,418,0,0" VerticalAlignment="Top" Width="205" Foreground="#CC119EDA" FontSize="16" Height="43"/>
+                    <TextBox x:Name="txtBoxIssuedBy" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="237,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="True"/>
                     <Label Content="Издаден на:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="56,470,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
                     <DatePicker x:Name="datePickerIssuedDate" HorizontalAlignment="Left" Margin="56,510,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
                     <Label Content="Валиден до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="260,470,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerExpiryDate" HorizontalAlignment="Left" Margin="260,510,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Focusable="False"/>
+                    <DatePicker x:Name="datePickerExpiryDate"  HorizontalAlignment="Left" Margin="260,510,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Focusable="False"/>
                     <GroupBox Header="Категории" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="1018" Width="422">
                         <Grid>
                             <Label Content="Категория" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Foreground="#CC119EDA" Height="28"/>

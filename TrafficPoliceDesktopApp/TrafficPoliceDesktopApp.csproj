@@ -86,6 +86,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utilities\DateParser.cs" />
     <Compile Include="Utilities\InputValidator.cs" />
     <Compile Include="View\AddDriverOwnerView.xaml.cs">
       <DependentUpon>AddDriverOwnerView.xaml</DependentUpon>

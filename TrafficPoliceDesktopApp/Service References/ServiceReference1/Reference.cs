@@ -148,154 +148,154 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime a1AcquiryDateField;
+        private System.Nullable<System.DateTime> a1AcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime a1ExpiryDateField;
+        private System.Nullable<System.DateTime> a1ExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string a1RestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime aAcquiryDateField;
+        private System.Nullable<System.DateTime> aAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime aExpiryDateField;
+        private System.Nullable<System.DateTime> aExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string aRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime b1AcquiryDateField;
+        private System.Nullable<System.DateTime> b1AcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime b1ExpiryDateField;
+        private System.Nullable<System.DateTime> b1ExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string b1RestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime bAcquiryDateField;
+        private System.Nullable<System.DateTime> bAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime bExpiryDateField;
+        private System.Nullable<System.DateTime> bExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string bRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime beAcquiryDateField;
+        private System.Nullable<System.DateTime> beAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime beExpiryDateField;
+        private System.Nullable<System.DateTime> beExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string beRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime c1AcquiryDateField;
+        private System.Nullable<System.DateTime> c1AcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime c1ExpiryDateField;
+        private System.Nullable<System.DateTime> c1ExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string c1RestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime c1eAcquiryDateField;
+        private System.Nullable<System.DateTime> c1eAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime c1eExpiryDateField;
+        private System.Nullable<System.DateTime> c1eExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string c1eRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime cAcquiryDateField;
+        private System.Nullable<System.DateTime> cAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime cExpiryDateField;
+        private System.Nullable<System.DateTime> cExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string cRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ceAcquiryDateField;
+        private System.Nullable<System.DateTime> ceAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ceExpiryDateField;
+        private System.Nullable<System.DateTime> ceExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ceRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime d1AcquiryDateField;
+        private System.Nullable<System.DateTime> d1AcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime d1ExpiryDateField;
+        private System.Nullable<System.DateTime> d1ExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string d1RestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime d1eAcquiryDateField;
+        private System.Nullable<System.DateTime> d1eAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime d1eExpiryDateField;
+        private System.Nullable<System.DateTime> d1eExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string d1eRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime dAcquiryDateField;
+        private System.Nullable<System.DateTime> dAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime dExpiryDateField;
+        private System.Nullable<System.DateTime> dExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string dRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime deAcquiryDateField;
+        private System.Nullable<System.DateTime> deAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime deExpiryDateField;
+        private System.Nullable<System.DateTime> deExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string deRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime mAcquiryDateField;
+        private System.Nullable<System.DateTime> mAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime mExpiryDateField;
+        private System.Nullable<System.DateTime> mExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime tktAcquiryDateField;
+        private System.Nullable<System.DateTime> tktAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime tktExpiryDateField;
+        private System.Nullable<System.DateTime> tktExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string tktRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ttbAcquiryDateField;
+        private System.Nullable<System.DateTime> ttbAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ttbExpiryDateField;
+        private System.Nullable<System.DateTime> ttbExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ttbRestrictionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ttmAcquiryDateField;
+        private System.Nullable<System.DateTime> ttmAcquiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ttmExpiryDateField;
+        private System.Nullable<System.DateTime> ttmExpiryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ttmRestrictionsField;
@@ -311,7 +311,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime a1AcquiryDate {
+        public System.Nullable<System.DateTime> a1AcquiryDate {
             get {
                 return this.a1AcquiryDateField;
             }
@@ -324,7 +324,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime a1ExpiryDate {
+        public System.Nullable<System.DateTime> a1ExpiryDate {
             get {
                 return this.a1ExpiryDateField;
             }
@@ -350,7 +350,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime aAcquiryDate {
+        public System.Nullable<System.DateTime> aAcquiryDate {
             get {
                 return this.aAcquiryDateField;
             }
@@ -363,7 +363,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime aExpiryDate {
+        public System.Nullable<System.DateTime> aExpiryDate {
             get {
                 return this.aExpiryDateField;
             }
@@ -389,7 +389,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime b1AcquiryDate {
+        public System.Nullable<System.DateTime> b1AcquiryDate {
             get {
                 return this.b1AcquiryDateField;
             }
@@ -402,7 +402,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime b1ExpiryDate {
+        public System.Nullable<System.DateTime> b1ExpiryDate {
             get {
                 return this.b1ExpiryDateField;
             }
@@ -428,7 +428,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime bAcquiryDate {
+        public System.Nullable<System.DateTime> bAcquiryDate {
             get {
                 return this.bAcquiryDateField;
             }
@@ -441,7 +441,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime bExpiryDate {
+        public System.Nullable<System.DateTime> bExpiryDate {
             get {
                 return this.bExpiryDateField;
             }
@@ -467,7 +467,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime beAcquiryDate {
+        public System.Nullable<System.DateTime> beAcquiryDate {
             get {
                 return this.beAcquiryDateField;
             }
@@ -480,7 +480,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime beExpiryDate {
+        public System.Nullable<System.DateTime> beExpiryDate {
             get {
                 return this.beExpiryDateField;
             }
@@ -506,7 +506,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime c1AcquiryDate {
+        public System.Nullable<System.DateTime> c1AcquiryDate {
             get {
                 return this.c1AcquiryDateField;
             }
@@ -519,7 +519,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime c1ExpiryDate {
+        public System.Nullable<System.DateTime> c1ExpiryDate {
             get {
                 return this.c1ExpiryDateField;
             }
@@ -545,7 +545,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime c1eAcquiryDate {
+        public System.Nullable<System.DateTime> c1eAcquiryDate {
             get {
                 return this.c1eAcquiryDateField;
             }
@@ -558,7 +558,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime c1eExpiryDate {
+        public System.Nullable<System.DateTime> c1eExpiryDate {
             get {
                 return this.c1eExpiryDateField;
             }
@@ -584,7 +584,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime cAcquiryDate {
+        public System.Nullable<System.DateTime> cAcquiryDate {
             get {
                 return this.cAcquiryDateField;
             }
@@ -597,7 +597,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime cExpiryDate {
+        public System.Nullable<System.DateTime> cExpiryDate {
             get {
                 return this.cExpiryDateField;
             }
@@ -623,7 +623,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ceAcquiryDate {
+        public System.Nullable<System.DateTime> ceAcquiryDate {
             get {
                 return this.ceAcquiryDateField;
             }
@@ -636,7 +636,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ceExpiryDate {
+        public System.Nullable<System.DateTime> ceExpiryDate {
             get {
                 return this.ceExpiryDateField;
             }
@@ -662,7 +662,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime d1AcquiryDate {
+        public System.Nullable<System.DateTime> d1AcquiryDate {
             get {
                 return this.d1AcquiryDateField;
             }
@@ -675,7 +675,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime d1ExpiryDate {
+        public System.Nullable<System.DateTime> d1ExpiryDate {
             get {
                 return this.d1ExpiryDateField;
             }
@@ -701,7 +701,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime d1eAcquiryDate {
+        public System.Nullable<System.DateTime> d1eAcquiryDate {
             get {
                 return this.d1eAcquiryDateField;
             }
@@ -714,7 +714,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime d1eExpiryDate {
+        public System.Nullable<System.DateTime> d1eExpiryDate {
             get {
                 return this.d1eExpiryDateField;
             }
@@ -740,7 +740,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime dAcquiryDate {
+        public System.Nullable<System.DateTime> dAcquiryDate {
             get {
                 return this.dAcquiryDateField;
             }
@@ -753,7 +753,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime dExpiryDate {
+        public System.Nullable<System.DateTime> dExpiryDate {
             get {
                 return this.dExpiryDateField;
             }
@@ -779,7 +779,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime deAcquiryDate {
+        public System.Nullable<System.DateTime> deAcquiryDate {
             get {
                 return this.deAcquiryDateField;
             }
@@ -792,7 +792,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime deExpiryDate {
+        public System.Nullable<System.DateTime> deExpiryDate {
             get {
                 return this.deExpiryDateField;
             }
@@ -818,7 +818,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime mAcquiryDate {
+        public System.Nullable<System.DateTime> mAcquiryDate {
             get {
                 return this.mAcquiryDateField;
             }
@@ -831,7 +831,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime mExpiryDate {
+        public System.Nullable<System.DateTime> mExpiryDate {
             get {
                 return this.mExpiryDateField;
             }
@@ -857,7 +857,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime tktAcquiryDate {
+        public System.Nullable<System.DateTime> tktAcquiryDate {
             get {
                 return this.tktAcquiryDateField;
             }
@@ -870,7 +870,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime tktExpiryDate {
+        public System.Nullable<System.DateTime> tktExpiryDate {
             get {
                 return this.tktExpiryDateField;
             }
@@ -896,7 +896,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ttbAcquiryDate {
+        public System.Nullable<System.DateTime> ttbAcquiryDate {
             get {
                 return this.ttbAcquiryDateField;
             }
@@ -909,7 +909,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ttbExpiryDate {
+        public System.Nullable<System.DateTime> ttbExpiryDate {
             get {
                 return this.ttbExpiryDateField;
             }
@@ -935,7 +935,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ttmAcquiryDate {
+        public System.Nullable<System.DateTime> ttmAcquiryDate {
             get {
                 return this.ttmAcquiryDateField;
             }
@@ -948,7 +948,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ttmExpiryDate {
+        public System.Nullable<System.DateTime> ttmExpiryDate {
             get {
                 return this.ttmExpiryDateField;
             }
@@ -983,6 +983,270 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DriverOwner", Namespace="http://schemas.datacontract.org/2004/07/WCFDBService")]
+    [System.SerializableAttribute()]
+    public partial class DriverOwner : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BirthDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BirthPlaceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TrafficPoliceDesktopApp.ServiceReference1.Categories CategoriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long DriverOwnerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LicenceExpiryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LicenceIssueDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LicenceIssuedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NationalityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte RemainingPtsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResidenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TrafficPoliceDesktopApp.ServiceReference1.Sex SexField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BirthDate {
+            get {
+                return this.BirthDateField;
+            }
+            set {
+                if ((this.BirthDateField.Equals(value) != true)) {
+                    this.BirthDateField = value;
+                    this.RaisePropertyChanged("BirthDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BirthPlace {
+            get {
+                return this.BirthPlaceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BirthPlaceField, value) != true)) {
+                    this.BirthPlaceField = value;
+                    this.RaisePropertyChanged("BirthPlace");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TrafficPoliceDesktopApp.ServiceReference1.Categories Categories {
+            get {
+                return this.CategoriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoriesField, value) != true)) {
+                    this.CategoriesField = value;
+                    this.RaisePropertyChanged("Categories");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long DriverOwnerId {
+            get {
+                return this.DriverOwnerIdField;
+            }
+            set {
+                if ((this.DriverOwnerIdField.Equals(value) != true)) {
+                    this.DriverOwnerIdField = value;
+                    this.RaisePropertyChanged("DriverOwnerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LicenceExpiryDate {
+            get {
+                return this.LicenceExpiryDateField;
+            }
+            set {
+                if ((this.LicenceExpiryDateField.Equals(value) != true)) {
+                    this.LicenceExpiryDateField = value;
+                    this.RaisePropertyChanged("LicenceExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LicenceIssueDate {
+            get {
+                return this.LicenceIssueDateField;
+            }
+            set {
+                if ((this.LicenceIssueDateField.Equals(value) != true)) {
+                    this.LicenceIssueDateField = value;
+                    this.RaisePropertyChanged("LicenceIssueDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LicenceIssuedBy {
+            get {
+                return this.LicenceIssuedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LicenceIssuedByField, value) != true)) {
+                    this.LicenceIssuedByField = value;
+                    this.RaisePropertyChanged("LicenceIssuedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nationality {
+            get {
+                return this.NationalityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NationalityField, value) != true)) {
+                    this.NationalityField = value;
+                    this.RaisePropertyChanged("Nationality");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte RemainingPts {
+            get {
+                return this.RemainingPtsField;
+            }
+            set {
+                if ((this.RemainingPtsField.Equals(value) != true)) {
+                    this.RemainingPtsField = value;
+                    this.RaisePropertyChanged("RemainingPts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Residence {
+            get {
+                return this.ResidenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResidenceField, value) != true)) {
+                    this.ResidenceField = value;
+                    this.RaisePropertyChanged("Residence");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondName {
+            get {
+                return this.SecondNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondNameField, value) != true)) {
+                    this.SecondNameField = value;
+                    this.RaisePropertyChanged("SecondName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TrafficPoliceDesktopApp.ServiceReference1.Sex Sex {
+            get {
+                return this.SexField;
+            }
+            set {
+                if ((this.SexField.Equals(value) != true)) {
+                    this.SexField = value;
+                    this.RaisePropertyChanged("Sex");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/WCFDBService")]
+    public enum Sex : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Man = 1052,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Woman = 1046,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -1001,6 +1265,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
         int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registerDriverOwner", ReplyAction="http://tempuri.org/IService1/registerDriverOwnerResponse")]
+        void registerDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1048,6 +1315,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ) {
             return base.Channel.InsertCat(categ);
+        }
+        
+        public void registerDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
+            base.Channel.registerDriverOwner(drOwner);
         }
     }
 }
