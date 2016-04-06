@@ -75,8 +75,9 @@ namespace WCFDBService
 
         public int UpdateUser(User user)
         {
-            string updateQuery =String.Format(("UPDATE users SET first_name =\"{0}\",second_name = \"{1}\", last_name = \"{2}\"," + 
-                "is_traffic_policeman = {3},password = \"{4}\" WHERE user_id = {5}"),user.FirstName,user.SecondName,user.LastName,user.IsTrafficPoliceman,user.UserPassword,user.UserId);
+
+            string updateQuery = String.Format(("update_user({0},\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\")"), user.UserId, user.FirstName, user.SecondName, user.LastName, user.IsTrafficPoliceman, user.UserPassword);
+
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -90,7 +91,7 @@ namespace WCFDBService
 
                     cmd.ExecuteNonQuery();
                     //DB-OK User - Updated
-                    return 1;
+                    return 0;
                 }
                 catch (Exception)
                 {
@@ -106,14 +107,17 @@ namespace WCFDBService
             }
             else
             {
-                return 0;
+                //DB - NOT CONNECTED
+                return 1;
             }
         }
 
 
         public User GetUserByIdAndPass(string id, string password)
         {
-            string query = String.Format("SELECT * FROM users WHERE user_id ={0} AND password = \"{1}\"", id, password);
+
+            string query = String.Format("get_user_by_id_and_pass({0},\"{1}\")", id, password);
+
 
             string userId;
             string firstName;

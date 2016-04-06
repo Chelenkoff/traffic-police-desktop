@@ -56,6 +56,49 @@ namespace TrafficPoliceDesktopApp.Utilities
            else   message = null;
            return message;
        }
+        public static string validateDate(string date)
+        {
+            if (String.IsNullOrWhiteSpace(date))
+                message = "Не сте въвели дата!";
+            else message = null;
+            return message;
+        }
+
+        public static string validateBirthPlace(string place)
+        {
+            if (String.IsNullOrWhiteSpace(place))
+                message = "Не сте въвели месторождение!";
+            else message = null;
+            return message;
+        }
+        public static string validateResidence(string res)
+        {
+            if (String.IsNullOrWhiteSpace(res))
+                message = "Не сте въвели постоянен адрес!";
+            else message = null;
+            return message;
+        }
+        public static string validateIssuer(string iss)
+        {
+            if (String.IsNullOrWhiteSpace(iss))
+                message = "Не сте въвели органа издал документа!";
+            else message = null;
+            return message;
+        }
+        public static string validateIssuedDate(string iss)
+        {
+            if (String.IsNullOrWhiteSpace(iss))
+                message = "Не сте въвели дата на издаване на документа!";
+            else message = null;
+            return message;
+        }
+        public static string validateExpirydDate(string exp)
+        {
+            if (String.IsNullOrWhiteSpace(exp))
+                message = "Не сте въвели дата на валидност на документа!";
+            else message = null;
+            return message;
+        }
 
        static bool IsDigitsOnly(string str)
         {

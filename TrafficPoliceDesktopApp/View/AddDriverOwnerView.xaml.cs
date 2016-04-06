@@ -96,11 +96,11 @@ namespace TrafficPoliceDesktopApp.View
             string expiryDate = datePickerExpiryDate.SelectedDate.ToString();
 
             //needs to be finished
-           
 
-        
-            //if (!uiDataValidation(id, firstName, secondName, lastName, pass))
-            //    return;
+
+
+            if (!uiDataValidation(id, firstName, secondName, lastName, birthDate,birthPlace,residence,issuedBy,issuedDate,expiryDate))
+                return;
 
             MessageDialogResult msgDialog = await ParentWindow.ShowMessageAsync("Внимание", "Сигурни ли сте, че искате да добавите потребител?", MessageDialogStyle.AffirmativeAndNegative);
             if (msgDialog == MessageDialogResult.Negative)
@@ -134,10 +134,10 @@ namespace TrafficPoliceDesktopApp.View
                             break;
                         case 2:
                             
-                            ParentWindow.ShowMessageAsync("Внимание", String.Format("Съществува водач с егн:{0}",driverOwner.DriverOwnerId), MessageDialogStyle.Affirmative);
+                            ParentWindow.ShowMessageAsync("Внимание", String.Format("Съществува водач с егн: {0}",driverOwner.DriverOwnerId), MessageDialogStyle.Affirmative);
                             break;
                         case 0:
-                            ParentWindow.ShowMessageAsync("Внимание", "Потребителят бе успешно добавен", MessageDialogStyle.Affirmative);
+                            ParentWindow.ShowMessageAsync("Внимание", "Водачът бе успешно добавен", MessageDialogStyle.Affirmative);
                             break;
 
                     }
@@ -146,19 +146,13 @@ namespace TrafficPoliceDesktopApp.View
             });
         }
 
-        private bool uiDataValidation(string id, string firstName, string secondName, string lastName, string pass)
+        private bool uiDataValidation(string id, string firstName, string secondName, string lastName, string birthDate, string birthPlace, 
+                                       string residence, string issuedBy,string issuedDate, string expiryDate)
         {
             string idValidation = InputValidator.validateId(id);
-            //Id validation
             if (idValidation != null)
             {
                 ParentWindow.ShowMessageAsync("Грешка в ЕГН", idValidation);
-                return false;
-            }
-            string passValidation = InputValidator.validatePass(pass);
-            if (passValidation != null)
-            {
-                ParentWindow.ShowMessageAsync("Грешка в паролата", passValidation);
                 return false;
             }
             string firstNameValidation = InputValidator.validateName(firstName);
@@ -179,8 +173,36 @@ namespace TrafficPoliceDesktopApp.View
                 ParentWindow.ShowMessageAsync("Грешка във фамилията", lastNameValidation);
                 return false;
             }
-
-
+            string birthDateValidation = InputValidator.validateDate(birthDate);
+            if (birthDateValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в датата на раждане", birthDateValidation);
+                return false;
+            }
+            string birthPlaceValidation = InputValidator.validateBirthPlace(birthPlace);
+            if (birthPlaceValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в месторождението", birthPlaceValidation);
+                return false;
+            }
+            string residenceValidation = InputValidator.validateResidence(residence);
+            if (residenceValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в постоянен адрес", residenceValidation);
+                return false;
+            }
+            string issuerValidation = InputValidator.validateIssuer(issuedBy);
+            if (issuerValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в постоянен адрес", issuerValidation);
+                return false;
+            }
+            string issuedDateValidation = InputValidator.validateIssuedDate(issuedDate);
+            if (issuedDateValidation != null)
+            {
+                ParentWindow.ShowMessageAsync("Грешка в датата на издаване на документа", issuedDateValidation);
+                return false;
+            }
 
             return true;
         }

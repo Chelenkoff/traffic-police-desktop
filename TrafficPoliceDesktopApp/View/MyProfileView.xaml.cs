@@ -21,6 +21,11 @@ using System.Drawing.Imaging;
 using System.IO;
 using Microsoft.Win32;
 using System.Windows.Threading;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+using PdfSharp.Pdf;
+using System.Diagnostics;
+using TrafficPoliceDesktopApp.Utilities.PDFGenerator;
 
 namespace TrafficPoliceDesktopApp.View
 {
@@ -163,10 +168,9 @@ namespace TrafficPoliceDesktopApp.View
             ParentWindow.User.UserPassword = txtBoxVisiblePassword.Text;
             ParentWindow.User.IsTrafficPoliceman = check;
 
-            ParentWindow.lblLoggedUserName.Content = String.Format("{0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
-            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
-            disableEdit();
 
+
+            int checkResponse;
             await Task.Factory.StartNew(() =>
             {
                 //startLoading logic
@@ -174,7 +178,7 @@ namespace TrafficPoliceDesktopApp.View
 
                 //Constructing USER from DB
 
-                ParentWindow.Service.UpdateUser(ParentWindow.User);
+                checkResponse = ParentWindow.Service.UpdateUser(ParentWindow.User);
 
 
                 // invoke user code on the main UI thread
@@ -183,15 +187,25 @@ namespace TrafficPoliceDesktopApp.View
                     //stopLoading logic
                     this.Dispatcher.Invoke((Action)(() => stopLoading()));
 
+                    switch (checkResponse)
+                    {
+                        case 1:
+                            ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
+                            break;
+                        case 2:
 
+                            ParentWindow.ShowMessageAsync("Внимание", "Неуспешно обновяване на потребител", MessageDialogStyle.Affirmative);
+                            break;
+                        case 0:
+                            ParentWindow.ShowMessageAsync("Внимание", "Данните за потребителя бяха успешно обновени", MessageDialogStyle.Affirmative);
+                            ParentWindow.lblLoggedUserName.Content = String.Format("{0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
+                            lblUserGreeting.Content = String.Format("Здравейте, {0} {1}", ParentWindow.User.FirstName, ParentWindow.User.LastName);
+                            pswdBoxPassword.Password = txtBoxVisiblePassword.Text;
+                            disableEdit();
+                            break;
 
-                    //if (!dbResponseValidation(user)) return;
-                   
+                    }
 
-                    //DB - OK, USER - FOUND
-                    //var newForm = new MainWindow(user); //create your new form.
-                    //newForm.Show(); //show the new form.
-                    //this.Hide(); //only if you want to close the current form.
                 }));
             });
             
@@ -214,24 +228,24 @@ namespace TrafficPoliceDesktopApp.View
         {
             //Name validation
             string firstNameValidation = InputValidator.validateName(firstN);
-            string secondNameValidation = InputValidator.validateName(secondN);
-            string lastNameValidation = InputValidator.validateName(lastN);
-            string passValidation = InputValidator.validatePass(pass);
             if (firstNameValidation != null)
             {
                 ParentWindow.ShowMessageAsync("Грешка в името", firstNameValidation);
                 return false;
             }
+            string secondNameValidation = InputValidator.validateName(secondN);
             if(secondNameValidation != null)
             {
                 ParentWindow.ShowMessageAsync("Грешка в презимето", secondNameValidation);
                 return false;
             }
+            string lastNameValidation = InputValidator.validateName(lastN);
             if (lastNameValidation != null)
             {
                 ParentWindow.ShowMessageAsync("Грешка във фамилията", lastNameValidation);
                 return false;
             }
+            string passValidation = InputValidator.validatePass(pass);
             if(passValidation != null)
             {
                 ParentWindow.ShowMessageAsync("Грешка при парола", passValidation);
@@ -281,6 +295,27 @@ namespace TrafficPoliceDesktopApp.View
                     pngImage.Save(fileStream);
                 }
             }
+        }
+
+        private void btnExportToPdf_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a MigraDoc document
+            Document document = Documents.CreateMyDataDocument(ParentWindow.User);
+
+            //string ddl = MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToString(document);
+            MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(document, "MigraDoc.mdddl");
+
+            PdfDocumentRenderer renderer = new PdfDocumentRenderer(true, PdfSharp.Pdf.PdfFontEmbedding.Always);
+            renderer.Document = document;
+
+            renderer.RenderDocument();
+
+            // Save the document...
+            string filename = "HelloMigraDoc.pdf";
+            renderer.PdfDocument.Save(filename);
+            // ...and start a viewer.
+            Process.Start(filename);
+
         }
       
 
