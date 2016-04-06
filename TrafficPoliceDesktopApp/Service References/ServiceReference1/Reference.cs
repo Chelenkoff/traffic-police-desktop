@@ -1266,8 +1266,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
         int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registerDriverOwner", ReplyAction="http://tempuri.org/IService1/registerDriverOwnerResponse")]
-        void registerDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDriverOwner", ReplyAction="http://tempuri.org/IService1/RegisterDriverOwnerResponse")]
+        int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1317,8 +1317,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
             return base.Channel.InsertCat(categ);
         }
         
-        public void registerDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
-            base.Channel.registerDriverOwner(drOwner);
+        public int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
+            return base.Channel.RegisterDriverOwner(drOwner);
         }
     }
 }

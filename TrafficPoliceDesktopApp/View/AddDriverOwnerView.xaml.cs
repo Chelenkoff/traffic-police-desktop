@@ -87,6 +87,7 @@ namespace TrafficPoliceDesktopApp.View
             else
                 sex = 'Ф'.ToString();
             string nationality = comboBoxCountries.SelectedItem.ToString();
+            string birthDate = datePickerBirthDate.SelectedDate.ToString();
             string birthPlace = txtBoxBirthPlace.Text;
             string residence = txtBoxResidence.Text;
             string remainingPts = upDownRemainingPts.Value.ToString();
@@ -118,28 +119,28 @@ namespace TrafficPoliceDesktopApp.View
                 this.Dispatcher.Invoke((Action)(() => startLoading()));
 
                 //Receiving REST api response
-                //check = ParentWindow.Service.registerDriverOwner(driverOwner);
-                ParentWindow.Service.registerDriverOwner(driverOwner);
+                check = ParentWindow.Service.RegisterDriverOwner(driverOwner);
+                
 
                 // invoke user code on the main UI thread
                 Dispatcher.Invoke(new Action(() =>
                 {
                     //stopLoading logic
                     this.Dispatcher.Invoke((Action)(() => stopLoading()));
-                    //switch (check)
-                    //{
-                    //    case 1:
-                    //        ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
-                    //        break;
-                    //    case 2:
-                    //        string message = String.Format("Проблем със заявката");
-                    //        ParentWindow.ShowMessageAsync("Внимание", message, MessageDialogStyle.Affirmative);
-                    //        break;
-                    //    case 0:
-                    //        ParentWindow.ShowMessageAsync("Внимание", "Потребителят бе успешно добавен", MessageDialogStyle.Affirmative);
-                    //        break;
+                    switch (check)
+                    {
+                        case 1:
+                            ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
+                            break;
+                        case 2:
+                            
+                            ParentWindow.ShowMessageAsync("Внимание", String.Format("Съществува водач с егн:{0}",driverOwner.DriverOwnerId), MessageDialogStyle.Affirmative);
+                            break;
+                        case 0:
+                            ParentWindow.ShowMessageAsync("Внимание", "Потребителят бе успешно добавен", MessageDialogStyle.Affirmative);
+                            break;
 
-                    //}
+                    }
 
                 }));
             });
@@ -208,6 +209,7 @@ namespace TrafficPoliceDesktopApp.View
             txtBoxIssuedBy.Text = "";
             datePickerIssuedDate.SelectedDate = null;
             datePickerExpiryDate.SelectedDate = null;
+            datePickerBirthDate.SelectedDate = null;
             clearCategories();
 
         }
@@ -374,12 +376,12 @@ namespace TrafficPoliceDesktopApp.View
             driverOwner.LastName = txtBoxLastName.Text;
             driverOwner.Sex = (radioBtnMan.IsChecked == true ? Sex.Man : Sex.Woman);
             driverOwner.Nationality = comboBoxCountries.SelectedItem.ToString();
-            driverOwner.BirthDate =Convert.ToDateTime(String.Format("{0}/{1}/{2}", txtBoxId.Text.Substring(4, 2), txtBoxId.Text.Substring(2, 2), txtBoxId.Text.Substring(0, 2)));
+            driverOwner.BirthDate = datePickerBirthDate.DisplayDate;
             driverOwner.BirthPlace = txtBoxBirthPlace.Text;
             driverOwner.Residence = txtBoxResidence.Text;
             driverOwner.RemainingPts = Convert.ToByte(upDownRemainingPts.Value);
-            driverOwner.LicenceIssueDate = datePickerIssuedDate.SelectedDate ?? DateTime.Now;
-            driverOwner.LicenceExpiryDate = datePickerExpiryDate.SelectedDate ?? DateTime.Now.AddYears(10);
+            driverOwner.LicenceIssueDate = datePickerIssuedDate.DisplayDate;
+            driverOwner.LicenceExpiryDate = datePickerExpiryDate.SelectedDate ?? datePickerIssuedDate.DisplayDate.AddYears(10);
             driverOwner.LicenceIssuedBy = txtBoxIssuedBy.Text;
             driverOwner.Categories = getCategories();
             return driverOwner;

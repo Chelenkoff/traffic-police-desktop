@@ -268,7 +268,7 @@ namespace WCFDBService
        }
 
 
-      public void registerDriverOwner(DriverOwner drOwner)
+      public int RegisterDriverOwner(DriverOwner drOwner)
        {
            //0 - driver_owner_id            
            //1 - first_name
@@ -358,12 +358,12 @@ namespace WCFDBService
                {
                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                    cmd.ExecuteNonQuery();
-                   //return 0;
+                   return 0;
                }
                catch
                {   //User is already present with the given credentials
-                   throw;
-                   //return 2;
+
+                   return 2;
                }
                finally
                {
@@ -374,7 +374,7 @@ namespace WCFDBService
            else
            {
                //DB - Not connected
-               //return 1;
+               return 1;
            }                       
        }
 

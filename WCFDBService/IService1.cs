@@ -29,7 +29,7 @@ namespace WCFDBService
       int InsertCat(Categories categ);
 
       [OperationContract]
-      void registerDriverOwner(DriverOwner drOwner);
+       int RegisterDriverOwner(DriverOwner drOwner);
 
 
        

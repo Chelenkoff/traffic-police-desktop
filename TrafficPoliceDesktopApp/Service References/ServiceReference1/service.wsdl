@@ -37,11 +37,11 @@
   <wsdl:message name="IService1_InsertCat_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertCatResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_registerDriverOwner_InputMessage">
-    <wsdl:part name="parameters" element="tns:registerDriverOwner" />
+  <wsdl:message name="IService1_RegisterDriverOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDriverOwner" />
   </wsdl:message>
-  <wsdl:message name="IService1_registerDriverOwner_OutputMessage">
-    <wsdl:part name="parameters" element="tns:registerDriverOwnerResponse" />
+  <wsdl:message name="IService1_RegisterDriverOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDriverOwnerResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateUser">
@@ -64,9 +64,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCat" message="tns:IService1_InsertCat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCatResponse" message="tns:IService1_InsertCat_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="registerDriverOwner">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/registerDriverOwner" message="tns:IService1_registerDriverOwner_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registerDriverOwnerResponse" message="tns:IService1_registerDriverOwner_OutputMessage" />
+    <wsdl:operation name="RegisterDriverOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterDriverOwner" message="tns:IService1_RegisterDriverOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegisterDriverOwnerResponse" message="tns:IService1_RegisterDriverOwner_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -116,8 +116,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="registerDriverOwner">
-      <soap:operation soapAction="http://tempuri.org/IService1/registerDriverOwner" style="document" />
+    <wsdl:operation name="RegisterDriverOwner">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegisterDriverOwner" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

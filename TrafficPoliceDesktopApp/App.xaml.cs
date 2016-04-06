@@ -4,6 +4,9 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 namespace TrafficPoliceDesktopApp
 {
@@ -12,5 +15,7 @@ namespace TrafficPoliceDesktopApp
     /// </summary>
     public partial class App : Application
     {
+
+
     }
 }
