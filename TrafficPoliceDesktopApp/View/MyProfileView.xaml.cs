@@ -21,11 +21,10 @@ using System.Drawing.Imaging;
 using System.IO;
 using Microsoft.Win32;
 using System.Windows.Threading;
-using MigraDoc.DocumentObjectModel;
-using MigraDoc.Rendering;
-using PdfSharp.Pdf;
 using System.Diagnostics;
-using TrafficPoliceDesktopApp.Utilities.PDFGenerator;
+using iTextSharp.text.pdf;
+using ceTe.DynamicPDF.Merger;
+
 
 namespace TrafficPoliceDesktopApp.View
 {
@@ -299,23 +298,27 @@ namespace TrafficPoliceDesktopApp.View
 
         private void btnExportToPdf_Click(object sender, RoutedEventArgs e)
         {
-            // Create a MigraDoc document
-            Document document = Documents.CreateMyDataDocument(ParentWindow.User);
+            fillPDFForm();
 
-            //string ddl = MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToString(document);
-            MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(document, "MigraDoc.mdddl");
+        }
 
-            PdfDocumentRenderer renderer = new PdfDocumentRenderer(true, PdfSharp.Pdf.PdfFontEmbedding.Always);
-            renderer.Document = document;
+        private void fillPDFForm()
+        {
+            string formFile = "./Resources/Docs/personal_data.pdf";
+            MergeDocument document = new MergeDocument(formFile);
 
-            renderer.RenderDocument();
 
-            // Save the document...
-            string filename = "HelloMigraDoc.pdf";
-            renderer.PdfDocument.Save(filename);
-            // ...and start a viewer.
-            Process.Start(filename);
 
+            document.Form.Fields["firstName"].Value = ParentWindow.User.FirstName;
+            document.Form.Fields["secondName"].Value = ParentWindow.User.SecondName;
+            document.Form.Fields["lastName"].Value = ParentWindow.User.LastName;
+            document.Form.Fields["id"].Value = ParentWindow.User.UserId.ToString();
+            document.Form.Fields["pass"].Value = ParentWindow.User.UserPassword;
+            document.Form.Fields["trafficPoliceman"].Value = ParentWindow.User.IsTrafficPoliceman.ToString();
+
+
+            document.Draw(@"Resources/Docs/test.pdf");
+            
         }
       
 
