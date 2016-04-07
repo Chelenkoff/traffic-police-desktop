@@ -103,6 +103,9 @@
     <Compile Include="View\NewUserView.xaml.cs">
       <DependentUpon>NewUserView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchDriverOwnerView.xaml.cs">
+      <DependentUpon>SearchDriverOwnerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SearchUserView.xaml.cs">
       <DependentUpon>SearchUserView.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SearchDriverOwnerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SearchUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +194,9 @@
     <None Include="Resources\Docs\personal_data.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Service References\ServiceReference1\TrafficPoliceDesktopApp.ServiceReference1.DriverOwner.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TrafficPoliceDesktopApp.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -220,7 +230,6 @@
   <ItemGroup>
     <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

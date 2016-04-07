@@ -42,7 +42,7 @@
                 <Controls:ProgressRing x:Name="progressRingLoading" Margin="10,249,379,67" Height="50" Width="50" IsActive="False" />
                 <Button x:Name="btnCancelEdit" Content="Прекрати"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="117,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Visibility="Hidden" Click="btnCancelEdit_Click" />
                 <Button HorizontalAlignment="Left" Margin="267,311,0,0" Content="{DynamicResource appbar_page_png}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Click="Button_Click" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PNG формат на компютъра"></Button>
-                <Button x:Name="btnExportToPdf" HorizontalAlignment="Left" Margin="207,311,0,0" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PNG формат на компютъра" Click="btnExportToPdf_Click"/>
+                <Button x:Name="btnExportToPdf" HorizontalAlignment="Left" Margin="207,311,0,0" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PDF формат на компютъра" Click="btnExportToPdf_Click"/>
 
             </Grid>
         </GroupBox>

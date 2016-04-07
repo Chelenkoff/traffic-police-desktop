@@ -91,6 +91,12 @@ namespace TrafficPoliceDesktopApp
             if(addDriverOwnerTabItem.IsSelected == true)
             {
                 viewAddDriverOwner.ParentWindow = this;
+                return;
+            }
+            if(searchDriverOwnerTabItem.IsSelected == true)
+            {
+                viewSearchDriverOwner.ParentWindow = this;
+                return;
             }
             
 

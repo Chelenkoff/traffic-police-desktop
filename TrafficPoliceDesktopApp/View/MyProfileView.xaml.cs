@@ -316,8 +316,16 @@ namespace TrafficPoliceDesktopApp.View
             document.Form.Fields["pass"].Value = ParentWindow.User.UserPassword;
             document.Form.Fields["trafficPoliceman"].Value = ParentWindow.User.IsTrafficPoliceman.ToString();
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF File|*.pdf;";
 
-            document.Draw(@"Resources/Docs/test.pdf");
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (Stream fileStream = File.Create(saveFileDialog.FileName))
+                {
+                    document.Draw(fileStream);
+                }
+            }
             
         }
       

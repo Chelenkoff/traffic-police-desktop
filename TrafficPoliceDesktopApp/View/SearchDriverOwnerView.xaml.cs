@@ -19,26 +19,26 @@ using TrafficPoliceDesktopApp.Utilities;
 namespace TrafficPoliceDesktopApp.View
 {
     /// <summary>
-    /// Interaction logic for SearchUserView.xaml
+    /// Interaction logic for SearchDriverOwnerView.xaml
     /// </summary>
-    public partial class SearchUserView : UserControl
+    public partial class SearchDriverOwnerView : UserControl
     {
         public MainWindow ParentWindow { get; set; }
-        public SearchUserView()
+        public SearchDriverOwnerView()
         {
             InitializeComponent();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            string userId = txtBoxId.Text;
+            string driverOwnerId = txtBoxId.Text;
             //UI validation
-            if (!uiDataValidation(userId)) return;
+            if (!uiDataValidation(driverOwnerId)) return;
 
             //Creating empty user
-            User user = new User();
+            DriverOwner drOwner = new DriverOwner();
 
-            
+
             //Starting new non-blocking-ui task
             Task.Factory.StartNew(() =>
             {
@@ -46,7 +46,7 @@ namespace TrafficPoliceDesktopApp.View
                 this.Dispatcher.Invoke((Action)(() => startLoading()));
 
                 //Constructing USER from DB
-                user = ParentWindow.Service.GetReadOnlyUserById(userId);
+                drOwner = ParentWindow.Service.GetDriverOwnerById(driverOwnerId);
 
                 // invoke user code on the main UI thread
                 Dispatcher.Invoke(new Action(() =>
@@ -55,31 +55,29 @@ namespace TrafficPoliceDesktopApp.View
                     this.Dispatcher.Invoke((Action)(() => stopLoading()));
 
                     //DB response validation
-                    if (!dbResponseValidation(user)) return;
+                    if (!dbResponseValidation(drOwner)) return;
 
                     //DB - OK, USER - FOUND
-                    SearchUserWindow searchUsrWindow = new SearchUserWindow(user);
-                    searchUsrWindow.Show();
+                    //SearchUserWindow searchUsrWindow = new SearchUserWindow(user);
+                    //searchUsrWindow.Show();
 
                 }));
             });
 
-            
         }
 
 
-
-        private  bool dbResponseValidation(User usr)
+        private bool dbResponseValidation(DriverOwner drOwner)
         {
             //DB-OK , USER - NOT FOUND
-            if (usr != null && usr.UserId == 0)
+            if (drOwner != null && drOwner.DriverOwnerId == 0)
             {
                 ParentWindow.ShowMessageAsync("Грешка", "Не съществува служител с тези данни!");
                 return false;
             }
 
             //DB - NOT CONNECTED
-            else if (usr == null)
+            else if (drOwner== null)
             {
                 ParentWindow.ShowMessageAsync("Грешка", "Проблем с връзката с базата данни.");
                 return false;
@@ -87,7 +85,6 @@ namespace TrafficPoliceDesktopApp.View
             else return true;
 
         }
-
 
         private bool uiDataValidation(string id)
         {
@@ -99,7 +96,7 @@ namespace TrafficPoliceDesktopApp.View
                 ParentWindow.ShowMessageAsync("Грешка в ЕГН", idValidation);
                 return false;
             }
-           
+
             return true;
         }
 
@@ -113,6 +110,5 @@ namespace TrafficPoliceDesktopApp.View
             progressRingLoading.IsActive = false;
 
         }
-
     }
 }

@@ -42,6 +42,7 @@ namespace WCFDBService
 
     }
     [DataContract(Name = "Sex")]
+    [Flags]
     public enum SexEnum
     {
         [EnumMember]

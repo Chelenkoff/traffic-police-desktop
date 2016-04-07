@@ -382,6 +382,63 @@ namespace WCFDBService
            }                       
        }
 
+
+      public DriverOwner  GetDriverOwnerById(string id)
+      {
+          string query = String.Format("get_driverowner_data_by_id({0})", id);
+
+
+
+          //Open connection
+          if (this.OpenConnection() == true)
+          {
+              DriverOwner drOwner = new DriverOwner();
+              MySqlDataReader dataReader;
+              try
+              {
+                  //Create Command
+                  MySqlCommand cmd = new MySqlCommand(query, connection);
+                  //Create a data reader and Execute the command                    
+                  dataReader = cmd.ExecuteReader();
+
+                  //Read the data and store them in the list
+                  while (dataReader.Read())
+                  {
+                      drOwner.DriverOwnerId =Convert.ToInt64(dataReader["driver_owner_id"]);
+                      drOwner.FirstName = dataReader["first_name"] + "";
+                      drOwner.SecondName = dataReader["second_name"] + "";
+                      drOwner.LastName = dataReader["last_name"] + "";
+                      drOwner.Sex = ((dataReader["sex"] + "") == "М") ? SexEnum.Man : SexEnum.Woman;
+                      drOwner.Nationality = dataReader["nationality"] + "";
+                      drOwner.BirthDate = Convert.ToDateTime(dataReader["birth_date"]);
+                      drOwner.BirthPlace = dataReader["birth_place"] + "";
+                      drOwner.Residence = dataReader["residence"] + "";
+                      drOwner.RemainingPts =Convert.ToByte(dataReader["remaining_pts"]);
+                      drOwner.LicenceIssueDate =Convert.ToDateTime(dataReader["licence_issue_date"]);
+                      drOwner.LicenceExpiryDate =Convert.ToDateTime(dataReader["licence_expiry_date"]);
+                      drOwner.LicenceIssuedBy = dataReader["licence_issued_by"] + "";
+
+
+                  }
+                  dataReader.Close();
+                  return drOwner;
+              }
+              catch
+              {   //Returning empty user with uninitialized properties (UserId = 0)
+                  return new DriverOwner();
+              }
+              finally
+              {
+                  this.CloseConnection();
+              }
+
+          }
+          else
+          {
+              return null;
+          }
+        }
+
       private string parseDateSqlFormat(DateTime dt)
       {
           return dt.ToString("yyyy-MM-dd");

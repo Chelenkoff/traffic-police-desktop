@@ -86,4 +86,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetDriverOwnerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverOwnerByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="GetDriverOwnerByIdResult" nillable="true" type="q7:DriverOwner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

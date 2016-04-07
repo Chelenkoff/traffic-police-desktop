@@ -1237,6 +1237,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
     [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/WCFDBService")]
     public enum Sex : int {
         
@@ -1268,6 +1269,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDriverOwner", ReplyAction="http://tempuri.org/IService1/RegisterDriverOwnerResponse")]
         int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDriverOwnerById", ReplyAction="http://tempuri.org/IService1/GetDriverOwnerByIdResponse")]
+        TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1319,6 +1323,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
             return base.Channel.RegisterDriverOwner(drOwner);
+        }
+        
+        public TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id) {
+            return base.Channel.GetDriverOwnerById(id);
         }
     }
 }

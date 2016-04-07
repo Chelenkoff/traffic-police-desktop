@@ -20,6 +20,7 @@ namespace WCFDBService
       User GetUserByIdAndPass(string id, string password);
 
       [OperationContract]
+        //Getting user data with nullified pass
       User GetReadOnlyUserById(string id);
 
       [OperationContract]
@@ -30,6 +31,8 @@ namespace WCFDBService
 
       [OperationContract]
        int RegisterDriverOwner(DriverOwner drOwner);
+      [OperationContract]
+      DriverOwner GetDriverOwnerById(string id);
 
 
        
