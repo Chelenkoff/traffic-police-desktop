@@ -80,6 +80,7 @@
       <xs:element minOccurs="0" name="LicenceIssueDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="LicenceIssuedBy" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Penalties" nillable="true" type="tns:ArrayOfPenalty" />
       <xs:element minOccurs="0" name="RemainingPts" type="xs:unsignedByte" />
       <xs:element minOccurs="0" name="Residence" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
@@ -87,6 +88,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DriverOwner" nillable="true" type="tns:DriverOwner" />
+  <xs:complexType name="ArrayOfPenalty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Penalty" nillable="true" type="tns:Penalty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPenalty" nillable="true" type="tns:ArrayOfPenalty" />
+  <xs:complexType name="Penalty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Disagreement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HappenedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PenaltyId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Penalty" nillable="true" type="tns:Penalty" />
   <xs:simpleType name="Sex">
     <xs:list>
       <xs:simpleType>

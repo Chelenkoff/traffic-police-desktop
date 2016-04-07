@@ -76,7 +76,7 @@ namespace WCFDBService
         public int UpdateUser(User user)
         {
 
-            string updateQuery = String.Format(("update_user({0},\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\")"), user.UserId, user.FirstName, user.SecondName, user.LastName, user.IsTrafficPoliceman, user.UserPassword);
+            string updateQuery = String.Format(("call update_user({0},\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\")"), user.UserId, user.FirstName, user.SecondName, user.LastName, user.IsTrafficPoliceman, user.UserPassword);
 
 
             //Open connection
@@ -116,7 +116,7 @@ namespace WCFDBService
         public User GetUserByIdAndPass(string id, string password)
         {
 
-            string query = String.Format("get_user_by_id_and_pass({0},\"{1}\")", id, password);
+            string query = String.Format("call get_user_by_id_and_pass({0},\"{1}\")", id, password);
 
 
             string userId;
@@ -385,14 +385,14 @@ namespace WCFDBService
 
       public DriverOwner  GetDriverOwnerById(string id)
       {
-          string query = String.Format("get_driverowner_data_by_id({0})", id);
+          string query = String.Format("call get_driverowner_data_by_id({0})", id);
 
 
 
           //Open connection
           if (this.OpenConnection() == true)
           {
-              DriverOwner drOwner = new DriverOwner();
+             
               MySqlDataReader dataReader;
               try
               {
@@ -401,7 +401,13 @@ namespace WCFDBService
                   //Create a data reader and Execute the command                    
                   dataReader = cmd.ExecuteReader();
 
+                  //Initializing empty user
+                  DriverOwner drOwner = new DriverOwner();
+                  drOwner.Categories = new Categories();
+                  drOwner.Penalties = new List<Penalty>();
+
                   //Read the data and store them in the list
+
                   while (dataReader.Read())
                   {
                       drOwner.DriverOwnerId =Convert.ToInt64(dataReader["driver_owner_id"]);
@@ -419,76 +425,90 @@ namespace WCFDBService
                       drOwner.LicenceIssuedBy = dataReader["licence_issued_by"] + "";
 
                       //Constructing 'Categories'
-                      //drOwner.Categories = new Categories();
 
-                      //drOwner.Categories.a1AcquiryDate = dataReader["a1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_acquiry_date"]);
-                      //drOwner.Categories.a1ExpiryDate = dataReader["a1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_expiry_date"]);
-                      //drOwner.Categories.a1Restrictions = dataReader["a1_restrictions"].ToString();
 
-                      //drOwner.Categories.aAcquiryDate = dataReader["a_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_acquiry_date"]);
-                      //drOwner.Categories.aExpiryDate = dataReader["a_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_expiry_date"]);
-                      //drOwner.Categories.aRestrictions = dataReader["a_restrictions"].ToString();
+                      drOwner.Categories.a1AcquiryDate = dataReader["a1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_acquiry_date"]);
+                      drOwner.Categories.a1ExpiryDate = dataReader["a1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_expiry_date"]);
+                      drOwner.Categories.a1Restrictions = dataReader["a1_restrictions"].ToString();
 
-                      //drOwner.Categories.b1AcquiryDate = dataReader["b1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_acquiry_date"]);
-                      //drOwner.Categories.b1ExpiryDate = dataReader["b1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_expiry_date"]);
-                      //drOwner.Categories.b1Restrictions = dataReader["b1_restrictions"].ToString();
+                      drOwner.Categories.aAcquiryDate = dataReader["a_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_acquiry_date"]);
+                      drOwner.Categories.aExpiryDate = dataReader["a_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_expiry_date"]);
+                      drOwner.Categories.aRestrictions = dataReader["a_restrictions"].ToString();
 
-                      //drOwner.Categories.bAcquiryDate = dataReader["b_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_acquiry_date"]);
-                      //drOwner.Categories.bExpiryDate = dataReader["b_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_expiry_date"]);
-                      //drOwner.Categories.bRestrictions = dataReader["b_restrictions"].ToString();
+                      drOwner.Categories.b1AcquiryDate = dataReader["b1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_acquiry_date"]);
+                      drOwner.Categories.b1ExpiryDate = dataReader["b1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_expiry_date"]);
+                      drOwner.Categories.b1Restrictions = dataReader["b1_restrictions"].ToString();
 
-                      //drOwner.Categories.c1AcquiryDate = dataReader["c1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_acquiry_date"]);
-                      //drOwner.Categories.c1ExpiryDate = dataReader["c1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_expiry_date"]);
-                      //drOwner.Categories.c1Restrictions = dataReader["c1_restrictions"].ToString();
+                      drOwner.Categories.bAcquiryDate = dataReader["b_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_acquiry_date"]);
+                      drOwner.Categories.bExpiryDate = dataReader["b_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_expiry_date"]);
+                      drOwner.Categories.bRestrictions = dataReader["b_restrictions"].ToString();
 
-                      //drOwner.Categories.cAcquiryDate = dataReader["c_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_acquiry_date"]);
-                      //drOwner.Categories.cExpiryDate = dataReader["c_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_expiry_date"]);
-                      //drOwner.Categories.cRestrictions = dataReader["c_restrictions"].ToString();
+                      drOwner.Categories.c1AcquiryDate = dataReader["c1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_acquiry_date"]);
+                      drOwner.Categories.c1ExpiryDate = dataReader["c1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_expiry_date"]);
+                      drOwner.Categories.c1Restrictions = dataReader["c1_restrictions"].ToString();
 
-                      //drOwner.Categories.d1AcquiryDate = dataReader["d1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_acquiry_date"]);
-                      //drOwner.Categories.d1ExpiryDate = dataReader["d1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_expiry_date"]);
-                      //drOwner.Categories.d1Restrictions = dataReader["d1_restrictions"].ToString();
+                      drOwner.Categories.cAcquiryDate = dataReader["c_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_acquiry_date"]);
+                      drOwner.Categories.cExpiryDate = dataReader["c_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_expiry_date"]);
+                      drOwner.Categories.cRestrictions = dataReader["c_restrictions"].ToString();
 
-                      //drOwner.Categories.dAcquiryDate = dataReader["d_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_acquiry_date"]);
-                      //drOwner.Categories.dExpiryDate = dataReader["d_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_expiry_date"]);
-                      //drOwner.Categories.dRestrictions = dataReader["d_restrictions"].ToString();
+                      drOwner.Categories.d1AcquiryDate = dataReader["d1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_acquiry_date"]);
+                      drOwner.Categories.d1ExpiryDate = dataReader["d1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_expiry_date"]);
+                      drOwner.Categories.d1Restrictions = dataReader["d1_restrictions"].ToString();
 
-                      //drOwner.Categories.beAcquiryDate = dataReader["be_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_acquiry_date"]);
-                      //drOwner.Categories.beExpiryDate = dataReader["be_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_expiry_date"]);
-                      //drOwner.Categories.beRestrictions = dataReader["be_restrictions"].ToString();
+                      drOwner.Categories.dAcquiryDate = dataReader["d_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_acquiry_date"]);
+                      drOwner.Categories.dExpiryDate = dataReader["d_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_expiry_date"]);
+                      drOwner.Categories.dRestrictions = dataReader["d_restrictions"].ToString();
 
-                      //drOwner.Categories.c1eAcquiryDate = dataReader["c1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_acquiry_date"]);
-                      //drOwner.Categories.c1eExpiryDate = dataReader["c1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_expiry_date"]);
-                      //drOwner.Categories.c1eRestrictions = dataReader["c1e_restrictions"].ToString();
+                      drOwner.Categories.beAcquiryDate = dataReader["be_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_acquiry_date"]);
+                      drOwner.Categories.beExpiryDate = dataReader["be_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_expiry_date"]);
+                      drOwner.Categories.beRestrictions = dataReader["be_restrictions"].ToString();
 
-                      //drOwner.Categories.ceAcquiryDate = dataReader["ce_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_acquiry_date"]);
-                      //drOwner.Categories.ceAcquiryDate = dataReader["ce_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_expiry_date"]);
-                      //drOwner.Categories.ceRestrictions = dataReader["ce_restrictions"].ToString();
+                      drOwner.Categories.c1eAcquiryDate = dataReader["c1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_acquiry_date"]);
+                      drOwner.Categories.c1eExpiryDate = dataReader["c1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_expiry_date"]);
+                      drOwner.Categories.c1eRestrictions = dataReader["c1e_restrictions"].ToString();
 
-                      //drOwner.Categories.d1eAcquiryDate = dataReader["d1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_acquiry_date"]);
-                      //drOwner.Categories.d1eExpiryDate = dataReader["d1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_expiry_date"]);
-                      //drOwner.Categories.d1eRestrictions = dataReader["d1e_restrictions"].ToString();
+                      drOwner.Categories.ceAcquiryDate = dataReader["ce_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_acquiry_date"]);
+                      drOwner.Categories.ceAcquiryDate = dataReader["ce_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_expiry_date"]);
+                      drOwner.Categories.ceRestrictions = dataReader["ce_restrictions"].ToString();
 
-                      //drOwner.Categories.deAcquiryDate = dataReader["de_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_acquiry_date"]);
-                      //drOwner.Categories.deExpiryDate = dataReader["de_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_expiry_date"]);
-                      //drOwner.Categories.deRestrictions = dataReader["de_restrictions"].ToString();
+                      drOwner.Categories.d1eAcquiryDate = dataReader["d1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_acquiry_date"]);
+                      drOwner.Categories.d1eExpiryDate = dataReader["d1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_expiry_date"]);
+                      drOwner.Categories.d1eRestrictions = dataReader["d1e_restrictions"].ToString();
 
-                      //drOwner.Categories.ttbAcquiryDate = dataReader["ttb_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_acquiry_date"]);
-                      //drOwner.Categories.ttbExpiryDate = dataReader["ttb_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_expiry_date"]);
-                      //drOwner.Categories.ttbRestrictions = dataReader["ttb_restrictions"].ToString();
+                      drOwner.Categories.deAcquiryDate = dataReader["de_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_acquiry_date"]);
+                      drOwner.Categories.deExpiryDate = dataReader["de_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_expiry_date"]);
+                      drOwner.Categories.deRestrictions = dataReader["de_restrictions"].ToString();
 
-                      //drOwner.Categories.ttmAcquiryDate = dataReader["ttm_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_acquiry_date"]);
-                      //drOwner.Categories.ttmExpiryDate = dataReader["ttm_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_expiry_date"]);
-                      //drOwner.Categories.ttmRestrictions = dataReader["ttm_restrictions"].ToString();
+                      drOwner.Categories.ttbAcquiryDate = dataReader["ttb_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_acquiry_date"]);
+                      drOwner.Categories.ttbExpiryDate = dataReader["ttb_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_expiry_date"]);
+                      drOwner.Categories.ttbRestrictions = dataReader["ttb_restrictions"].ToString();
 
-                      //drOwner.Categories.tktAcquiryDate = dataReader["tkt_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_acquiry_date"]);
-                      //drOwner.Categories.tktExpiryDate = dataReader["tkt_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_expiry_date"]);
-                      //drOwner.Categories.tktRestrictions = dataReader["tkt_restrictions"].ToString();
-                     
-                      //drOwner.Categories.mAcquiryDate = dataReader["m_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_acquiry_date"]);
-                      //drOwner.Categories.mExpiryDate = dataReader["m_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_expiry_date"]);
-                      //drOwner.Categories.mRestrictions = dataReader["m_restrictions"].ToString();
+                      drOwner.Categories.ttmAcquiryDate = dataReader["ttm_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_acquiry_date"]);
+                      drOwner.Categories.ttmExpiryDate = dataReader["ttm_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_expiry_date"]);
+                      drOwner.Categories.ttmRestrictions = dataReader["ttm_restrictions"].ToString();
+
+                      drOwner.Categories.tktAcquiryDate = dataReader["tkt_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_acquiry_date"]);
+                      drOwner.Categories.tktExpiryDate = dataReader["tkt_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_expiry_date"]);
+                      drOwner.Categories.tktRestrictions = dataReader["tkt_restrictions"].ToString();
+
+                      drOwner.Categories.mAcquiryDate = dataReader["m_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_acquiry_date"]);
+                      drOwner.Categories.mExpiryDate = dataReader["m_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_expiry_date"]);
+                      drOwner.Categories.mRestrictions = dataReader["m_restrictions"].ToString();
+
                   }
+                  //Closing current reader and prepare for the new one for the nex query
+                  dataReader.Close();
+
+                  query = String.Format("call get_driverowner_penalties_info({0})", id);
+                  cmd = new MySqlCommand(query, connection);
+                  //Create a data reader and Execute the command                    
+                  dataReader = cmd.ExecuteReader();
+                  while (dataReader.Read())
+                  {
+                      //Fetcj penalty info
+                  }
+
+
                   dataReader.Close();
                   return drOwner;
               }

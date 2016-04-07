@@ -1023,6 +1023,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         private string NationalityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TrafficPoliceDesktopApp.ServiceReference1.Penalty[] PenaltiesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private byte RemainingPtsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1175,6 +1178,19 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public TrafficPoliceDesktopApp.ServiceReference1.Penalty[] Penalties {
+            get {
+                return this.PenaltiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PenaltiesField, value) != true)) {
+                    this.PenaltiesField = value;
+                    this.RaisePropertyChanged("Penalties");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public byte RemainingPts {
             get {
                 return this.RemainingPtsField;
@@ -1222,6 +1238,147 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
                 if ((this.SexField.Equals(value) != true)) {
                     this.SexField = value;
                     this.RaisePropertyChanged("Sex");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Penalty", Namespace="http://schemas.datacontract.org/2004/07/WCFDBService")]
+    [System.SerializableAttribute()]
+    public partial class Penalty : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisagreementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime HappenedDateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime IssuedDateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long IssuerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PenaltyIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Disagreement {
+            get {
+                return this.DisagreementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisagreementField, value) != true)) {
+                    this.DisagreementField = value;
+                    this.RaisePropertyChanged("Disagreement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime HappenedDateTime {
+            get {
+                return this.HappenedDateTimeField;
+            }
+            set {
+                if ((this.HappenedDateTimeField.Equals(value) != true)) {
+                    this.HappenedDateTimeField = value;
+                    this.RaisePropertyChanged("HappenedDateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime IssuedDateTime {
+            get {
+                return this.IssuedDateTimeField;
+            }
+            set {
+                if ((this.IssuedDateTimeField.Equals(value) != true)) {
+                    this.IssuedDateTimeField = value;
+                    this.RaisePropertyChanged("IssuedDateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long IssuerId {
+            get {
+                return this.IssuerIdField;
+            }
+            set {
+                if ((this.IssuerIdField.Equals(value) != true)) {
+                    this.IssuerIdField = value;
+                    this.RaisePropertyChanged("IssuerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Location {
+            get {
+                return this.LocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LocationField, value) != true)) {
+                    this.LocationField = value;
+                    this.RaisePropertyChanged("Location");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PenaltyId {
+            get {
+                return this.PenaltyIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PenaltyIdField, value) != true)) {
+                    this.PenaltyIdField = value;
+                    this.RaisePropertyChanged("PenaltyId");
                 }
             }
         }

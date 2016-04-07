@@ -8,7 +8,7 @@ using System.Text;
 namespace WCFDBService
 {
     [DataContract]
-    public class Penalties
+    public class Penalty
     {
         [DataMember]
         public string PenaltyId { get; set; }

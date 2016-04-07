@@ -10,6 +10,9 @@ namespace WCFDBService
     [DataContract]
     public class DriverOwner
     {
+
+
+
         [DataMember]
         public long DriverOwnerId { get; set; }
         [DataMember]
@@ -39,8 +42,15 @@ namespace WCFDBService
         public string LicenceIssuedBy { get; set; }
          [DataMember]
         public Categories Categories { get; set; }
+         [DataMember]
+         public List<Penalty> Penalties { get; set; }
+
+
 
     }
+
+    
+
     [DataContract(Name = "Sex")]
     [Flags]
     public enum SexEnum
