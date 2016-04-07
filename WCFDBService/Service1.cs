@@ -418,7 +418,76 @@ namespace WCFDBService
                       drOwner.LicenceExpiryDate =Convert.ToDateTime(dataReader["licence_expiry_date"]);
                       drOwner.LicenceIssuedBy = dataReader["licence_issued_by"] + "";
 
+                      //Constructing 'Categories'
+                      //drOwner.Categories = new Categories();
 
+                      //drOwner.Categories.a1AcquiryDate = dataReader["a1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_acquiry_date"]);
+                      //drOwner.Categories.a1ExpiryDate = dataReader["a1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a1_expiry_date"]);
+                      //drOwner.Categories.a1Restrictions = dataReader["a1_restrictions"].ToString();
+
+                      //drOwner.Categories.aAcquiryDate = dataReader["a_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_acquiry_date"]);
+                      //drOwner.Categories.aExpiryDate = dataReader["a_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["a_expiry_date"]);
+                      //drOwner.Categories.aRestrictions = dataReader["a_restrictions"].ToString();
+
+                      //drOwner.Categories.b1AcquiryDate = dataReader["b1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_acquiry_date"]);
+                      //drOwner.Categories.b1ExpiryDate = dataReader["b1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b1_expiry_date"]);
+                      //drOwner.Categories.b1Restrictions = dataReader["b1_restrictions"].ToString();
+
+                      //drOwner.Categories.bAcquiryDate = dataReader["b_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_acquiry_date"]);
+                      //drOwner.Categories.bExpiryDate = dataReader["b_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["b_expiry_date"]);
+                      //drOwner.Categories.bRestrictions = dataReader["b_restrictions"].ToString();
+
+                      //drOwner.Categories.c1AcquiryDate = dataReader["c1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_acquiry_date"]);
+                      //drOwner.Categories.c1ExpiryDate = dataReader["c1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1_expiry_date"]);
+                      //drOwner.Categories.c1Restrictions = dataReader["c1_restrictions"].ToString();
+
+                      //drOwner.Categories.cAcquiryDate = dataReader["c_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_acquiry_date"]);
+                      //drOwner.Categories.cExpiryDate = dataReader["c_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c_expiry_date"]);
+                      //drOwner.Categories.cRestrictions = dataReader["c_restrictions"].ToString();
+
+                      //drOwner.Categories.d1AcquiryDate = dataReader["d1_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_acquiry_date"]);
+                      //drOwner.Categories.d1ExpiryDate = dataReader["d1_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1_expiry_date"]);
+                      //drOwner.Categories.d1Restrictions = dataReader["d1_restrictions"].ToString();
+
+                      //drOwner.Categories.dAcquiryDate = dataReader["d_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_acquiry_date"]);
+                      //drOwner.Categories.dExpiryDate = dataReader["d_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d_expiry_date"]);
+                      //drOwner.Categories.dRestrictions = dataReader["d_restrictions"].ToString();
+
+                      //drOwner.Categories.beAcquiryDate = dataReader["be_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_acquiry_date"]);
+                      //drOwner.Categories.beExpiryDate = dataReader["be_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["be_expiry_date"]);
+                      //drOwner.Categories.beRestrictions = dataReader["be_restrictions"].ToString();
+
+                      //drOwner.Categories.c1eAcquiryDate = dataReader["c1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_acquiry_date"]);
+                      //drOwner.Categories.c1eExpiryDate = dataReader["c1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["c1e_expiry_date"]);
+                      //drOwner.Categories.c1eRestrictions = dataReader["c1e_restrictions"].ToString();
+
+                      //drOwner.Categories.ceAcquiryDate = dataReader["ce_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_acquiry_date"]);
+                      //drOwner.Categories.ceAcquiryDate = dataReader["ce_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ce_expiry_date"]);
+                      //drOwner.Categories.ceRestrictions = dataReader["ce_restrictions"].ToString();
+
+                      //drOwner.Categories.d1eAcquiryDate = dataReader["d1e_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_acquiry_date"]);
+                      //drOwner.Categories.d1eExpiryDate = dataReader["d1e_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["d1e_expiry_date"]);
+                      //drOwner.Categories.d1eRestrictions = dataReader["d1e_restrictions"].ToString();
+
+                      //drOwner.Categories.deAcquiryDate = dataReader["de_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_acquiry_date"]);
+                      //drOwner.Categories.deExpiryDate = dataReader["de_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["de_expiry_date"]);
+                      //drOwner.Categories.deRestrictions = dataReader["de_restrictions"].ToString();
+
+                      //drOwner.Categories.ttbAcquiryDate = dataReader["ttb_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_acquiry_date"]);
+                      //drOwner.Categories.ttbExpiryDate = dataReader["ttb_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttb_expiry_date"]);
+                      //drOwner.Categories.ttbRestrictions = dataReader["ttb_restrictions"].ToString();
+
+                      //drOwner.Categories.ttmAcquiryDate = dataReader["ttm_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_acquiry_date"]);
+                      //drOwner.Categories.ttmExpiryDate = dataReader["ttm_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["ttm_expiry_date"]);
+                      //drOwner.Categories.ttmRestrictions = dataReader["ttm_restrictions"].ToString();
+
+                      //drOwner.Categories.tktAcquiryDate = dataReader["tkt_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_acquiry_date"]);
+                      //drOwner.Categories.tktExpiryDate = dataReader["tkt_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["tkt_expiry_date"]);
+                      //drOwner.Categories.tktRestrictions = dataReader["tkt_restrictions"].ToString();
+                     
+                      //drOwner.Categories.mAcquiryDate = dataReader["m_acquiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_acquiry_date"]);
+                      //drOwner.Categories.mExpiryDate = dataReader["m_expiry_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["m_expiry_date"]);
+                      //drOwner.Categories.mRestrictions = dataReader["m_restrictions"].ToString();
                   }
                   dataReader.Close();
                   return drOwner;

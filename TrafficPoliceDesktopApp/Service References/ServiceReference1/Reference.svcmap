@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3adaf21-89a3-4c14-87fb-6c57f41e1a44" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3b6c159-6f28-44fd-aff0-c71b9033ca10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,10 +21,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7ef12041-0b6a-4ec5-9e88-6948a9a35e33" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="dbe4d7e2-390e-4085-8d76-4f7790cff69e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="21417128-9313-4c7a-a903-f59921544887" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
-    <MetadataFile FileName="WCFDBService.xsd" MetadataType="Schema" ID="5b2541a1-c13f-4eec-b11a-f14257808842" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="bba2b8f1-68ec-4097-a5db-6275c21bc5f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="211e96e9-e9c4-4912-9456-999f17b04752" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="afc3f305-74f3-4048-8d56-6066a9d57d1e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
+    <MetadataFile FileName="WCFDBService.xsd" MetadataType="Schema" ID="b1507b00-0d77-4242-9e4d-e30d9f7e2a69" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFDBService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

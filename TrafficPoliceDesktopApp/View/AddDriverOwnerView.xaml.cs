@@ -13,13 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TrafficPoliceDesktopApp.ServiceReference1;
+
 using TrafficPoliceDesktopApp.Utilities;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using Microsoft.Win32;
 using System.Windows.Threading;
+using TrafficPoliceDesktopApp.ServiceReference1;
 
 
 
