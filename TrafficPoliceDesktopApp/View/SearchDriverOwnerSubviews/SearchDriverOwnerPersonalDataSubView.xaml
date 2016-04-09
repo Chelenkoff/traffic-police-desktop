@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             mc:Ignorable="d" d:DesignWidth="490" Height="568.486" Loaded="UserControl_Loaded">
+             mc:Ignorable="d" d:DesignWidth="490" Height="568.486">
     <Grid>
         <Label x:Name="lblViewMessage" Content="Лични данни на" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
-        <GroupBox Header="Лични данни на водач/собственик" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="477" Width="470">
+        <GroupBox Header="Лични данни" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="477" Width="470">
 
-            <Grid   >
+            <Grid >
                 <TextBox x:Name="txtBoxId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="False"/>
 
                 <Label Content="ЕГН:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="114" Foreground="#CC119EDA" FontSize="18" Height="33"/>

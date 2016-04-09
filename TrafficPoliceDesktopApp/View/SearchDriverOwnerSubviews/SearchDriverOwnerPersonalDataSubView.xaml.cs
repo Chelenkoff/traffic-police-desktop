@@ -28,15 +28,17 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
             comboBoxCountries.ItemsSource = getCountryList();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+
+
+
+        public void initDriverOwnerPersonalData(DriverOwner drOwner)
         {
-            fulfillDriverOwnerPersonalData();
+            DriverOwner = drOwner;
+
+
             lblViewMessage.Content = String.Format("Лични данни на {0} {1}", DriverOwner.FirstName, DriverOwner.LastName);
-        }
 
 
-        private void fulfillDriverOwnerPersonalData()
-        {
             txtBoxId.Text = DriverOwner.DriverOwnerId.ToString();
             txtBoxFirstName.Text = DriverOwner.FirstName;
             txtBoxSecondName.Text = DriverOwner.SecondName;

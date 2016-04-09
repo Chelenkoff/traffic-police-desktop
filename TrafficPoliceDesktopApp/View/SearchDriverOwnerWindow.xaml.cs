@@ -43,9 +43,31 @@ namespace TrafficPoliceDesktopApp.View
         {
             if(driverOwnerPersonalDataTabItem.IsSelected)
             {
-                searchDriverOwnerPersonalDataSubView.DriverOwner = DriverOwner;
+                //searchDriverOwnerPersonalDataSubView.DriverOwner = DriverOwner;
+                //searchDriverOwnerPersonalDataSubView.initDriverOwnerPersonalData();
+                return;
+            }
+            if(driverOwnerLicenceDataTabItem.IsSelected)
+            {
+                //searchDriverOwnerLicenceDataSubView.DriverOwner = DriverOwner;
+                //searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData();
+                
+                return;
             }
 
         }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Initializing Personal Data tab
+            searchDriverOwnerPersonalDataSubView.initDriverOwnerPersonalData(DriverOwner);
+
+            //Initializing Licence Data tab
+            searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData(DriverOwner);
+        }
+
+
+
+
     }
 }
