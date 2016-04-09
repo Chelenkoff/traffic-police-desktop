@@ -11,7 +11,7 @@ namespace WCFDBService
     public class Penalty
     {
         [DataMember]
-        public string PenaltyId { get; set; }
+        public UInt64 PenaltyId { get; set; }
 
         [DataMember]
         public long IssuerId { get; set; }

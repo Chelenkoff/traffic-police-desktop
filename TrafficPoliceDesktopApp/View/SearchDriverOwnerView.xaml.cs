@@ -58,8 +58,8 @@ namespace TrafficPoliceDesktopApp.View
                     if (!dbResponseValidation(drOwner)) return;
 
                     //DB - OK, USER - FOUND
-                    //SearchUserWindow searchUsrWindow = new SearchUserWindow(user);
-                    //searchUsrWindow.Show();
+                    SearchDriverOwnerWindow searchDrOwnerWindow = new SearchDriverOwnerWindow(drOwner);
+                    searchDrOwnerWindow.Show();
 
                 }));
             });

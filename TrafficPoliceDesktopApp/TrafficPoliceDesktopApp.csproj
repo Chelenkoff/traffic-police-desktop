@@ -108,8 +108,20 @@
     <Compile Include="View\NewUserView.xaml.cs">
       <DependentUpon>NewUserView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerLicenceDataSubView.xaml.cs">
+      <DependentUpon>SearchDriverOwnerLicenceDataSubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerPenaltyDataSubView.xaml.cs">
+      <DependentUpon>SearchDriverOwnerPenaltyDataSubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerPersonalDataSubView.xaml.cs">
+      <DependentUpon>SearchDriverOwnerPersonalDataSubView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SearchDriverOwnerView.xaml.cs">
       <DependentUpon>SearchDriverOwnerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchDriverOwnerWindow.xaml.cs">
+      <DependentUpon>SearchDriverOwnerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SearchUserView.xaml.cs">
       <DependentUpon>SearchUserView.xaml</DependentUpon>
@@ -153,7 +165,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerLicenceDataSubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerPenaltyDataSubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerPersonalDataSubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SearchDriverOwnerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchDriverOwnerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

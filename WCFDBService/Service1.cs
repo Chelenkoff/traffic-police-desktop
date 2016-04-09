@@ -503,9 +503,19 @@ namespace WCFDBService
                   cmd = new MySqlCommand(query, connection);
                   //Create a data reader and Execute the command                    
                   dataReader = cmd.ExecuteReader();
+                  Penalty penalty;
                   while (dataReader.Read())
                   {
-                      //Fetcj penalty info
+                      penalty = new Penalty();
+                      //Fetch penalty info
+                      penalty.PenaltyId = Convert.ToUInt64(dataReader["penalty_id"]);
+                      penalty.IssuerId = Convert.ToInt64(dataReader["user_id"]);
+                      penalty.IssuedDateTime = Convert.ToDateTime(dataReader["date_time_issued"]);
+                      penalty.Location = dataReader["location"].ToString();
+                      penalty.Description = dataReader["description"].ToString();
+                      penalty.Disagreement = dataReader["disagreement"].ToString();
+
+                      drOwner.Penalties.Add(penalty);
                   }
 
 
