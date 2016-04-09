@@ -64,6 +64,9 @@ namespace TrafficPoliceDesktopApp.View
 
             //Initializing Licence Data tab
             searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData(DriverOwner);
+
+            //Initializing Penalty Data tab
+            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(DriverOwner);
         }
 
 

@@ -11,17 +11,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrafficPoliceDesktopApp.ServiceReference1;
 
 namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
 {
     /// <summary>
     /// Interaction logic for SearchDriverOwnerPenaltyDataSubView.xaml
     /// </summary>
+    
     public partial class SearchDriverOwnerPenaltyDataSubView : UserControl
     {
+        public DriverOwner DriverOwner { get; set; }
         public SearchDriverOwnerPenaltyDataSubView()
         {
             InitializeComponent();
+        }
+
+        public void initDriverOwnerPenaltyData(DriverOwner drOwner)
+        {
+
+            DriverOwner = drOwner;
+
+            lblViewMessage.Content = String.Format("Нарушения на {0} {1}", DriverOwner.FirstName, DriverOwner.LastName);
+
+
+            //Set DataGrid items source 
+            dataGridPenalties.ItemsSource = DriverOwner.Penalties;
+
         }
     }
 }

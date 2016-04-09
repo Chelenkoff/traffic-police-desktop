@@ -511,6 +511,7 @@ namespace WCFDBService
                       penalty.PenaltyId = Convert.ToUInt64(dataReader["penalty_id"]);
                       penalty.IssuerId = Convert.ToInt64(dataReader["user_id"]);
                       penalty.IssuedDateTime = Convert.ToDateTime(dataReader["date_time_issued"]);
+                      penalty.HappenedDateTime = Convert.ToDateTime(dataReader["penalty_date_time"]);
                       penalty.Location = dataReader["location"].ToString();
                       penalty.Description = dataReader["description"].ToString();
                       penalty.Disagreement = dataReader["disagreement"].ToString();
