@@ -510,6 +510,7 @@ namespace WCFDBService
                       //Fetch penalty info
                       penalty.PenaltyId = Convert.ToUInt64(dataReader["penalty_id"]);
                       penalty.IssuerId = Convert.ToInt64(dataReader["user_id"]);
+                      penalty.DriverOwnerId = Convert.ToInt64(dataReader["driver_owner_id"]);
                       penalty.IssuedDateTime = Convert.ToDateTime(dataReader["date_time_issued"]);
                       penalty.HappenedDateTime = Convert.ToDateTime(dataReader["penalty_date_time"]);
                       penalty.Location = dataReader["location"].ToString();

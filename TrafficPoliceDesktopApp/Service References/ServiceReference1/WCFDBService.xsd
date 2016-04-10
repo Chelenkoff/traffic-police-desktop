@@ -98,11 +98,12 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Disagreement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverOwnerId" type="xs:long" />
       <xs:element minOccurs="0" name="HappenedDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IssuedDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IssuerId" type="xs:long" />
       <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PenaltyId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PenaltyId" type="xs:unsignedLong" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Penalty" nillable="true" type="tns:Penalty" />

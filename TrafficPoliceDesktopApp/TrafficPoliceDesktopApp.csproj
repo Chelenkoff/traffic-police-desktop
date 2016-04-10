@@ -109,6 +109,9 @@
     <Compile Include="View\NewUserView.xaml.cs">
       <DependentUpon>NewUserView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchDriverOwnerSubviews\PenaltyDetailsWindow.xaml.cs">
+      <DependentUpon>PenaltyDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SearchDriverOwnerSubviews\SearchDriverOwnerLicenceDataSubView.xaml.cs">
       <DependentUpon>SearchDriverOwnerLicenceDataSubView.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchDriverOwnerSubviews\PenaltyDetailsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

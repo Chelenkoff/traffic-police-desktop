@@ -17,6 +17,9 @@ namespace WCFDBService
         public long IssuerId { get; set; }
 
         [DataMember]
+        public long DriverOwnerId { get; set; }
+
+        [DataMember]
         public DateTime IssuedDateTime { get; set; }
 
         [DataMember]

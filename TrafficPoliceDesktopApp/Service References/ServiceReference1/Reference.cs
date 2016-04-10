@@ -1268,6 +1268,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         private string DisagreementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long DriverOwnerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime HappenedDateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1280,7 +1283,7 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         private string LocationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PenaltyIdField;
+        private ulong PenaltyIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1314,6 +1317,19 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
                 if ((object.ReferenceEquals(this.DisagreementField, value) != true)) {
                     this.DisagreementField = value;
                     this.RaisePropertyChanged("Disagreement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long DriverOwnerId {
+            get {
+                return this.DriverOwnerIdField;
+            }
+            set {
+                if ((this.DriverOwnerIdField.Equals(value) != true)) {
+                    this.DriverOwnerIdField = value;
+                    this.RaisePropertyChanged("DriverOwnerId");
                 }
             }
         }
@@ -1371,12 +1387,12 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PenaltyId {
+        public ulong PenaltyId {
             get {
                 return this.PenaltyIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.PenaltyIdField, value) != true)) {
+                if ((this.PenaltyIdField.Equals(value) != true)) {
                     this.PenaltyIdField = value;
                     this.RaisePropertyChanged("PenaltyId");
                 }

@@ -39,5 +39,24 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
             dataGridPenalties.ItemsSource = DriverOwner.Penalties;
 
         }
+
+        private void dataGridPenalties_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Getting 'Penalty info' on selected row
+
+            if((Penalty)dataGridPenalties.SelectedItem != null)
+            {
+                PenaltyDetailsWindow penDetailsWindow = new PenaltyDetailsWindow((Penalty)dataGridPenalties.SelectedItem,DriverOwner);
+                penDetailsWindow.Show();
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
