@@ -540,6 +540,40 @@ namespace WCFDBService
           }
         }
 
+
+      public int removePenalty(Penalty pen)
+      {
+          string query = String.Format("CALL remove_penalty_by_id({0})", pen.PenaltyId);
+
+
+          //Open connection
+          if (this.OpenConnection() == true)
+          {
+              try
+              {
+                  //Create Command
+                  MySqlCommand cmd = new MySqlCommand(query, connection);
+                  cmd.ExecuteNonQuery();
+                  return 0;
+                  //Create a data reader and Execute the command                    
+              }
+              catch
+              {   //Returning empty user with uninitialized properties (UserId = 0)
+                  return 2;
+              }
+              finally
+              {
+                  this.CloseConnection();
+              }
+
+          }
+          else
+          {
+              //DB NOT CONNECTED
+              return 1;
+          }
+      }
+
       private string parseDateSqlFormat(DateTime dt)
       {
           return dt.ToString("yyyy-MM-dd");
@@ -565,6 +599,8 @@ namespace WCFDBService
                 return String.Format("\"{0}\"", rest);
             }
       }
+
+       
 
         
 

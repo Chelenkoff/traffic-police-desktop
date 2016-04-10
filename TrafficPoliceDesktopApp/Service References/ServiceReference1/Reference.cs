@@ -1445,6 +1445,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDriverOwnerById", ReplyAction="http://tempuri.org/IService1/GetDriverOwnerByIdResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removePenalty", ReplyAction="http://tempuri.org/IService1/removePenaltyResponse")]
+        int removePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1500,6 +1503,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id) {
             return base.Channel.GetDriverOwnerById(id);
+        }
+        
+        public int removePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen) {
+            return base.Channel.removePenalty(pen);
         }
     }
 }

@@ -5,37 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
               mc:Ignorable="d" d:DesignWidth="490" Height="568.486" >
-    
-    
-    
+
+    <!--Window resources-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <Grid>
         <Label x:Name="lblViewMessage" Content="Данни" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20" Focusable="True"/>
 
         <GroupBox Header="Данни за извършени нарушения" HorizontalAlignment="Left" Margin="10,37,0,-504" VerticalAlignment="Top" Height="477" Width="470">
 
             <Grid>
+                <Button x:Name="btnDeletePenalty" HorizontalAlignment="Left"  Content="{DynamicResource appbar_delete}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="64" Height="64" ClickMode="Press" ToolTip="Премахване на селектираното нарушение" Margin="384,325,0,0" Click="btnDeletePenalty_Click"/>
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="329,339,79,49" Height="50" Width="50" IsActive="False" />
 
-            <DataGrid x:Name="dataGridPenalties"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,79"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="dataGridPenalties_MouseDoubleClick"  >
+
+                <DataGrid x:Name="dataGridPenalties"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,113"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="dataGridPenalties_MouseDoubleClick"  >
 
 
 
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="№" Width="40"  Binding="{Binding Path=PenaltyId}"  FontSize="17"/>
-                    <DataGridTextColumn Header="Извършено на" Width="135" Binding="{Binding Path=HappenedDateTime}" />
-                    <DataGridTextColumn Header="Нарушение"   Width="265" Binding="{Binding Path=Description}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="40"  Binding="{Binding Path=PenaltyId}"  FontSize="17"/>
+                        <DataGridTextColumn Header="Извършено на" Width="135" Binding="{Binding Path=HappenedDateTime}" />
+                        <DataGridTextColumn Header="Нарушение"   Width="265" Binding="{Binding Path=Description}">
 
 
                             <DataGridTextColumn.ElementStyle>
-                            <Style>
-                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
-                                <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                        
-                    </DataGridTextColumn>
+                                <Style>
+                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
 
-                </DataGrid.Columns>
-            </DataGrid>
+                        </DataGridTextColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
 
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="19,0,0,0" TextWrapping="Wrap" Text="За да видите повече детайли, кликнете двукратно с мишката върху съответното нарушение"  Height="44" Width="419" Foreground="#FFFF2C2C" FontSize="14" FontStyle="Italic"/>
             </Grid>

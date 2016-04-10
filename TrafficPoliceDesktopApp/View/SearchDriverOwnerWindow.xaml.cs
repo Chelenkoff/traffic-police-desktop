@@ -22,11 +22,14 @@ namespace TrafficPoliceDesktopApp.View
     public partial class SearchDriverOwnerWindow : MetroWindow
     {
         public DriverOwner DriverOwner { get; set; }
-        public SearchDriverOwnerWindow(DriverOwner drOwner)
+        public Service1Client ServiceReference { get; set; }
+        public SearchDriverOwnerWindow(DriverOwner drOwner, Service1Client serviceRef)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             DriverOwner = drOwner;
+            ServiceReference = serviceRef;
+
             this.Title = String.Format("{0} {1} - Справка за водач", DriverOwner.FirstName, DriverOwner.LastName);
         }
 
@@ -66,7 +69,7 @@ namespace TrafficPoliceDesktopApp.View
             searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData(DriverOwner);
 
             //Initializing Penalty Data tab
-            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(DriverOwner);
+            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(DriverOwner,ServiceReference);
         }
 
 

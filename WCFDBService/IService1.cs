@@ -34,6 +34,9 @@ namespace WCFDBService
       [OperationContract]
       DriverOwner GetDriverOwnerById(string id);
 
+      [OperationContract]
+      int removePenalty(Penalty pen);
+
 
        
     }

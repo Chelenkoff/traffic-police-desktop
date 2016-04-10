@@ -23,11 +23,14 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
     {
         public Penalty Penalty { get; set; }
         public DriverOwner DriverOwner { get; set; }
-        public PenaltyDetailsWindow(Penalty pen, DriverOwner drOwner)
+        public Service1Client ServiceReference { get; set; }
+        public PenaltyDetailsWindow(Penalty pen, DriverOwner drOwner, Service1Client servRef)
         {
             InitializeComponent();
+
             Penalty = pen;
             DriverOwner = drOwner;
+            ServiceReference = servRef;
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.Title = String.Format("Нарушение № {0} - {1} {2}",Penalty.PenaltyId, DriverOwner.FirstName, DriverOwner.LastName);

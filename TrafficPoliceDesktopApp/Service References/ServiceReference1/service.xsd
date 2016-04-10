@@ -100,4 +100,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="removePenalty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="pen" nillable="true" type="q8:Penalty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removePenaltyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="removePenaltyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

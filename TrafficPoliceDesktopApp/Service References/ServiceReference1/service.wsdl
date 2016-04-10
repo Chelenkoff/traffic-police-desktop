@@ -49,6 +49,12 @@
   <wsdl:message name="IService1_GetDriverOwnerById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDriverOwnerByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_removePenalty_InputMessage">
+    <wsdl:part name="parameters" element="tns:removePenalty" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removePenalty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removePenaltyResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="GetDriverOwnerById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDriverOwnerById" message="tns:IService1_GetDriverOwnerById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDriverOwnerByIdResponse" message="tns:IService1_GetDriverOwnerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removePenalty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/removePenalty" message="tns:IService1_removePenalty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/removePenaltyResponse" message="tns:IService1_removePenalty_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDriverOwnerById">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDriverOwnerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePenalty">
+      <soap:operation soapAction="http://tempuri.org/IService1/removePenalty" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
