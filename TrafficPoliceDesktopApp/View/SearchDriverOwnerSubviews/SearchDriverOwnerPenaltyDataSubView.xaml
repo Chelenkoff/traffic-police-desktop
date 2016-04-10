@@ -30,9 +30,9 @@
 
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="№" Width="40"  Binding="{Binding Path=PenaltyId}"  FontSize="17"/>
-                        <DataGridTextColumn Header="Извършено на" Width="135" Binding="{Binding Path=HappenedDateTime}" />
-                        <DataGridTextColumn Header="Нарушение"   Width="265" Binding="{Binding Path=Description}">
+                        <DataGridTextColumn Header="№" Width="40"  Binding="{Binding Path=PenaltyId}"  FontSize="17" MaxWidth="40"/>
+                        <DataGridTextColumn Header="Извършено на" Width="135" Binding="{Binding Path=HappenedDateTime}" MaxWidth="135" />
+                        <DataGridTextColumn Header="Нарушение"   Width="250" Binding="{Binding Path=Description}" MaxWidth="265">
 
 
                             <DataGridTextColumn.ElementStyle>

@@ -46,15 +46,21 @@ namespace TrafficPoliceDesktopApp.View
         {
             if(driverOwnerPersonalDataTabItem.IsSelected)
             {
-                //searchDriverOwnerPersonalDataSubView.DriverOwner = DriverOwner;
-                //searchDriverOwnerPersonalDataSubView.initDriverOwnerPersonalData();
+
                 return;
             }
             if(driverOwnerLicenceDataTabItem.IsSelected)
             {
-                //searchDriverOwnerLicenceDataSubView.DriverOwner = DriverOwner;
-                //searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData();
+
                 
+                return;
+            }
+            if(driverOwnerPenaltiesDataTabItem.IsSelected)
+            {
+                if(!searchDriverOwnerPenaltyDataSubView.arePenaltiesAvailable())
+                {
+                    tabControl.SelectedItem = driverOwnerPersonalDataTabItem;
+                }
                 return;
             }
 
@@ -69,7 +75,7 @@ namespace TrafficPoliceDesktopApp.View
             searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData(DriverOwner);
 
             //Initializing Penalty Data tab
-            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(DriverOwner,ServiceReference);
+            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(this);
         }
 
 
