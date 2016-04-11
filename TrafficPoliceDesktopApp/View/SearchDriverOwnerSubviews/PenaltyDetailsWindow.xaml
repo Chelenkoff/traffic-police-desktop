@@ -6,12 +6,22 @@
                       Height="480" Width="500"
                       ResizeMode="CanMinimize"     
                          GlowBrush="{DynamicResource AccentColorBrush}">
+
+    <!--Window resources-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Label x:Name="lblViewMessage" Content="Лични данни на" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
         <GroupBox Header="Данни за нарушение" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="405" Width="470">
 
             <Grid >
+
                 <TextBox x:Name="txtBoxPenaltyId" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="181,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="18" IsEnabled="False"/>
 
                 <Label Content="Контролен номер:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,11,0,0" VerticalAlignment="Top" Width="166" Foreground="#CC119EDA" FontSize="18" Height="33"/>
@@ -33,6 +43,7 @@
                 <Label Content="Възражение:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,281,0,0" VerticalAlignment="Top" Width="109" Foreground="#CC119EDA" FontSize="16"/>
                 <TextBox x:Name="txtBoxIssuerId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="181,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="18" IsEnabled="False"/>
                 <Label Content="Съставител ЕГН:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" Width="166" Foreground="#CC119EDA" FontSize="18" Height="33"/>
+                <Button x:Name="btnGenerateDisagreementTemplate" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="375,281,0,0" VerticalAlignment="Top" Width="72" Click="btnGenerateDisagreementTemplate_Click" Height="72" ToolTip="Генерирай документ - възражение на нарушителя"/>
 
             </Grid>
 

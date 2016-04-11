@@ -1428,26 +1428,66 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
         int UpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        System.IAsyncResult BeginUpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user, System.AsyncCallback callback, object asyncState);
+        
+        int EndUpdateUser(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByIdAndPass", ReplyAction="http://tempuri.org/IService1/GetUserByIdAndPassResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetUserByIdAndPass", ReplyAction="http://tempuri.org/IService1/GetUserByIdAndPassResponse")]
+        System.IAsyncResult BeginGetUserByIdAndPass(string id, string password, System.AsyncCallback callback, object asyncState);
+        
+        TrafficPoliceDesktopApp.ServiceReference1.User EndGetUserByIdAndPass(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetReadOnlyUserById", ReplyAction="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.User GetReadOnlyUserById(string id);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetReadOnlyUserById", ReplyAction="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse")]
+        System.IAsyncResult BeginGetReadOnlyUserById(string id, System.AsyncCallback callback, object asyncState);
+        
+        TrafficPoliceDesktopApp.ServiceReference1.User EndGetReadOnlyUserById(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUser", ReplyAction="http://tempuri.org/IService1/InsertUserResponse")]
         int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/InsertUser", ReplyAction="http://tempuri.org/IService1/InsertUserResponse")]
+        System.IAsyncResult BeginInsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr, System.AsyncCallback callback, object asyncState);
+        
+        int EndInsertUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
         int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
+        System.IAsyncResult BeginInsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ, System.AsyncCallback callback, object asyncState);
+        
+        int EndInsertCat(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDriverOwner", ReplyAction="http://tempuri.org/IService1/RegisterDriverOwnerResponse")]
         int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/RegisterDriverOwner", ReplyAction="http://tempuri.org/IService1/RegisterDriverOwnerResponse")]
+        System.IAsyncResult BeginRegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner, System.AsyncCallback callback, object asyncState);
+        
+        int EndRegisterDriverOwner(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDriverOwnerById", ReplyAction="http://tempuri.org/IService1/GetDriverOwnerByIdResponse")]
         TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetDriverOwnerById", ReplyAction="http://tempuri.org/IService1/GetDriverOwnerByIdResponse")]
+        System.IAsyncResult BeginGetDriverOwnerById(string id, System.AsyncCallback callback, object asyncState);
+        
+        TrafficPoliceDesktopApp.ServiceReference1.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removePenalty", ReplyAction="http://tempuri.org/IService1/removePenaltyResponse")]
         int removePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/removePenalty", ReplyAction="http://tempuri.org/IService1/removePenaltyResponse")]
+        System.IAsyncResult BeginremovePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState);
+        
+        int EndremovePenalty(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1456,7 +1496,207 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetUserByIdAndPassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetUserByIdAndPassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TrafficPoliceDesktopApp.ServiceReference1.User Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TrafficPoliceDesktopApp.ServiceReference1.User)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetReadOnlyUserByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetReadOnlyUserByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TrafficPoliceDesktopApp.ServiceReference1.User Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TrafficPoliceDesktopApp.ServiceReference1.User)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InsertUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InsertUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InsertCatCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InsertCatCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RegisterDriverOwnerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public RegisterDriverOwnerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDriverOwnerByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDriverOwnerByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TrafficPoliceDesktopApp.ServiceReference1.DriverOwner Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TrafficPoliceDesktopApp.ServiceReference1.DriverOwner)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class removePenaltyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public removePenaltyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<TrafficPoliceDesktopApp.ServiceReference1.IService1>, TrafficPoliceDesktopApp.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginUpdateUserDelegate;
+        
+        private EndOperationDelegate onEndUpdateUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetUserByIdAndPassDelegate;
+        
+        private EndOperationDelegate onEndGetUserByIdAndPassDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetUserByIdAndPassCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetReadOnlyUserByIdDelegate;
+        
+        private EndOperationDelegate onEndGetReadOnlyUserByIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetReadOnlyUserByIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInsertUserDelegate;
+        
+        private EndOperationDelegate onEndInsertUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onInsertUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInsertCatDelegate;
+        
+        private EndOperationDelegate onEndInsertCatDelegate;
+        
+        private System.Threading.SendOrPostCallback onInsertCatCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterDriverOwnerDelegate;
+        
+        private EndOperationDelegate onEndRegisterDriverOwnerDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterDriverOwnerCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDriverOwnerByIdDelegate;
+        
+        private EndOperationDelegate onEndGetDriverOwnerByIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDriverOwnerByIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginremovePenaltyDelegate;
+        
+        private EndOperationDelegate onEndremovePenaltyDelegate;
+        
+        private System.Threading.SendOrPostCallback onremovePenaltyCompletedDelegate;
         
         public Service1Client() {
         }
@@ -1477,36 +1717,422 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<UpdateUserCompletedEventArgs> UpdateUserCompleted;
+        
+        public event System.EventHandler<GetUserByIdAndPassCompletedEventArgs> GetUserByIdAndPassCompleted;
+        
+        public event System.EventHandler<GetReadOnlyUserByIdCompletedEventArgs> GetReadOnlyUserByIdCompleted;
+        
+        public event System.EventHandler<InsertUserCompletedEventArgs> InsertUserCompleted;
+        
+        public event System.EventHandler<InsertCatCompletedEventArgs> InsertCatCompleted;
+        
+        public event System.EventHandler<RegisterDriverOwnerCompletedEventArgs> RegisterDriverOwnerCompleted;
+        
+        public event System.EventHandler<GetDriverOwnerByIdCompletedEventArgs> GetDriverOwnerByIdCompleted;
+        
+        public event System.EventHandler<removePenaltyCompletedEventArgs> removePenaltyCompleted;
+        
         public int UpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user) {
             return base.Channel.UpdateUser(user);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdateUser(TrafficPoliceDesktopApp.ServiceReference1.User user, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateUser(user, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndUpdateUser(System.IAsyncResult result) {
+            return base.Channel.EndUpdateUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPoliceDesktopApp.ServiceReference1.User user = ((TrafficPoliceDesktopApp.ServiceReference1.User)(inValues[0]));
+            return this.BeginUpdateUser(user, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateUser(System.IAsyncResult result) {
+            int retVal = this.EndUpdateUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateUserCompleted(object state) {
+            if ((this.UpdateUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateUserCompleted(this, new UpdateUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateUserAsync(TrafficPoliceDesktopApp.ServiceReference1.User user) {
+            this.UpdateUserAsync(user, null);
+        }
+        
+        public void UpdateUserAsync(TrafficPoliceDesktopApp.ServiceReference1.User user, object userState) {
+            if ((this.onBeginUpdateUserDelegate == null)) {
+                this.onBeginUpdateUserDelegate = new BeginOperationDelegate(this.OnBeginUpdateUser);
+            }
+            if ((this.onEndUpdateUserDelegate == null)) {
+                this.onEndUpdateUserDelegate = new EndOperationDelegate(this.OnEndUpdateUser);
+            }
+            if ((this.onUpdateUserCompletedDelegate == null)) {
+                this.onUpdateUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateUserDelegate, new object[] {
+                        user}, this.onEndUpdateUserDelegate, this.onUpdateUserCompletedDelegate, userState);
         }
         
         public TrafficPoliceDesktopApp.ServiceReference1.User GetUserByIdAndPass(string id, string password) {
             return base.Channel.GetUserByIdAndPass(id, password);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetUserByIdAndPass(string id, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetUserByIdAndPass(id, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TrafficPoliceDesktopApp.ServiceReference1.User EndGetUserByIdAndPass(System.IAsyncResult result) {
+            return base.Channel.EndGetUserByIdAndPass(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetUserByIdAndPass(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string id = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginGetUserByIdAndPass(id, password, callback, asyncState);
+        }
+        
+        private object[] OnEndGetUserByIdAndPass(System.IAsyncResult result) {
+            TrafficPoliceDesktopApp.ServiceReference1.User retVal = this.EndGetUserByIdAndPass(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetUserByIdAndPassCompleted(object state) {
+            if ((this.GetUserByIdAndPassCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetUserByIdAndPassCompleted(this, new GetUserByIdAndPassCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetUserByIdAndPassAsync(string id, string password) {
+            this.GetUserByIdAndPassAsync(id, password, null);
+        }
+        
+        public void GetUserByIdAndPassAsync(string id, string password, object userState) {
+            if ((this.onBeginGetUserByIdAndPassDelegate == null)) {
+                this.onBeginGetUserByIdAndPassDelegate = new BeginOperationDelegate(this.OnBeginGetUserByIdAndPass);
+            }
+            if ((this.onEndGetUserByIdAndPassDelegate == null)) {
+                this.onEndGetUserByIdAndPassDelegate = new EndOperationDelegate(this.OnEndGetUserByIdAndPass);
+            }
+            if ((this.onGetUserByIdAndPassCompletedDelegate == null)) {
+                this.onGetUserByIdAndPassCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUserByIdAndPassCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetUserByIdAndPassDelegate, new object[] {
+                        id,
+                        password}, this.onEndGetUserByIdAndPassDelegate, this.onGetUserByIdAndPassCompletedDelegate, userState);
+        }
+        
         public TrafficPoliceDesktopApp.ServiceReference1.User GetReadOnlyUserById(string id) {
             return base.Channel.GetReadOnlyUserById(id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetReadOnlyUserById(string id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetReadOnlyUserById(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TrafficPoliceDesktopApp.ServiceReference1.User EndGetReadOnlyUserById(System.IAsyncResult result) {
+            return base.Channel.EndGetReadOnlyUserById(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetReadOnlyUserById(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string id = ((string)(inValues[0]));
+            return this.BeginGetReadOnlyUserById(id, callback, asyncState);
+        }
+        
+        private object[] OnEndGetReadOnlyUserById(System.IAsyncResult result) {
+            TrafficPoliceDesktopApp.ServiceReference1.User retVal = this.EndGetReadOnlyUserById(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetReadOnlyUserByIdCompleted(object state) {
+            if ((this.GetReadOnlyUserByIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetReadOnlyUserByIdCompleted(this, new GetReadOnlyUserByIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetReadOnlyUserByIdAsync(string id) {
+            this.GetReadOnlyUserByIdAsync(id, null);
+        }
+        
+        public void GetReadOnlyUserByIdAsync(string id, object userState) {
+            if ((this.onBeginGetReadOnlyUserByIdDelegate == null)) {
+                this.onBeginGetReadOnlyUserByIdDelegate = new BeginOperationDelegate(this.OnBeginGetReadOnlyUserById);
+            }
+            if ((this.onEndGetReadOnlyUserByIdDelegate == null)) {
+                this.onEndGetReadOnlyUserByIdDelegate = new EndOperationDelegate(this.OnEndGetReadOnlyUserById);
+            }
+            if ((this.onGetReadOnlyUserByIdCompletedDelegate == null)) {
+                this.onGetReadOnlyUserByIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetReadOnlyUserByIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetReadOnlyUserByIdDelegate, new object[] {
+                        id}, this.onEndGetReadOnlyUserByIdDelegate, this.onGetReadOnlyUserByIdCompletedDelegate, userState);
         }
         
         public int InsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr) {
             return base.Channel.InsertUser(usr);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInsertUser(TrafficPoliceDesktopApp.ServiceReference1.User usr, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInsertUser(usr, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndInsertUser(System.IAsyncResult result) {
+            return base.Channel.EndInsertUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginInsertUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPoliceDesktopApp.ServiceReference1.User usr = ((TrafficPoliceDesktopApp.ServiceReference1.User)(inValues[0]));
+            return this.BeginInsertUser(usr, callback, asyncState);
+        }
+        
+        private object[] OnEndInsertUser(System.IAsyncResult result) {
+            int retVal = this.EndInsertUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInsertUserCompleted(object state) {
+            if ((this.InsertUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InsertUserCompleted(this, new InsertUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InsertUserAsync(TrafficPoliceDesktopApp.ServiceReference1.User usr) {
+            this.InsertUserAsync(usr, null);
+        }
+        
+        public void InsertUserAsync(TrafficPoliceDesktopApp.ServiceReference1.User usr, object userState) {
+            if ((this.onBeginInsertUserDelegate == null)) {
+                this.onBeginInsertUserDelegate = new BeginOperationDelegate(this.OnBeginInsertUser);
+            }
+            if ((this.onEndInsertUserDelegate == null)) {
+                this.onEndInsertUserDelegate = new EndOperationDelegate(this.OnEndInsertUser);
+            }
+            if ((this.onInsertUserCompletedDelegate == null)) {
+                this.onInsertUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInsertUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginInsertUserDelegate, new object[] {
+                        usr}, this.onEndInsertUserDelegate, this.onInsertUserCompletedDelegate, userState);
+        }
+        
         public int InsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ) {
             return base.Channel.InsertCat(categ);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInsertCat(TrafficPoliceDesktopApp.ServiceReference1.Categories categ, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInsertCat(categ, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndInsertCat(System.IAsyncResult result) {
+            return base.Channel.EndInsertCat(result);
+        }
+        
+        private System.IAsyncResult OnBeginInsertCat(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPoliceDesktopApp.ServiceReference1.Categories categ = ((TrafficPoliceDesktopApp.ServiceReference1.Categories)(inValues[0]));
+            return this.BeginInsertCat(categ, callback, asyncState);
+        }
+        
+        private object[] OnEndInsertCat(System.IAsyncResult result) {
+            int retVal = this.EndInsertCat(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInsertCatCompleted(object state) {
+            if ((this.InsertCatCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InsertCatCompleted(this, new InsertCatCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InsertCatAsync(TrafficPoliceDesktopApp.ServiceReference1.Categories categ) {
+            this.InsertCatAsync(categ, null);
+        }
+        
+        public void InsertCatAsync(TrafficPoliceDesktopApp.ServiceReference1.Categories categ, object userState) {
+            if ((this.onBeginInsertCatDelegate == null)) {
+                this.onBeginInsertCatDelegate = new BeginOperationDelegate(this.OnBeginInsertCat);
+            }
+            if ((this.onEndInsertCatDelegate == null)) {
+                this.onEndInsertCatDelegate = new EndOperationDelegate(this.OnEndInsertCat);
+            }
+            if ((this.onInsertCatCompletedDelegate == null)) {
+                this.onInsertCatCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInsertCatCompleted);
+            }
+            base.InvokeAsync(this.onBeginInsertCatDelegate, new object[] {
+                        categ}, this.onEndInsertCatDelegate, this.onInsertCatCompletedDelegate, userState);
         }
         
         public int RegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
             return base.Channel.RegisterDriverOwner(drOwner);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterDriverOwner(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterDriverOwner(drOwner, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndRegisterDriverOwner(System.IAsyncResult result) {
+            return base.Channel.EndRegisterDriverOwner(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterDriverOwner(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner = ((TrafficPoliceDesktopApp.ServiceReference1.DriverOwner)(inValues[0]));
+            return this.BeginRegisterDriverOwner(drOwner, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterDriverOwner(System.IAsyncResult result) {
+            int retVal = this.EndRegisterDriverOwner(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnRegisterDriverOwnerCompleted(object state) {
+            if ((this.RegisterDriverOwnerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterDriverOwnerCompleted(this, new RegisterDriverOwnerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterDriverOwnerAsync(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner) {
+            this.RegisterDriverOwnerAsync(drOwner, null);
+        }
+        
+        public void RegisterDriverOwnerAsync(TrafficPoliceDesktopApp.ServiceReference1.DriverOwner drOwner, object userState) {
+            if ((this.onBeginRegisterDriverOwnerDelegate == null)) {
+                this.onBeginRegisterDriverOwnerDelegate = new BeginOperationDelegate(this.OnBeginRegisterDriverOwner);
+            }
+            if ((this.onEndRegisterDriverOwnerDelegate == null)) {
+                this.onEndRegisterDriverOwnerDelegate = new EndOperationDelegate(this.OnEndRegisterDriverOwner);
+            }
+            if ((this.onRegisterDriverOwnerCompletedDelegate == null)) {
+                this.onRegisterDriverOwnerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterDriverOwnerCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterDriverOwnerDelegate, new object[] {
+                        drOwner}, this.onEndRegisterDriverOwnerDelegate, this.onRegisterDriverOwnerCompletedDelegate, userState);
+        }
+        
         public TrafficPoliceDesktopApp.ServiceReference1.DriverOwner GetDriverOwnerById(string id) {
             return base.Channel.GetDriverOwnerById(id);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDriverOwnerById(string id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDriverOwnerById(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TrafficPoliceDesktopApp.ServiceReference1.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result) {
+            return base.Channel.EndGetDriverOwnerById(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDriverOwnerById(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string id = ((string)(inValues[0]));
+            return this.BeginGetDriverOwnerById(id, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDriverOwnerById(System.IAsyncResult result) {
+            TrafficPoliceDesktopApp.ServiceReference1.DriverOwner retVal = this.EndGetDriverOwnerById(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDriverOwnerByIdCompleted(object state) {
+            if ((this.GetDriverOwnerByIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDriverOwnerByIdCompleted(this, new GetDriverOwnerByIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDriverOwnerByIdAsync(string id) {
+            this.GetDriverOwnerByIdAsync(id, null);
+        }
+        
+        public void GetDriverOwnerByIdAsync(string id, object userState) {
+            if ((this.onBeginGetDriverOwnerByIdDelegate == null)) {
+                this.onBeginGetDriverOwnerByIdDelegate = new BeginOperationDelegate(this.OnBeginGetDriverOwnerById);
+            }
+            if ((this.onEndGetDriverOwnerByIdDelegate == null)) {
+                this.onEndGetDriverOwnerByIdDelegate = new EndOperationDelegate(this.OnEndGetDriverOwnerById);
+            }
+            if ((this.onGetDriverOwnerByIdCompletedDelegate == null)) {
+                this.onGetDriverOwnerByIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDriverOwnerByIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDriverOwnerByIdDelegate, new object[] {
+                        id}, this.onEndGetDriverOwnerByIdDelegate, this.onGetDriverOwnerByIdCompletedDelegate, userState);
+        }
+        
         public int removePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen) {
             return base.Channel.removePenalty(pen);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginremovePenalty(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginremovePenalty(pen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndremovePenalty(System.IAsyncResult result) {
+            return base.Channel.EndremovePenalty(result);
+        }
+        
+        private System.IAsyncResult OnBeginremovePenalty(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPoliceDesktopApp.ServiceReference1.Penalty pen = ((TrafficPoliceDesktopApp.ServiceReference1.Penalty)(inValues[0]));
+            return this.BeginremovePenalty(pen, callback, asyncState);
+        }
+        
+        private object[] OnEndremovePenalty(System.IAsyncResult result) {
+            int retVal = this.EndremovePenalty(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnremovePenaltyCompleted(object state) {
+            if ((this.removePenaltyCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.removePenaltyCompleted(this, new removePenaltyCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void removePenaltyAsync(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen) {
+            this.removePenaltyAsync(pen, null);
+        }
+        
+        public void removePenaltyAsync(TrafficPoliceDesktopApp.ServiceReference1.Penalty pen, object userState) {
+            if ((this.onBeginremovePenaltyDelegate == null)) {
+                this.onBeginremovePenaltyDelegate = new BeginOperationDelegate(this.OnBeginremovePenalty);
+            }
+            if ((this.onEndremovePenaltyDelegate == null)) {
+                this.onEndremovePenaltyDelegate = new EndOperationDelegate(this.OnEndremovePenalty);
+            }
+            if ((this.onremovePenaltyCompletedDelegate == null)) {
+                this.onremovePenaltyCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnremovePenaltyCompleted);
+            }
+            base.InvokeAsync(this.onBeginremovePenaltyDelegate, new object[] {
+                        pen}, this.onEndremovePenaltyDelegate, this.onremovePenaltyCompletedDelegate, userState);
         }
     }
 }
