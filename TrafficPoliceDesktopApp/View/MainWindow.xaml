@@ -53,8 +53,9 @@
 
                 </Grid>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
+            <Controls:MetroTabItem Name="addRegistration" Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
                 <Grid Margin="224,-38,671,-3">
+                    <View:AddRegistrationView x:Name="viewAddRegistration"/>
 
                 </Grid>
             </Controls:MetroTabItem>
