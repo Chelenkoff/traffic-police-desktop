@@ -22,10 +22,10 @@
         <GroupBox Header="Търси служител" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
             <Grid>
                 <Label Content="ЕГН:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="98,82,0,0" VerticalAlignment="Top" Width="247" Foreground="#CC119EDA" FontSize="25"/>
-                <TextBox x:Name="txtBoxId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="49" Margin="98,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" FontSize="18" IsEnabled="True"/>
+                <TextBox x:Name="txtBoxId" Text="{Binding UserId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="49" Margin="98,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" FontSize="18" IsEnabled="True"/>
 
-                <Button x:Name="btnSearch" Content="Търси"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="170,196,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Click="btnSearch_Click"  />
-                <Controls:ProgressRing x:Name="progressRingLoading" Margin="194,255,195,61" Height="50" Width="50" IsActive="False" />
+                <Button x:Name="btnSearch" Content="Търси"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="170,196,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding SearchUserCommand}"  />
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="194,255,195,61" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
                 
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" TextWrapping="Wrap" Text="Всяка заявки ще бъде показвана в отделен прозорец, за да може обработката на заявките да се осъществява паралелно."  Height="44" Width="419" Foreground="#FFFF2C2C" FontSize="14" FontStyle="Italic"/>
             </Grid>

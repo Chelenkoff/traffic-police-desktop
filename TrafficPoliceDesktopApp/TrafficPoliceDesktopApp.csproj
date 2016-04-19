@@ -37,8 +37,7 @@
     <ApplicationIcon>kat.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>TrafficPoliceDesktopApp.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ceTe.DynamicPDF.40">
@@ -99,6 +98,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="DispatchService.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="MyProfileViewModel.cs" />
+    <Compile Include="NewUserViewModel.cs" />
+    <Compile Include="PasswordHelper.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +113,11 @@
     <Compile Include="Utilities\ControlsIterator.cs" />
     <Compile Include="Utilities\DateParser.cs" />
     <Compile Include="Utilities\InputValidator.cs" />
+    <Compile Include="ViewModel\SearchDriverOwnerPersonalDataSubViewViewModel.cs" />
+    <Compile Include="ViewModel\SearchDriverOwnerViewViewModel.cs" />
+    <Compile Include="ViewModel\SearchDriverOwnerWindowViewModel.cs" />
+    <Compile Include="ViewModel\SearchUserViewViewModel.cs" />
+    <Compile Include="ViewModel\SearchUserWindowViewModel.cs" />
     <Compile Include="View\AddDriverOwnerView.xaml.cs">
       <DependentUpon>AddDriverOwnerView.xaml</DependentUpon>
     </Compile>

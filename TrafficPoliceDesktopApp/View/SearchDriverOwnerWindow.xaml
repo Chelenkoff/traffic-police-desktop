@@ -3,10 +3,10 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:View="clr-namespace:TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews"
-                      Title="SearchDriverOwnerWindow"
+                      Title="{Binding Title}"
                       Height="600" Width="500"
                       ResizeMode="CanMinimize"     
-                         GlowBrush="{DynamicResource AccentColorBrush}" Loaded="MetroWindow_Loaded">
+                         GlowBrush="{DynamicResource AccentColorBrush}" >
 
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
@@ -19,17 +19,17 @@
     </Controls:MetroWindow.Resources>
     
     <Grid>
-        <TabControl Name="tabControl" SelectionChanged="tabControl_SelectionChanged"  >
+        <TabControl Name="tabControl" >
             <Controls:MetroTabItem Name="driverOwnerPersonalDataTabItem" Header="Лични данни" Controls:ControlsHelper.HeaderFontSize="20" >
-                <View:SearchDriverOwnerPersonalDataSubView x:Name="searchDriverOwnerPersonalDataSubView"></View:SearchDriverOwnerPersonalDataSubView>
+                <View:SearchDriverOwnerPersonalDataSubView DataContext="{Binding SearchDriverOwnerPersonalDataSubViewViewModel}" x:Name="searchDriverOwnerPersonalDataSubView"></View:SearchDriverOwnerPersonalDataSubView>
             </Controls:MetroTabItem>
             
             <Controls:MetroTabItem Name="driverOwnerLicenceDataTabItem" Header="Шофьорска книжка" Controls:ControlsHelper.HeaderFontSize="20"  >
-                <View:SearchDriverOwnerLicenceDataSubView x:Name="searchDriverOwnerLicenceDataSubView"></View:SearchDriverOwnerLicenceDataSubView>
+                <!--<View:SearchDriverOwnerLicenceDataSubView x:Name="searchDriverOwnerLicenceDataSubView"></View:SearchDriverOwnerLicenceDataSubView>-->
             </Controls:MetroTabItem>
             
             <Controls:MetroTabItem x:Name="driverOwnerPenaltiesDataTabItem" Header="Нарушения" Controls:ControlsHelper.HeaderFontSize="20"  >
-                <View:SearchDriverOwnerPenaltyDataSubView x:Name="searchDriverOwnerPenaltyDataSubView"></View:SearchDriverOwnerPenaltyDataSubView>
+                <!--<View:SearchDriverOwnerPenaltyDataSubView x:Name="searchDriverOwnerPenaltyDataSubView"></View:SearchDriverOwnerPenaltyDataSubView>-->
             </Controls:MetroTabItem>
 
 

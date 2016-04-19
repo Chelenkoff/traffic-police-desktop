@@ -21,63 +21,12 @@ namespace TrafficPoliceDesktopApp.View
     /// </summary>
     public partial class SearchDriverOwnerWindow : MetroWindow
     {
-        public DriverOwner DriverOwner { get; set; }
-        public Service1Client ServiceReference { get; set; }
-        public SearchDriverOwnerWindow(DriverOwner drOwner, Service1Client serviceRef)
+
+
+        public SearchDriverOwnerWindow()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            DriverOwner = drOwner;
-            ServiceReference = serviceRef;
-
-            this.Title = String.Format("{0} {1} - Справка за водач", DriverOwner.FirstName, DriverOwner.LastName);
         }
-
-
-
-
-        private void MetroTabControl_TabItemClosingEvent(object sender, BaseMetroTabControl.TabItemClosingEventArgs e)
-        {
-            if (e.ClosingTabItem.Header.ToString().StartsWith("sizes"))
-                e.Cancel = true;
-        }
-
-        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(driverOwnerPersonalDataTabItem.IsSelected)
-            {
-
-                return;
-            }
-            if(driverOwnerLicenceDataTabItem.IsSelected)
-            {
-
-                
-                return;
-            }
-            if(driverOwnerPenaltiesDataTabItem.IsSelected)
-            {
-                if(!searchDriverOwnerPenaltyDataSubView.arePenaltiesAvailable())
-                {
-                    tabControl.SelectedItem = driverOwnerPersonalDataTabItem;
-                }
-                return;
-            }
-
-        }
-
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            //Initializing Personal Data tab
-            searchDriverOwnerPersonalDataSubView.initDriverOwnerPersonalData(DriverOwner);
-
-            //Initializing Licence Data tab
-            searchDriverOwnerLicenceDataSubView.initDriverOwnerLicenceData(DriverOwner);
-
-            //Initializing Penalty Data tab
-            searchDriverOwnerPenaltyDataSubView.initDriverOwnerPenaltyData(this);
-        }
-
 
 
 

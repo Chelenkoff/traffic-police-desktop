@@ -3,11 +3,16 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:View="clr-namespace:TrafficPoliceDesktopApp.View"
+                      xmlns:local ="clr-namespace:TrafficPoliceDesktopApp"
                     
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
                      GlowBrush="{DynamicResource AccentColorBrush}"
                      WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Closing="MetroWindow_Closing" IsVisibleChanged="MetroWindow_IsVisibleChanged"  >
+
+
+
+
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -21,7 +26,7 @@
     <!--Window Top Right Menu Items-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Label x:Name="lblLoggedUserName" Foreground="#FFFFEFEF"  />
+            <Label x:Name="lblLoggedUserName" Content="{Binding LoggedUserName}"  Foreground="#FFFFEFEF"  />
             <Button x:Name="btnLogout" Click="btnLogout_Click">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0 0 4 0"
@@ -41,21 +46,22 @@
     </Controls:MetroWindow.RightWindowCommands>
 
 
+    
     <Grid >
 
 
 
-        <TabControl Name="tabControl" Margin="0,0,-674,0" SelectionChanged="TabControl_SelectionChanged"  >
+        <TabControl Name="tabControl" Margin="0,0,-674,0"  >
 
-            <Controls:MetroTabItem Name="myProfileTabItem" Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
+            <Controls:MetroTabItem Name="myProfileTabItem"  Header="Моят профил" Controls:ControlsHelper.HeaderFontSize="20" Margin="0,0,5,0" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:MyProfileView x:Name="viewMyProfile"/>
+                    <View:MyProfileView DataContext="{Binding MyProfileViewModel}" x:Name="viewMyProfile" />
 
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Name="addRegistration" Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:AddRegistrationView x:Name="viewAddRegistration"/>
+                    <!--<View:AddRegistrationView x:Name="viewAddRegistration"/>-->
 
                 </Grid>
             </Controls:MetroTabItem>
@@ -66,22 +72,22 @@
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Name="addDriverOwnerTabItem" Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:AddDriverOwnerView x:Name="viewAddDriverOwner"/>
+                    <!--<View:AddDriverOwnerView x:Name="viewAddDriverOwner"/>-->
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem x:Name="searchDriverOwnerTabItem"  Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:SearchDriverOwnerView x:Name="viewSearchDriverOwner"/>
+                    <View:SearchDriverOwnerView x:Name="viewSearchDriverOwner" DataContext="{Binding SearchDriverOwnerViewViewModel}"/>
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem x:Name="newUserTabItem" Header="Нов служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-885,347,890,-347" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:NewUserView x:Name="viewNewUser"/>
+                    <View:NewUserView x:Name="viewNewUser" DataContext="{Binding NewUserViewModel}"/>
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem x:Name="searchUserTabItem" Header="Търси служител" Controls:ControlsHelper.HeaderFontSize="22" Margin="-1035,388,1040,-388" >
                 <Grid Margin="224,-38,671,-3">
-                    <View:SearchUserView x:Name="viewSearchUser"/>
+                    <View:SearchUserView x:Name="viewSearchUser" DataContext="{Binding SearchUserViewViewModel}"/>
                 </Grid>
             </Controls:MetroTabItem>
 

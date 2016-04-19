@@ -21,22 +21,10 @@ namespace TrafficPoliceDesktopApp.View
     /// 
     public partial class SearchUserWindow : MetroWindow
     {
-        public User User { get; set; }
-        public SearchUserWindow(User usr)
+        public SearchUserWindow()
         {
             InitializeComponent();
-            User = usr;
-            this.Title = String.Format("{0} {1} - Справка за служител", User.FirstName, User.LastName);
-            populateFields();
-        }
 
-        void populateFields()
-        {
-            lblFirstName.Content = User.FirstName;
-            lblSecondName.Content = User.SecondName;
-            lblLastName.Content = User.LastName;
-            lblId.Content = User.UserId;
-            checkBoxIsTrafficPoliceman.IsChecked = User.IsTrafficPoliceman;
         }
     }
 }

@@ -30,15 +30,13 @@ namespace TrafficPoliceDesktopApp
 
         public User User { get; set; }
 
-        public MainWindow(User usr)
+
+        
+        public MainWindow()
         {
-            Service = new Service1Client();
+
             InitializeComponent();
-            
-            User = usr;
-            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
-
-
+           
         }
         
         
@@ -59,7 +57,7 @@ namespace TrafficPoliceDesktopApp
         {
             
             
-            LoginWindow.Show();
+            //LoginWindow.Show();
             this.Hide();
            
         }
@@ -72,53 +70,52 @@ namespace TrafficPoliceDesktopApp
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (myProfileTabItem.IsSelected == true)
-            {
-                viewMyProfile.ParentWindow = this;
-                return;
+            //if (myProfileTabItem.IsSelected == true)
+            //{
+            //    //viewMyProfile.ParentWindow = this;
+            //    return;
                 
-            }
-            if (newUserTabItem.IsSelected == true)
-            {
-                viewNewUser.ParentWindow = this;
-                return;
-            }
-            if (searchUserTabItem.IsSelected == true)
-            {
-                viewSearchUser.ParentWindow = this;
-                return;
-            }
-            if(addDriverOwnerTabItem.IsSelected == true)
-            {
-                viewAddDriverOwner.ParentWindow = this;
-                return;
-            }
-            if(searchDriverOwnerTabItem.IsSelected == true)
-            {
-                viewSearchDriverOwner.ParentWindow = this;
-                return;
-            }
+            //}
+            //if (newUserTabItem.IsSelected == true)
+            //{
+            //    viewNewUser.ParentWindow = this;
+            //    return;
+            //}
+            //if (searchUserTabItem.IsSelected == true)
+            //{
+            //    viewSearchUser.ParentWindow = this;
+            //    return;
+            //}
+            //if(addDriverOwnerTabItem.IsSelected == true)
+            //{
+            //    viewAddDriverOwner.ParentWindow = this;
+            //    return;
+            //}
+            //if(searchDriverOwnerTabItem.IsSelected == true)
+            //{
+            //    viewSearchDriverOwner.ParentWindow = this;
+            //    return;
+            //}
             
 
         }
 
         public void updateLoggedUsername()
         {
-            lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
+            //lblLoggedUserName.Content = String.Format("{0} {1}", User.FirstName, User.LastName);
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Service.Close();
             Environment.Exit(0);
         }
 
         private void MetroWindow_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (this.Visibility == Visibility.Visible)
-            {
-                Dispatcher.BeginInvoke((Action)(() => tabControl.SelectedItem = myProfileTabItem));
-            }
+            //if (this.Visibility == Visibility.Visible)
+            //{
+            //    Dispatcher.BeginInvoke((Action)(() => tabControl.SelectedItem = myProfileTabItem));
+            //}
         }
 
 

@@ -39,7 +39,7 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
             
             //Setting parent
             ParentWindow = parent;
-            lblViewMessage.Content = String.Format("Нарушения на {0} {1}", ParentWindow.DriverOwner.FirstName, ParentWindow.DriverOwner.LastName);
+            //lblViewMessage.Content = String.Format("Нарушения на {0} {1}", ParentWindow.DriverOwner.FirstName, ParentWindow.DriverOwner.LastName);
         }
 
         private void dataGridPenalties_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -48,8 +48,8 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
 
             if((Penalty)dataGridPenalties.SelectedItem != null)
             {
-                PenaltyDetailsWindow penDetailsWindow = new PenaltyDetailsWindow((Penalty)dataGridPenalties.SelectedItem,ParentWindow.DriverOwner,ParentWindow.ServiceReference);
-                penDetailsWindow.Show();
+                //PenaltyDetailsWindow penDetailsWindow = new PenaltyDetailsWindow((Penalty)dataGridPenalties.SelectedItem,ParentWindow.DriverOwner,ParentWindow.ServiceReference);
+                //penDetailsWindow.Show();
             }
         }
 
@@ -66,7 +66,7 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
                 this.Dispatcher.Invoke((Action)(() => startLoading()));
 
 
-                checkResponse = ParentWindow.ServiceReference.removePenalty(penToRemove);
+                //checkResponse = ParentWindow.ServiceReference.removePenalty(penToRemove);
 
                 // invoke user code on the main UI thread
                 Dispatcher.Invoke(new Action(() =>
@@ -74,46 +74,46 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
                     //stopLoading logic
                     this.Dispatcher.Invoke((Action)(() => stopLoading()));
 
-                    switch (checkResponse)
-                    {
-                        case 1:
-                            ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
-                            break;
-                        case 2:
-                            ParentWindow.ShowMessageAsync("Внимание", "Неуспешно премахване на нарушение", MessageDialogStyle.Affirmative);
-                            break;
-                        case 0:
-                            //Removing penalty from parent 
-                            ParentWindow.DriverOwner.Penalties = ParentWindow.DriverOwner.Penalties.Where(val => val != penToRemove).ToArray();
-                            //Clearing penalty from table
-                            PenaltiesList.Remove(penToRemove);
+                    //switch (checkResponse)
+                    //{
+                    //    case 1:
+                    //        ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
+                    //        break;
+                    //    case 2:
+                    //        ParentWindow.ShowMessageAsync("Внимание", "Неуспешно премахване на нарушение", MessageDialogStyle.Affirmative);
+                    //        break;
+                    //    case 0:
+                    //        //Removing penalty from parent 
+                    //        //ParentWindow.DriverOwner.Penalties = ParentWindow.DriverOwner.Penalties.Where(val => val != penToRemove).ToArray();
+                    //        //Clearing penalty from table
+                    //        PenaltiesList.Remove(penToRemove);
 
-                            ParentWindow.ShowMessageAsync("Внимание", "Нарушението бе успешно премахнато", MessageDialogStyle.Affirmative);
+                    //        ParentWindow.ShowMessageAsync("Внимание", "Нарушението бе успешно премахнато", MessageDialogStyle.Affirmative);
 
-                            break;
+                    //        break;
 
-                    }
+                    //}
 
                 }));
             });
             
         }
 
-        public bool arePenaltiesAvailable()
-        {
-            if (ParentWindow.DriverOwner.Penalties.Length == 0)
-            {
-                ParentWindow.ShowMessageAsync("Внимание", "Водачът няма актуални нарушения", MessageDialogStyle.Affirmative);
-                return false;
-            }
-            else
-            {   //Penalties are available
-                PenaltiesList = new ObservableCollection<Penalty>(ParentWindow.DriverOwner.Penalties);
-                //Set DataGrid items source 
-                dataGridPenalties.ItemsSource = PenaltiesList;
-                return true;
-            }
-        }
+        //public bool arePenaltiesAvailable()
+        //{
+        //    if (ParentWindow.DriverOwner.Penalties.Length == 0)
+        //    {
+        //        ParentWindow.ShowMessageAsync("Внимание", "Водачът няма актуални нарушения", MessageDialogStyle.Affirmative);
+        //        return false;
+        //    }
+        //    else
+        //    {   //Penalties are available
+        //        PenaltiesList = new ObservableCollection<Penalty>(ParentWindow.DriverOwner.Penalties);
+        //        //Set DataGrid items source 
+        //        dataGridPenalties.ItemsSource = PenaltiesList;
+        //        return true;
+        //    }
+        //}
 
         private void startLoading()
         {

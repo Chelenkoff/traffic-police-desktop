@@ -21,58 +21,11 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
     /// </summary>
     public partial class SearchDriverOwnerPersonalDataSubView : UserControl
     {
-        public DriverOwner DriverOwner { get; set; }
         public SearchDriverOwnerPersonalDataSubView()
         {
             InitializeComponent();
-            comboBoxCountries.ItemsSource = getCountryList();
-        }
-
-
-
-
-        public void initDriverOwnerPersonalData(DriverOwner drOwner)
-        {
-            DriverOwner = drOwner;
-
-
-            lblViewMessage.Content = String.Format("Лични данни на {0} {1}", DriverOwner.FirstName, DriverOwner.LastName);
-
-
-            txtBoxId.Text = DriverOwner.DriverOwnerId.ToString();
-            txtBoxFirstName.Text = DriverOwner.FirstName;
-            txtBoxSecondName.Text = DriverOwner.SecondName;
-            txtBoxLastName.Text = DriverOwner.LastName;
-            comboBoxCountries.SelectedItem = DriverOwner.Nationality;
-
-            radioBtnMan.IsChecked = (DriverOwner.Sex == Sex.Man) ? true : false;
-            radioBtnWoman.IsChecked = (DriverOwner.Sex == Sex.Woman) ? true : false;
-
-            datePickerBirthDate.SelectedDate = DriverOwner.BirthDate;
-            txtBoxBirthPlace.Text = DriverOwner.BirthPlace;
-            txtBoxResidence.Text = DriverOwner.Residence;
-            
-            
-        }
-
-
-
-        public List<string> getCountryList()
-        {
-            List<string> LogList = new List<string>();
-            try
-            {
-                var logFile = File.ReadAllLines(@"Resources\Textfiles\CountryListCyrillic.txt");
-                LogList = new List<string>(logFile);
-            }
-            catch
-            {
-                MessageBox.Show("File does not exist!");
-            }
-
-
-            return LogList;
 
         }
+
     }
 }
