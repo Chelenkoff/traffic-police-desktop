@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
@@ -74,7 +75,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
 
             if (idValidation != null)
             {
-                System.Windows.MessageBox.Show(idValidation, "Грешка в ЕГН");
+                MessageBox.Show(idValidation, "Невалидно ЕГН", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                 return false;
             }
@@ -88,7 +89,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
             //DB-OK , USER - NOT FOUND
             if (usr != null && usr.UserId == 0)
             {
-                System.Windows.MessageBox.Show("Не съществува служител с тези данни!", "Грешка");
+               MessageBox.Show("Не съществува служител с тези данни!", "Грешка", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 return false;
             }
@@ -96,7 +97,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
             //DB - NOT CONNECTED
             else if (usr == null)
             {
-                System.Windows.MessageBox.Show("Проблем с връзката с базата данни.", "Грешка");
+                MessageBox.Show("Проблем с връзката с базата данни.", "Грешка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             else return true;

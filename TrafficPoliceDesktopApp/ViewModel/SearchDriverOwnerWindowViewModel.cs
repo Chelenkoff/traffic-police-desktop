@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using TrafficPoliceDesktopApp.ServiceReference1;
+using TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs;
 
 namespace TrafficPoliceDesktopApp.ViewModel
 {
@@ -21,6 +22,8 @@ namespace TrafficPoliceDesktopApp.ViewModel
 
             //Declaring VM's of tabs
             _searchDriverOwnerPersonalDataSubViewViewModel = new SearchDriverOwnerPersonalDataSubViewViewModel(_driverOwner);
+            _searchDriverOwnerLicenceDataSubViewViewModel = new SearchDriverOwnerLicenceDataSubViewViewModel(_driverOwner);
+            _searchDriverOwnerPenaltyDataSubViewViewModel = new SearchDriverOwnerPenaltyDataSubViewViewModel(_driverOwner);
         }
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)
@@ -55,6 +58,30 @@ namespace TrafficPoliceDesktopApp.ViewModel
             {
                 _searchDriverOwnerPersonalDataSubViewViewModel = value;
                 RaisePropertyChangedEvent("SearchDriverOwnerPersonalDataSubViewViewModel");
+            }
+        }
+
+        //Get/Set SearchDriverOwnerPenaltyDataSubViewViewModel
+        private SearchDriverOwnerPenaltyDataSubViewViewModel _searchDriverOwnerPenaltyDataSubViewViewModel;
+        public SearchDriverOwnerPenaltyDataSubViewViewModel SearchDriverOwnerPenaltyDataSubViewViewModel
+        {
+            private get { return _searchDriverOwnerPenaltyDataSubViewViewModel; }
+            set
+            {
+                _searchDriverOwnerPenaltyDataSubViewViewModel = value;
+                RaisePropertyChangedEvent("SearchDriverOwnerPenaltyDataSubViewViewModel");
+            }
+        }
+
+        //Get/Set SearchDriverOwnerLicenceDataSubViewViewModel
+        private SearchDriverOwnerLicenceDataSubViewViewModel _searchDriverOwnerLicenceDataSubViewViewModel;
+        public SearchDriverOwnerLicenceDataSubViewViewModel SearchDriverOwnerLicenceDataSubViewViewModel
+        {
+            private get { return _searchDriverOwnerLicenceDataSubViewViewModel; }
+            set
+            {
+                _searchDriverOwnerLicenceDataSubViewViewModel = value;
+                RaisePropertyChangedEvent("SearchDriverOwnerLicenceDataSubViewViewModel");
             }
         }
 

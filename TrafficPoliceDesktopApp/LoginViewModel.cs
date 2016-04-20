@@ -11,7 +11,7 @@ using TrafficPoliceDesktopApp.ServiceReference1;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Controls;
 using System.Windows.Controls;
-
+using System.Windows;
 
 namespace TrafficPoliceDesktopApp
 {
@@ -124,19 +124,19 @@ namespace TrafficPoliceDesktopApp
             //Null or whitespaces
             if (String.IsNullOrWhiteSpace(pass) || String.IsNullOrWhiteSpace(id))
             {
-                System.Windows.MessageBox.Show("Не са въведени необходимите данни!", "Внимание");
+                MessageBox.Show("Не са въведени необходимите данни!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
             //Digit check
             else if (!id.All(char.IsDigit))
             {
-                System.Windows.MessageBox.Show("Некоректен формат на ЕГН! \nМоже да съдържа само цифри!", "Внимание");
+               MessageBox.Show("Некоректен формат на ЕГН! \nМоже да съдържа само цифри!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
             //Id length check
             else if (id.Length != MAX_ID_LENGTH)
             {
-                System.Windows.MessageBox.Show("ЕГН трябва да съдържа точно 10 цифри!", "Внимание");
+                MessageBox.Show("ЕГН трябва да съдържа точно 10 цифри!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
             else return true;
@@ -147,14 +147,14 @@ namespace TrafficPoliceDesktopApp
             //DB-OK , USER - NOT FOUND
             if (usr != null && usr.UserId == 0)
             {
-                System.Windows.MessageBox.Show("Не съществува потребител с тези данни!", "Грешка");
+                MessageBox.Show("Не съществува потребител с тези данни!", "Грешка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             //DB - NOT CONNECTED
             else if (usr == null)
             {
-                System.Windows.MessageBox.Show("Проблем с връзката с базата данни.", "Грешка");
+                MessageBox.Show("Проблем с връзката с базата данни.", "Грешка", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
             else return true;

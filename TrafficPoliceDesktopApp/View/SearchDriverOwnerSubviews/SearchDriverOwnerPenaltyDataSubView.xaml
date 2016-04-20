@@ -16,16 +16,16 @@
     </UserControl.Resources>
 
     <Grid>
-        <Label x:Name="lblViewMessage" Content="Данни" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20" Focusable="True"/>
+        <Label x:Name="lblViewMessage" Content="{Binding ViewMessage}" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20" Focusable="True"/>
 
         <GroupBox Header="Данни за извършени нарушения" HorizontalAlignment="Left" Margin="10,37,0,-504" VerticalAlignment="Top" Height="477" Width="470">
 
             <Grid>
                 <Button x:Name="btnDeletePenalty" HorizontalAlignment="Left"  Content="{DynamicResource appbar_delete}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="64" Height="64" ClickMode="Press" ToolTip="Премахване на селектираното нарушение" Margin="384,325,0,0" Click="btnDeletePenalty_Click"/>
-                <Controls:ProgressRing x:Name="progressRingLoading" Margin="329,339,79,49" Height="50" Width="50" IsActive="False" />
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="329,339,79,49" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
 
 
-                <DataGrid x:Name="dataGridPenalties"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,113"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="dataGridPenalties_MouseDoubleClick"  >
+                <DataGrid x:Name="dataGridPenalties" ItemsSource="{Binding PenaltiesList}"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,113"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="dataGridPenalties_MouseDoubleClick"  >
 
 
 

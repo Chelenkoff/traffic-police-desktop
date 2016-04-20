@@ -25,11 +25,11 @@
             </Controls:MetroTabItem>
             
             <Controls:MetroTabItem Name="driverOwnerLicenceDataTabItem" Header="Шофьорска книжка" Controls:ControlsHelper.HeaderFontSize="20"  >
-                <!--<View:SearchDriverOwnerLicenceDataSubView x:Name="searchDriverOwnerLicenceDataSubView"></View:SearchDriverOwnerLicenceDataSubView>-->
+                <View:SearchDriverOwnerLicenceDataSubView x:Name="searchDriverOwnerLicenceDataSubView" DataContext="{Binding SearchDriverOwnerLicenceDataSubViewViewModel}"></View:SearchDriverOwnerLicenceDataSubView>
             </Controls:MetroTabItem>
             
             <Controls:MetroTabItem x:Name="driverOwnerPenaltiesDataTabItem" Header="Нарушения" Controls:ControlsHelper.HeaderFontSize="20"  >
-                <!--<View:SearchDriverOwnerPenaltyDataSubView x:Name="searchDriverOwnerPenaltyDataSubView"></View:SearchDriverOwnerPenaltyDataSubView>-->
+                <View:SearchDriverOwnerPenaltyDataSubView x:Name="searchDriverOwnerPenaltyDataSubView" DataContext="{Binding SearchDriverOwnerPenaltyDataSubViewViewModel}"></View:SearchDriverOwnerPenaltyDataSubView>
             </Controls:MetroTabItem>
 
 

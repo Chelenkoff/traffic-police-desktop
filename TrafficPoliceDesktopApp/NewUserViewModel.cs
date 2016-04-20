@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
@@ -88,31 +89,33 @@ namespace TrafficPoliceDesktopApp
            //Id validation
            if (idValidation != null)
            {
-               System.Windows.MessageBox.Show(idValidation,"Грешка в ЕГН");
+               //System.Windows.MessageBox.Show(idValidation,"Грешка в ЕГН");
+                MessageBox.Show(idValidation,"Грешка в ЕГН",MessageBoxButton.OK, MessageBoxImage.Error);
+                
                return false;
            }
            string passValidation = InputValidator.validatePass(pass);
            if (passValidation != null)
            {
-               System.Windows.MessageBox.Show(passValidation, "Грешка в паролата");
+               MessageBox.Show(passValidation, "Грешка в паролата", MessageBoxButton.OK, MessageBoxImage.Error);
                return false;
            }
            string firstNameValidation = InputValidator.validateName(firstName);
            if (firstNameValidation != null)
            {
-               System.Windows.MessageBox.Show(firstNameValidation, "Грешка в името");
+               MessageBox.Show(firstNameValidation, "Грешка в името", MessageBoxButton.OK, MessageBoxImage.Error);
                return false;
            }
            string secondNameValidation = InputValidator.validateName(secondName);
            if (secondNameValidation != null)
            {
-               System.Windows.MessageBox.Show(secondNameValidation, "Грешка в презимето");
+               MessageBox.Show(secondNameValidation, "Грешка в презимето", MessageBoxButton.OK, MessageBoxImage.Error);
                return false;
            }
            string lastNameValidation = InputValidator.validateName(lastName);
            if (lastNameValidation != null)
            {
-               System.Windows.MessageBox.Show(lastNameValidation, "Грешка във фамилията");
+               MessageBox.Show(lastNameValidation, "Грешка във фамилията", MessageBoxButton.OK, MessageBoxImage.Error);
                return false;
            }
 
@@ -158,14 +161,14 @@ namespace TrafficPoliceDesktopApp
                    switch (check)
                    {
                        case 1:
-                           System.Windows.MessageBox.Show("Възникна проблем при свързването с базата данни ", "Внимание");
+                           MessageBox.Show("Възникна проблем при свързването с базата данни ", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
                        case 2:
                            string message = String.Format("Съществува потребител с ЕГН: {0}",User.UserId);
-                           System.Windows.MessageBox.Show(message, "Внимание");
+                           MessageBox.Show(message, "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
                        case 0:
-                           System.Windows.MessageBox.Show("Потребителят бе успешно добавен", "Внимание");
+                           MessageBox.Show("Потребителят бе успешно добавен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
 
                    }

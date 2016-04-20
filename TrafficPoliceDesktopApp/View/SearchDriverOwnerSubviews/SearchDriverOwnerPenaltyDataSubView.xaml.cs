@@ -34,13 +34,7 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
             InitializeComponent();
         }
 
-        public void initDriverOwnerPenaltyData(SearchDriverOwnerWindow parent)
-        {
-            
-            //Setting parent
-            ParentWindow = parent;
-            //lblViewMessage.Content = String.Format("Нарушения на {0} {1}", ParentWindow.DriverOwner.FirstName, ParentWindow.DriverOwner.LastName);
-        }
+
 
         private void dataGridPenalties_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

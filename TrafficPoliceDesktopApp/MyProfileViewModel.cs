@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
@@ -350,13 +351,13 @@ namespace TrafficPoliceDesktopApp
                     switch (checkResponse)
                     {
                         case 1:
-                            System.Windows.MessageBox.Show("Възникна проблем при свързването с базата данни ", "Внимание");
+                            MessageBox.Show("Възникна проблем при свързването с базата данни ", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 2:
-                            System.Windows.MessageBox.Show( "Неуспешно обновяване на потребител", "Внимание");
+                           MessageBox.Show( "Неуспешно обновяване на потребител", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 0:
-                            System.Windows.MessageBox.Show("Данните за потребителя бяха успешно обновени", "Внимание");
+                           MessageBox.Show("Данните за потребителя бяха успешно обновени", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             LoggedUserGreeting = String.Format("Здравейте, {0} {1}", User.FirstName, User.LastName);
                             disableEdit();
                             break;
@@ -373,25 +374,25 @@ namespace TrafficPoliceDesktopApp
             string firstNameValidation = InputValidator.validateName(firstN);
             if (firstNameValidation != null)
             {
-                System.Windows.MessageBox.Show(firstNameValidation, "Грешка в името");
+                MessageBox.Show(firstNameValidation, "Грешка в името",MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             string secondNameValidation = InputValidator.validateName(secondN);
             if (secondNameValidation != null)
             {
-                System.Windows.MessageBox.Show(secondNameValidation, "Грешка в презимето");
+                MessageBox.Show(secondNameValidation, "Грешка в презимето", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             string lastNameValidation = InputValidator.validateName(lastN);
             if (lastNameValidation != null)
             {
-                System.Windows.MessageBox.Show(lastNameValidation, "Грешка във фамилията");
+                MessageBox.Show(lastNameValidation, "Грешка във фамилията", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             string passValidation = InputValidator.validatePass(pass);
             if (passValidation != null)
             {
-                System.Windows.MessageBox.Show(passValidation, "Грешка при парола");
+                MessageBox.Show(passValidation, "Грешка при парола", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             return true;
