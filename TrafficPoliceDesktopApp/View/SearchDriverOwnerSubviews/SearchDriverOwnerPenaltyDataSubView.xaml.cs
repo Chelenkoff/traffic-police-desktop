@@ -25,9 +25,7 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
     public partial class SearchDriverOwnerPenaltyDataSubView : UserControl
     {
 
-        public ObservableCollection<Penalty> PenaltiesList  { get; set; }
 
-        public SearchDriverOwnerWindow ParentWindow { get; set; }
 
         public SearchDriverOwnerPenaltyDataSubView()
         {
@@ -35,63 +33,6 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
         }
 
 
-
-        private void dataGridPenalties_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            //Getting 'Penalty info' on selected row
-
-            if((Penalty)dataGridPenalties.SelectedItem != null)
-            {
-                //PenaltyDetailsWindow penDetailsWindow = new PenaltyDetailsWindow((Penalty)dataGridPenalties.SelectedItem,ParentWindow.DriverOwner,ParentWindow.ServiceReference);
-                //penDetailsWindow.Show();
-            }
-        }
-
-        private async void btnDeletePenalty_Click(object sender, RoutedEventArgs e)
-        {
-            Penalty penToRemove = (Penalty)dataGridPenalties.SelectedItem;
-
-            if (penToRemove == null) return;
-
-            int checkResponse;
-            await Task.Factory.StartNew(() =>
-            {
-                //startLoading logic
-                this.Dispatcher.Invoke((Action)(() => startLoading()));
-
-
-                //checkResponse = ParentWindow.ServiceReference.removePenalty(penToRemove);
-
-                // invoke user code on the main UI thread
-                Dispatcher.Invoke(new Action(() =>
-                {
-                    //stopLoading logic
-                    this.Dispatcher.Invoke((Action)(() => stopLoading()));
-
-                    //switch (checkResponse)
-                    //{
-                    //    case 1:
-                    //        ParentWindow.ShowMessageAsync("Внимание", "Възникна проблем при свързването с базата данни ", MessageDialogStyle.Affirmative);
-                    //        break;
-                    //    case 2:
-                    //        ParentWindow.ShowMessageAsync("Внимание", "Неуспешно премахване на нарушение", MessageDialogStyle.Affirmative);
-                    //        break;
-                    //    case 0:
-                    //        //Removing penalty from parent 
-                    //        //ParentWindow.DriverOwner.Penalties = ParentWindow.DriverOwner.Penalties.Where(val => val != penToRemove).ToArray();
-                    //        //Clearing penalty from table
-                    //        PenaltiesList.Remove(penToRemove);
-
-                    //        ParentWindow.ShowMessageAsync("Внимание", "Нарушението бе успешно премахнато", MessageDialogStyle.Affirmative);
-
-                    //        break;
-
-                    //}
-
-                }));
-            });
-            
-        }
 
         //public bool arePenaltiesAvailable()
         //{
@@ -109,16 +50,7 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
         //    }
         //}
 
-        private void startLoading()
-        {
-            progressRingLoading.IsActive = true;
 
-        }
-        private void stopLoading()
-        {
-            progressRingLoading.IsActive = false;
-
-        }
         
 
 

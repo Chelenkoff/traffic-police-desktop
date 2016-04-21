@@ -25,81 +25,12 @@ namespace TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews
     /// </summary>
     public partial class PenaltyDetailsWindow : MetroWindow
     {
-        public Penalty Penalty { get; set; }
-        public DriverOwner DriverOwner { get; set; }
-        public Service1Client ServiceReference { get; set; }
-        public PenaltyDetailsWindow(Penalty pen, DriverOwner drOwner, Service1Client servRef)
+
+        public PenaltyDetailsWindow()
         {
             InitializeComponent();
 
-            Penalty = pen;
-            DriverOwner = drOwner;
-            ServiceReference = servRef;
-
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            this.Title = String.Format("Нарушение № {0} - {1} {2}",Penalty.PenaltyId, DriverOwner.FirstName, DriverOwner.LastName);
-
-            initPenaltyDetails();
 
         }
-
-        private void initPenaltyDetails()
-        {
-            lblViewMessage.Content = String.Format("Нарушение на {0} {1}", DriverOwner.FirstName, DriverOwner.LastName);
-
-            txtBoxPenaltyId.Text = Penalty.PenaltyId.ToString();
-
-            datePickeIssuedDate.SelectedDate = Penalty.IssuedDateTime;
-            datePickerHappenedDate.SelectedDate = Penalty.HappenedDateTime;
-
-            txtBoxIssuerId.Text = Penalty.IssuerId.ToString();
-            txtBoxLocation.Text = Penalty.Location;
-            txtBoxDescription.Text = Penalty.Description;
-            txtBoxDisagreement.Text = Penalty.Disagreement;
-        }
-
-        private void btnGenerateDisagreementTemplate_Click(object sender, RoutedEventArgs e)
-        {
-            fillPDFForm();
-        }
-
-        private void fillPDFForm()
-        {
-            
-            string formFile = "./Resources/Docs/disagreement_template.pdf";
-            PdfReader reader = new PdfReader(formFile);
-
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF File|*.pdf;";
-
-            if (saveFileDialog.ShowDialog() == true)
-            {
-                using (PdfStamper stamper = new PdfStamper(reader, new FileStream(saveFileDialog.FileName, FileMode.Create)))
-                {
-                    AcroFields fields = stamper.AcroFields;
-
-                    // set form fields
-                    fields.SetField("driverOwnerNames", String.Format("{0} {1} {2}", DriverOwner.FirstName, DriverOwner.SecondName, DriverOwner.LastName));
-                    fields.SetField("driverOwnerId", String.Format("{0}", DriverOwner.DriverOwnerId));
-                    fields.SetField("driverOwnerResidence", String.Format("{0}", DriverOwner.Residence));
-                    fields.SetField("penaltyId", String.Format("{0}", Penalty.PenaltyId));
-                    fields.SetField("penaltyIssuedDateTime", String.Format("{0}", Penalty.IssuedDateTime.ToShortDateString()));
-                    fields.SetField("penaltyId_2", String.Format("{0}", Penalty.PenaltyId));
-                    fields.SetField("penaltyIssuedDateTime_2", String.Format("{0}", Penalty.IssuedDateTime.ToShortDateString()));
-                    fields.SetField("penaltyDisagreement", String.Format("{0}", Penalty.Disagreement));
-                    fields.SetField("penaltyId_3", String.Format("{0}", Penalty.PenaltyId));
-                    fields.SetField("penaltyIssuedDateTime_3", String.Format("{0}", Penalty.IssuedDateTime.ToString()));
-                    fields.SetField("currentDateTime", String.Format("{0}", DateTime.Now));
-                    fields.SetField("driverOwnerNames_2", String.Format("{0} {1} {2}", DriverOwner.FirstName, DriverOwner.SecondName, DriverOwner.LastName));
-
-                    // flatten form fields and close document
-                    stamper.FormFlattening = true;
-                    stamper.Close();
-                }
-            }
-
-        }
-
     }
 }

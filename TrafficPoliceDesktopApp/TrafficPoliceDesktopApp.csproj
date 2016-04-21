@@ -113,6 +113,7 @@
     <Compile Include="Utilities\ControlsIterator.cs" />
     <Compile Include="Utilities\DateParser.cs" />
     <Compile Include="Utilities\InputValidator.cs" />
+    <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\PenaltyDetailsWindowViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\SearchDriverOwnerLicenceDataSubViewViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\SearchDriverOwnerPenaltyDataSubViewViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\SearchDriverOwnerPersonalDataSubViewViewModel.cs" />

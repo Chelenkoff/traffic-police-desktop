@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
               xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
               mc:Ignorable="d" d:DesignWidth="490" Height="568.486" >
 
     <!--Window resources-->
@@ -21,12 +22,16 @@
         <GroupBox Header="Данни за извършени нарушения" HorizontalAlignment="Left" Margin="10,37,0,-504" VerticalAlignment="Top" Height="477" Width="470">
 
             <Grid>
-                <Button x:Name="btnDeletePenalty" HorizontalAlignment="Left"  Content="{DynamicResource appbar_delete}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="64" Height="64" ClickMode="Press" ToolTip="Премахване на селектираното нарушение" Margin="384,325,0,0" Click="btnDeletePenalty_Click"/>
+                <Button x:Name="btnDeletePenalty" HorizontalAlignment="Left" Command="{Binding DeletePenaltyCommand}"  Content="{DynamicResource appbar_delete}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="64" Height="64" ClickMode="Press" ToolTip="Премахване на селектираното нарушение" Margin="384,325,0,0" />
                 <Controls:ProgressRing x:Name="progressRingLoading" Margin="329,339,79,49" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
 
 
-                <DataGrid x:Name="dataGridPenalties" ItemsSource="{Binding PenaltiesList}"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,113"  SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="dataGridPenalties_MouseDoubleClick"  >
-
+                <DataGrid x:Name="dataGridPenalties" ItemsSource="{Binding PenaltiesList}" SelectedItem="{Binding SelectedPenalty}"  AutoGenerateColumns="False" GridLinesVisibility="All" HorizontalGridLinesBrush="#FF9FBDF4" VerticalGridLinesBrush="#FFF1F2F7" HorizontalAlignment="Center" Cursor="Hand" Margin="9,0,9,113"  SelectionMode="Single" IsReadOnly="True"   >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding Path=ShowPenaltyDetailsCommand, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
 
 
                     <DataGrid.Columns>
