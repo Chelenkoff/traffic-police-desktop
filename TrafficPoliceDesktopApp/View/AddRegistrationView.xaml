@@ -16,56 +16,76 @@
     <Grid>
         <Label x:Name="lblViewMessage" Content="Нова автомобилна регистрация" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
-        <GroupBox Header="Данни за регистрация" HorizontalAlignment="Left" Margin="10,52,0,-694" VerticalAlignment="Top" Height="1109" Width="451">
+        <GroupBox Header="Данни за регистрация" HorizontalAlignment="Left" Margin="10,52,0,-657" VerticalAlignment="Top" Height="405" Width="451">
             <ScrollViewer>
                 <Grid Height="1040" >
-                    <TextBox x:Name="txtBoxRegNum" MaxLength="13" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="237,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" FontSize="18" IsEnabled="True" Foreground="Red"/>
 
-                    <Label Content="Регистрационен номер:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Foreground="#CC119EDA" FontSize="18"/>
+                    <TextBox x:Name="txtBoxRegNum" Text="{Binding Registration.RegNum , Mode=TwoWay}" MaxLength="13" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="223,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" FontSize="17" IsEnabled="True" Foreground="Red" Controls:TextBoxHelper.Watermark="Пример: СО1234АН"/>
+                    <TextBox x:Name="txtBoxOwnerId" Text="{Binding Registration.DriverOwnerId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете ЕГН"/>
+                    <TextBox x:Name="txtBoxCarManufacturer" Text="{Binding Registration.CarManufacturer}" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете производител"/>
 
-                    <Controls:ProgressRing x:Name="progressRingLoading" Margin="185,959,190,641" Height="50" Width="50" IsActive="False" />
-                    <TextBox x:Name="txtBoxOwnerId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
+                    <TextBox x:Name="txtBoxCarModel" Text="{Binding Registration.CarModel}" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете модел"/>
+
+                    <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding CarTypesList}" SelectedItem="{Binding Registration.CarType,Mode=TwoWay}" Margin="185,172,0,0" VerticalAlignment="Top" Width="216" Controls:TextBoxHelper.Watermark="Изберете превозно средство"/>
+
+                    <Controls:NumericUpDown x:Name="upDownCubage" Value="{Binding Registration.CarCubage}" Minimum = "0" InterceptMouseWheel="True" Interval = "50"  Margin="185,203,106,806"  FontSize="16" UseLayoutRounding="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="134" IsManipulationEnabled="True"/>
+                    <Controls:NumericUpDown x:Name="upDownCarHp"  Value="{Binding Registration.CarHp}" Minimum = "0" InterceptMouseWheel="True" Interval = "10"  Margin="184,239,107,770"  FontSize="16" UseLayoutRounding="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="134" IsManipulationEnabled="True"/>
+
+                    <TextBox x:Name="txtBoxCarColor" Text="{Binding Registration.CarColor}" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="184,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете цвета"/>
+                    <TextBox x:Name="txtBoxVin" MaxLength="17" Text="{Binding Registration.CarVin}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="184,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете VIN "/>
+
+                    <DatePicker x:Name="datePickerFirstRegDate" SelectedDate="{Binding Registration.FirstRegDate}" HorizontalAlignment="Left" Margin="28,410,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата" Width="122"/>
+                    <DatePicker x:Name="datePickerRecentCertificateDate" SelectedDate="{Binding Registration.RecentRegDate}" HorizontalAlignment="Left" Margin="249,410,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата" Width="122"/>
+                    <GroupBox Header="Данни за винетка" Margin="5,451,5,474">
+                        <Grid>
+                            <Label Content="Валидна до:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="195,7,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="16" Height="33"/>
+
+                            <CheckBox x:Name="checkBoxHasVignette" IsChecked="{Binding Registration.HasVignette}" IsEnabled="True" Content="Винетка" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="126"/>
+                            <DatePicker x:Name="datePickerVignetterValidDate" SelectedDate="{Binding Registration.VignetteValidUntil}" HorizontalAlignment="Left" Margin="195,40,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Данни за застраховка гражданска отговорност" Margin="5,571,5,284">
+                        <Grid>
+                            <CheckBox x:Name="checkBoxHasCivilInsurance" IsChecked="{Binding Registration.HasCivilInsurance}" IsEnabled="True" Content="Гражданска отговорност" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="263" Margin="10,0,0,0"/>
+                            <Label Content="Застраховател:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="9,41,0,0" VerticalAlignment="Top" Width="128" Foreground="#CC119EDA" FontSize="16"/>
+                            <TextBox x:Name="txtBoxCivilInsIssuer" Text="{Binding Registration.CivilInsurer}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="142,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Застрахователно дружество"/>
+                            <Label Content="Сключена на:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="28,75,0,0" VerticalAlignment="Top" Width="111" Foreground="#CC119EDA" FontSize="16" Height="35"/>
+                            <DatePicker x:Name="datePickerCivilInsuranceIssuedDate" SelectedDate="{Binding Registration.CivilInsuranceStartDate}" HorizontalAlignment="Left" Margin="28,110,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                            <Label Content="Валидна до:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="244,75,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="16" Height="35"/>
+                            <DatePicker x:Name="datePickerCivilInsuranceExpiryDate" SelectedDate="{Binding Registration.CivilInsuranceEndDate}" HorizontalAlignment="Left" Margin="244,110,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Данни за застраховка 'Автокаско'" Margin="5,764,5,81">
+                        <Grid>
+                            <CheckBox x:Name="checkBoxHasDamageInsurance" IsChecked="{Binding Registration.HasDamageInsurance}" IsEnabled="True" Content="Автокаско" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="263"/>
+                            <DatePicker x:Name="DamageInsuranceIssuedDate" SelectedDate="{Binding Registration.DamageInsuranceStartDate}" HorizontalAlignment="Left" Margin="30,120,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                            <DatePicker x:Name="datePickerDamageInsuranceExpiryDate" SelectedDate="{Binding Registration.DamageInsuranceEndDate}" HorizontalAlignment="Left" Margin="246,120,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                            <Label Content="Сключена на:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="16" Height="35"/>
+                            <Label Content="Валидна до:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="246,85,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="16" Height="35"/>
+                            <Label Content="Застраховател:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="128" Foreground="#CC119EDA" FontSize="16"/>
+                            <TextBox x:Name="txtBoxDamageInsIssuer" Text="{Binding Registration.DamageInsurer}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="142,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Застрахователно дружество"/>
+
+                        </Grid>
+                    </GroupBox>
+
+                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding AddRegistrationCommand}"   />
+                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="313,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding ClearRegCommand}"  />
+
+                    <Label Content="Регистрационен номер:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="213" Foreground="#CC119EDA" FontSize="18"/>
+
+                    <Controls:ProgressRing x:Name="progressRingLoading" Margin="185,959,190,31" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
                     <Label Content="ЕГН на собственик:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,64,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
                     <Label Content="Първа регистрация:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,370,0,0" VerticalAlignment="Top" Width="162" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerFirstRegDate" HorizontalAlignment="Left" Margin="38,410,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
 
-                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"    />
-                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="313,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
-                    <TextBox x:Name="txtBoxCarManufacturer" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" IsEnabled="True"/>
                     <Label Content="Производител:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,100,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxCarModel" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" IsEnabled="True"/>
                     <Label Content="Модел:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,136,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxCarColor" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="184,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
                     <Label Content="Цвят:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
                     <Label Content="Тип:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,167,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="185,172,0,0" VerticalAlignment="Top" Width="186"/>
-                    <Controls:NumericUpDown x:Name="upDownCubage" Minimum = "0" InterceptMouseWheel="True" Interval = "100"  Margin="185,203,106,806"  FontSize="16" UseLayoutRounding="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="134" IsManipulationEnabled="True"/>
                     <Label Content="Кубатура:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <Controls:NumericUpDown x:Name="upDownCarHp" Minimum = "0" InterceptMouseWheel="True" Interval = "10"  Margin="184,239,107,770"  FontSize="16" UseLayoutRounding="False" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="134" IsManipulationEnabled="True"/>
                     <Label Content="Конски сили:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxVin" MaxLength="17" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="184,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
                     <Label Content="VIN номер:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
                     <Label Content="Настояща регистрация:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="216,370,0,0" VerticalAlignment="Top" Width="185" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerRecentCertificateDate" HorizontalAlignment="Left" Margin="254,410,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-
-                    <CheckBox x:Name="checkBoxHasVignette" IsEnabled="True" Content="Винетка" HorizontalAlignment="Left" Margin="12,478,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="126"/>
-                    <Label Content="Валидна до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="162,478,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerVignetterValidDate" HorizontalAlignment="Left" Margin="162,518,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-                    <CheckBox x:Name="checkBoxHasCivilInsurance" IsEnabled="True" Content="Гражданска отговорност" HorizontalAlignment="Left" Margin="12,571,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="263"/>
-                    <Label Content="Сключена на:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="28,660,0,0" VerticalAlignment="Top" Width="121" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerCivilInsuranceIssuedDate" HorizontalAlignment="Left" Margin="38,700,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-                    <Label Content="Валидна до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="254,660,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerCivilInsuranceExpiryDate" HorizontalAlignment="Left" Margin="254,700,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-                    <CheckBox x:Name="checkBoxHasDamageInsurance" IsEnabled="True" Content="Автокаско" HorizontalAlignment="Left" Margin="10,756,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="263"/>
-                    <Label Content="Сключена на:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="28,840,0,0" VerticalAlignment="Top" Width="121" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerDamageInsuranceIssuedDate" HorizontalAlignment="Left" Margin="38,880,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-                    <Label Content="Валидна до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="254,840,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerDamageInsuranceExpiryDate" HorizontalAlignment="Left" Margin="254,880,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-
-                    <TextBox x:Name="txtBoxCivilInsIssuer" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="183,624,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
-                    <Label Content="Застраховател:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="55,624,0,0" VerticalAlignment="Top" Width="128" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxDamageInsIssuer" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="183,804,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
-                    <Label Content="Застраховател:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="55,804,0,0" VerticalAlignment="Top" Width="128" Foreground="#CC119EDA" FontSize="16"/>
 
 
                 </Grid>

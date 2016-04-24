@@ -73,10 +73,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="reg" nillable="true" type="q6:Registration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertRegistrationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegisterDriverOwner">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="drOwner" nillable="true" type="q6:DriverOwner" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="drOwner" nillable="true" type="q7:DriverOwner" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -97,14 +111,14 @@
   <xs:element name="GetDriverOwnerByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="GetDriverOwnerByIdResult" nillable="true" type="q7:DriverOwner" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="GetDriverOwnerByIdResult" nillable="true" type="q8:DriverOwner" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="removePenalty">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="pen" nillable="true" type="q8:Penalty" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="pen" nillable="true" type="q9:Penalty" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -123,7 +137,7 @@
   <xs:element name="getAvailableCarTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAvailableCarTypesResult" nillable="true" type="q9:ArrayOfstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAvailableCarTypesResult" nillable="true" type="q10:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -68,6 +68,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Categories" nillable="true" type="tns:Categories" />
+  <xs:complexType name="Registration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarCubage" type="xs:int" />
+      <xs:element minOccurs="0" name="CarHp" type="xs:int" />
+      <xs:element minOccurs="0" name="CarManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarVin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CivilInsuranceEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CivilInsuranceStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CivilInsurer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageInsuranceEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DamageInsuranceStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DamageInsurer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverOwnerId" type="xs:long" />
+      <xs:element minOccurs="0" name="FirstRegDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HasCivilInsurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasDamageInsurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasVignette" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecentRegDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RegNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VignetteValidUntil" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Registration" nillable="true" type="tns:Registration" />
   <xs:complexType name="DriverOwner">
     <xs:sequence>
       <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />

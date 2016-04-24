@@ -30,6 +30,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
         int InsertCat(WCFDBService.Categories categ);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertRegistration", ReplyAction="http://tempuri.org/IService1/InsertRegistrationResponse")]
+        int InsertRegistration(WCFDBService.Registration reg);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDriverOwner", ReplyAction="http://tempuri.org/IService1/RegisterDriverOwnerResponse")]
         int RegisterDriverOwner(WCFDBService.DriverOwner drOwner);
         
@@ -88,6 +91,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public int InsertCat(WCFDBService.Categories categ) {
             return base.Channel.InsertCat(categ);
+        }
+        
+        public int InsertRegistration(WCFDBService.Registration reg) {
+            return base.Channel.InsertRegistration(reg);
         }
         
         public int RegisterDriverOwner(WCFDBService.DriverOwner drOwner) {

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -172,6 +173,58 @@ namespace WCFDBService
             {
                 return null;
             }
+
+        }
+
+        public int InsertRegistration(Registration reg)
+        {
+            DriverOwner drOwner = GetDriverOwnerById(reg.DriverOwnerId.ToString());
+            if (drOwner == null)
+                //ERROR code 2: Cannot connect to db
+                return 2;
+            if (drOwner.DriverOwnerId == 0)
+                //ERROR code 1: Driver owner does not exist 
+                return 1;
+
+
+
+            string insertQuery = String.Format("CALL add_registration(\"{0}\",{1},"+
+                "\"{2}\",\"{3}\",\"{4}\",\"{5}\",{6},{7}," +
+                "\"{8}\",\'{9}\',{10},\"{11}\",{12},{13},"+
+                "{14},{15},{16},\"{17}\",{18},{19},\'{20}\')",
+                reg.RegNum,reg.DriverOwnerId,
+                reg.CarManufacturer,reg.CarModel,reg.CarColor, reg.CarType,reg.CarCubage,reg.CarHp,
+                reg.CarVin, parseDateSqlFormat(reg.FirstRegDate),reg.HasCivilInsurance,reg.CivilInsurer, parseDateSqlFormat(reg.CivilInsuranceStartDate), parseDateSqlFormat(reg.CivilInsuranceEndDate),
+                reg.HasVignette, parseDateSqlFormat(reg.VignetteValidUntil),reg.HasDamageInsurance,reg.DamageInsurer, parseDateSqlFormat(reg.DamageInsuranceStartDate), parseDateSqlFormat(reg.DamageInsuranceEndDate), parseDateSqlFormat(reg.RecentRegDate));
+
+            
+
+            //DB - Connected
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+
+                    cmd.ExecuteNonQuery();
+                    return 0;
+                }
+                catch
+                {   //Reg is already present with the given credentials
+                    return 3;
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                //DB - Not connected
+                return 2;
+            }
+
 
         }
 
@@ -542,7 +595,7 @@ namespace WCFDBService
 
         public List<string> getAvailableCarTypes()
         {
-            string query = String.Format("SELECT COLUMN_TYPE FROM information_schema.`COLUMNS`  WHERE TABLE_NAME = 'registrations' AND COLUMN_NAME = 'car_type'");
+            string query = String.Format("CALL get_available_car_types");
 
             List<string> carTypes = new List<string>();
 
@@ -557,19 +610,24 @@ namespace WCFDBService
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     //Create a data reader and Execute the command                    
                     dataReader = cmd.ExecuteReader();
-                    string test = null;
+                    string types = null;
                     //Read the data and store them in the list
                     while (dataReader.Read())
                     {
-                        test = dataReader["COLUMN_TYPE"] + "";
+                        types = dataReader["COLUMN_TYPE"] + "";
                         
                     }
                     dataReader.Close();
+                    //Formating
+                    foreach (Match match in Regex.Matches(types, "\'([^\']*)\'"))
+                        carTypes.Add(match.ToString().Trim('\''));
+
+                    return carTypes;
 
                 }
                 catch
-                {   //Returning empty user with uninitialized properties (UserId = 0)
-                    //return new User();
+                {   
+                    return new List<string>();
                 }
                 finally
                 {
@@ -582,7 +640,7 @@ namespace WCFDBService
                 return carTypes;
             }
 
-            return carTypes;
+            
         }
 
 
