@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.View;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
 {

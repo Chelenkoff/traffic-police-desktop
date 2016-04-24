@@ -2,11 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:vm ="clr-namespace:TrafficPoliceDesktopApp"
+        xmlns:behaviors ="clr-namespace:TrafficPoliceDesktopApp.Behaviors"
+        behaviors:CloseDialog.DialogResult="{Binding CanWindowClose}"
         Title="КАТ - Вход" Height="300" Width="500"
         ResizeMode="CanMinimize"     
         GlowBrush="{DynamicResource AccentColorBrush}"
         WindowStartupLocation="CenterScreen" VerticalAlignment="Top">
+
+
 
     <Window.DataContext>
         <vm:LoginViewModel/>

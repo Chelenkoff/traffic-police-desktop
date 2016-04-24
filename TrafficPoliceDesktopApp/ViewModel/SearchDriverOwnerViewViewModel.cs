@@ -9,6 +9,7 @@ using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
 using TrafficPoliceDesktopApp.View;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel
 {

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp
 {

@@ -46,6 +46,24 @@ namespace WCFDBService
          public List<Penalty> Penalties { get; set; }
 
 
+        [OperationBehavior]
+        public void Clear()
+        {
+            DriverOwnerId = 0;
+            FirstName = "";
+            SecondName = "";
+            LastName = "";
+            Sex = SexEnum.Man;
+            Nationality = "България";
+            BirthDate = new DateTime();
+            BirthPlace = "";
+            Residence = "";
+            RemainingPts = 39;
+            LicenceIssueDate = new DateTime();
+            LicenceExpiryDate = new DateTime();
+            LicenceIssuedBy = "";
+
+        }
 
     }
 
@@ -61,4 +79,6 @@ namespace WCFDBService
         Woman = 'Ж'
 
     }
+
+
 }

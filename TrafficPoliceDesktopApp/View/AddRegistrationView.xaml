@@ -16,10 +16,10 @@
     <Grid>
         <Label x:Name="lblViewMessage" Content="Нова автомобилна регистрация" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
-        <GroupBox Header="Данни за регистрация" HorizontalAlignment="Left" Margin="10,52,0,-686" VerticalAlignment="Top" Height="405" Width="451">
+        <GroupBox Header="Данни за регистрация" HorizontalAlignment="Left" Margin="10,52,0,-694" VerticalAlignment="Top" Height="1109" Width="451">
             <ScrollViewer>
                 <Grid Height="1040" >
-                    <TextBox x:Name="txtBoxRegNum" MaxLength="13" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="237,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="18" IsEnabled="True"/>
+                    <TextBox x:Name="txtBoxRegNum" MaxLength="13" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="237,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" FontSize="18" IsEnabled="True" Foreground="Red"/>
 
                     <Label Content="Регистрационен номер:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="208" Foreground="#CC119EDA" FontSize="18"/>
 
@@ -31,9 +31,9 @@
 
                     <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"    />
                     <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="313,971,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
-                    <TextBox x:Name="txtBoxCarManufacturer" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
+                    <TextBox x:Name="txtBoxCarManufacturer" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" IsEnabled="True"/>
                     <Label Content="Производител:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,100,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
-                    <TextBox x:Name="txtBoxCarModel" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
+                    <TextBox x:Name="txtBoxCarModel" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="185,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontSize="16" IsEnabled="True"/>
                     <Label Content="Модел:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="12,136,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>
                     <TextBox x:Name="txtBoxCarColor" MaxLength="15" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="184,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="16" IsEnabled="True"/>
                     <Label Content="Цвят:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Width="158" Foreground="#CC119EDA" FontSize="16"/>

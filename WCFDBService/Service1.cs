@@ -540,8 +540,53 @@ namespace WCFDBService
           }
         }
 
+        public List<string> getAvailableCarTypes()
+        {
+            string query = String.Format("SELECT COLUMN_TYPE FROM information_schema.`COLUMNS`  WHERE TABLE_NAME = 'registrations' AND COLUMN_NAME = 'car_type'");
 
-      public int removePenalty(Penalty pen)
+            List<string> carTypes = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+
+                MySqlDataReader dataReader;
+                try
+                {
+                    //Create Command
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    //Create a data reader and Execute the command                    
+                    dataReader = cmd.ExecuteReader();
+                    string test = null;
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        test = dataReader["COLUMN_TYPE"] + "";
+                        
+                    }
+                    dataReader.Close();
+
+                }
+                catch
+                {   //Returning empty user with uninitialized properties (UserId = 0)
+                    //return new User();
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                return carTypes;
+            }
+
+            return carTypes;
+        }
+
+
+        public int removePenalty(Penalty pen)
       {
           string query = String.Format("CALL remove_penalty_by_id({0})", pen.PenaltyId);
 

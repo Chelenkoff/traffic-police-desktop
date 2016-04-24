@@ -8,18 +8,14 @@ using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel
 {
-    public class SearchUserWindowViewModel : INotifyPropertyChanged
+    public class AddRegistrationViewViewModel : INotifyPropertyChanged
     {
         Service1Client service;
-
-        public SearchUserWindowViewModel(User usr)
+        public AddRegistrationViewViewModel()
         {
-            _user = usr;
-
-            _title = String.Format("{0} {1} - Справка за служител", User.FirstName, User.LastName);
-
             service = new Service1Client();
-
+            service.getAvailableCarTypes();
+            _registration = new Registration();
         }
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)
@@ -31,27 +27,15 @@ namespace TrafficPoliceDesktopApp.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //Get/Set User
-        private User _user;
-        public User User
+        //Get/Set Registration
+        private Registration _registration;
+        public Registration Registration
         {
-            private get { return _user; }
+            private get { return _registration; }
             set
             {
-                _user = value;
-                RaisePropertyChangedEvent("User");
-            }
-        }
-
-        //Get/Set Title
-        private string _title;
-        public string Title
-        {
-            private get { return _title; }
-            set
-            {
-                _title = value;
-                RaisePropertyChangedEvent("Title");
+                _registration = value;
+                RaisePropertyChangedEvent("Registration");
             }
         }
     }

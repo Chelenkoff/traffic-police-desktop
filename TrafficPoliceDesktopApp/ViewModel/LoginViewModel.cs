@@ -12,6 +12,7 @@ using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.Controls;
 using System.Windows.Controls;
 using System.Windows;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp
 {
@@ -43,6 +44,8 @@ namespace TrafficPoliceDesktopApp
 
 
 
+
+
         //UserId property
         private string _userId;
         public string UserId
@@ -64,6 +67,7 @@ namespace TrafficPoliceDesktopApp
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
+
 
 
         //Login command
@@ -111,7 +115,10 @@ namespace TrafficPoliceDesktopApp
                 MainWindowViewModel mainWindowVM = new MainWindowViewModel(user);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.DataContext = mainWindowVM;
+
                 mainWindow.Show();
+                CanWindowClose = true;//Closing login window
+                
             });
            });
 
@@ -210,6 +217,21 @@ namespace TrafficPoliceDesktopApp
                 RaisePropertyChangedEvent("IsBtnLoginEnabled");
             }
         }
+
+        //Get/Set User CanWindowClose
+        private bool? _canWindowClose;
+        public bool? CanWindowClose
+        {
+            private get { return _canWindowClose; }
+            set
+            {
+                _canWindowClose = value;
+                RaisePropertyChangedEvent("CanWindowClose");
+            }
+        }
+
+
+
 
 
 

@@ -4,14 +4,16 @@
                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:View="clr-namespace:TrafficPoliceDesktopApp.View"
                       xmlns:local ="clr-namespace:TrafficPoliceDesktopApp"
-                    
+                      xmlns:behaviors ="clr-namespace:TrafficPoliceDesktopApp.Behaviors"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                       Title="КАТ - Главно меню" Height="500" Width="700"
                      ResizeMode="CanMinimize"     
-                     GlowBrush="{DynamicResource AccentColorBrush}"
-                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top" Closing="MetroWindow_Closing" IsVisibleChanged="MetroWindow_IsVisibleChanged"  >
+                     GlowBrush="{DynamicResource AccentColorBrush}" 
+                    behaviors:CloseDialog.DialogResult="{Binding CanWindowClose}"
+                     WindowStartupLocation="CenterScreen" VerticalAlignment="Top"   >
 
 
-
+ 
 
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
@@ -23,11 +25,13 @@
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
 
+
     <!--Window Top Right Menu Items-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Label x:Name="lblLoggedUserName" Content="{Binding LoggedUserName}"  Foreground="#FFFFEFEF"  />
-            <Button x:Name="btnLogout" Click="btnLogout_Click">
+            <Button x:Name="btnLogout" Command="{Binding CloseWindowCommand}">
+
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0 0 4 0"
                    VerticalAlignment="Center"
@@ -61,7 +65,7 @@
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Name="addRegistration" Header="Нова регистрация" Controls:ControlsHelper.HeaderFontSize="22" Margin="-134,83,139,-83" >
                 <Grid Margin="224,-38,671,-3">
-                    <!--<View:AddRegistrationView x:Name="viewAddRegistration"/>-->
+                    <View:AddRegistrationView x:Name="viewAddRegistration" DataContext="{Binding AddRegistrationViewViewModel}"/>
 
                 </Grid>
             </Controls:MetroTabItem>
@@ -72,7 +76,7 @@
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Name="addDriverOwnerTabItem" Header="Регистрирай лице" Controls:ControlsHelper.HeaderFontSize="22" Margin="-524,212,529,-212" >
                 <Grid Margin="224,-38,671,-3">
-                    <!--<View:AddDriverOwnerView x:Name="viewAddDriverOwner"/>-->
+                    <View:AddDriverOwnerView x:Name="viewAddDriverOwner" DataContext="{Binding AddDriverOwnerViewViewModel}"/>
                 </Grid>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem x:Name="searchDriverOwnerTabItem"  Header="Справка по ЕГН" Controls:ControlsHelper.HeaderFontSize="22" Margin="-716,254,721,-254" >

@@ -43,7 +43,7 @@
 
                 <Button x:Name="btnEdit" Content="Редактирай" IsEnabled="{Binding IsEditBtnEnabled}" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="327,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding EditCommand}" />
                 <Button x:Name="btnSave" Content="Запамети"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding UpdateUserCommand}" Visibility ="{Binding IsSaveEditBtnVisible, Converter={StaticResource BoolToVis}}" />
-                <Button x:Name="btnShowPass" Content="{DynamicResource appbar_unlock}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="361,218,0,0" VerticalAlignment="Top" Width="45" Height="43" ToolTip="Натиснете и задръжте левият бутон на мишката, за да видите паролата"  >
+                <Button x:Name="btnShowPass" Visibility="{Binding IsShowPassBtnVisible, Converter={StaticResource BoolToVis}}" Content="{DynamicResource appbar_unlock}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="361,218,0,0" VerticalAlignment="Top" Width="45" Height="43" ToolTip="Натиснете и задръжте левият бутон на мишката, за да видите паролата"  >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="PreviewMouseDown">
                             <i:InvokeCommandAction Command="{Binding Path=ShowPassCommand, Mode=OneWay}"/>
@@ -54,7 +54,7 @@
                     </i:Interaction.Triggers>
                 </Button>
                 <Controls:ProgressRing x:Name="progressRingLoading" Margin="10,249,379,67" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
-                <Button x:Name="btnCancelEdit"  Content="Прекрати" Visibility="{Binding IsCanceEditBtnVisible, Converter={StaticResource BoolToVis}}"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="117,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" >
+                <Button x:Name="btnCancelEdit"  Content="Прекрати" Visibility="{Binding IsCanceEditBtnVisible, Converter={StaticResource BoolToVis}}"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="117,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding CancelEditCommand}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding Path=CancelEditCommand, Mode=OneWay}"/>

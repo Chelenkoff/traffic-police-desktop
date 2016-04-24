@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
 {
@@ -126,7 +127,7 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
                             break;
                         case 0:
                             //Removing penalty from parent 
-                            DriverOwner.Penalties = DriverOwner.Penalties.Where(val => val != _selectedPenalty).ToArray();
+                            DriverOwner.Penalties = DriverOwner.Penalties.Where(val => val != _selectedPenalty).ToList();
                             //Clearing penalty from grid
                             if (PenaltiesList.Remove(_selectedPenalty) == true)
                             {

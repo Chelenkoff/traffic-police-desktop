@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCFDBService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_UpdateUser_InputMessage">
@@ -55,6 +56,12 @@
   <wsdl:message name="IService1_removePenalty_OutputMessage">
     <wsdl:part name="parameters" element="tns:removePenaltyResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getAvailableCarTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAvailableCarTypes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAvailableCarTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAvailableCarTypesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
@@ -87,6 +94,10 @@
     <wsdl:operation name="removePenalty">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/removePenalty" message="tns:IService1_removePenalty_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/removePenaltyResponse" message="tns:IService1_removePenalty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableCarTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAvailableCarTypes" message="tns:IService1_getAvailableCarTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAvailableCarTypesResponse" message="tns:IService1_getAvailableCarTypes_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -156,6 +167,15 @@
     </wsdl:operation>
     <wsdl:operation name="removePenalty">
       <soap:operation soapAction="http://tempuri.org/IService1/removePenalty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableCarTypes">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAvailableCarTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

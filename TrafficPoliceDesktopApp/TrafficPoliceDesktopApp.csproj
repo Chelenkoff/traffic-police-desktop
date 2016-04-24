@@ -98,21 +98,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DelegateCommand.cs" />
-    <Compile Include="DispatchService.cs" />
-    <Compile Include="LoginViewModel.cs" />
-    <Compile Include="MainWindowViewModel.cs" />
-    <Compile Include="MyProfileViewModel.cs" />
-    <Compile Include="NewUserViewModel.cs" />
-    <Compile Include="PasswordHelper.cs" />
+    <Compile Include="Behaviors\CloseDialog.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DelegateCommand.cs" />
+    <Compile Include="Utilities\DispatchService.cs" />
+    <Compile Include="ViewModel\AddRegistrationViewViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MyProfileViewModel.cs" />
+    <Compile Include="ViewModel\NewUserViewModel.cs" />
+    <Compile Include="Utilities\PasswordHelper.cs" />
     <Compile Include="Utilities\ControlsIterator.cs" />
     <Compile Include="Utilities\DateParser.cs" />
     <Compile Include="Utilities\InputValidator.cs" />
+    <Compile Include="ViewModel\AddDriverOwnerViewViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\PenaltyDetailsWindowViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\SearchDriverOwnerLicenceDataSubViewViewModel.cs" />
     <Compile Include="ViewModel\SearchDriverOwnerSubviewsVMs\SearchDriverOwnerPenaltyDataSubViewViewModel.cs" />
@@ -250,6 +253,8 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WCFDBService.DriverOwner.datasource" />
+    <None Include="Properties\DataSources\WCFDBService.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +266,9 @@
     <None Include="Resources\Docs\personal_data.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Service References\ServiceReference1\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\service.wsdl" />
     <None Include="Service References\ServiceReference1\service.xsd">
       <SubType>Designer</SubType>
@@ -268,20 +276,16 @@
     <None Include="Service References\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\TrafficPoliceDesktopApp.ServiceReference1.DriverOwner.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\TrafficPoliceDesktopApp.ServiceReference1.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceReference1\WCFDBService.xsd">
       <SubType>Designer</SubType>
     </None>
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Behaviors\" />
-    <Folder Include="Controller\" />
+    <ProjectReference Include="..\WCFDBService\WCFDBService.csproj">
+      <Project>{5C10C1BC-728C-4628-8BE0-6EB2C2395367}</Project>
+      <Name>WCFDBService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -371,6 +375,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="kat.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
@@ -384,9 +391,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="kat.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

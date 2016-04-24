@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
 using TrafficPoliceDesktopApp.Utilities;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp
 {
@@ -24,9 +25,9 @@ namespace TrafficPoliceDesktopApp
             service = new Service1Client();
             _user = user;
             LoggedUserGreeting = String.Format("Здравейте, {0} {1}", user.FirstName, user.LastName);
-           
 
-            disableEdit();
+
+            CancelEdit();
             
         }
 
@@ -171,7 +172,21 @@ namespace TrafficPoliceDesktopApp
         //Edit func
         private void Edit()
         {
-            enableEdit();
+            IsFirstNameTxtBoxEnabled = true;
+            IsSecondNameTxtBoxEnabled = true;
+            IsLastNameTxtBoxEnabled = true;
+            IsCheckBoxTrafficPolicemanEnabled = true;
+
+            IsCanceEditBtnVisible = true;
+            IsSaveEditBtnVisible = true;
+
+            IsEditBtnEnabled = false;
+
+            IsPswdTxtBoxEnabled = true;
+
+            IsShowPassBtnVisible = false;
+
+            showPassword();
         }
 
         //CancelEditCommand
@@ -183,7 +198,21 @@ namespace TrafficPoliceDesktopApp
         //CancelEdit func
         private void CancelEdit()
         {
-            disableEdit();
+            IsFirstNameTxtBoxEnabled = false;
+            IsSecondNameTxtBoxEnabled = false;
+            IsLastNameTxtBoxEnabled = false;
+            IsCheckBoxTrafficPolicemanEnabled = false;
+
+            IsEditBtnEnabled = true;
+
+            IsCanceEditBtnVisible = false;
+            IsSaveEditBtnVisible = false;
+
+            IsPswdTxtBoxEnabled = false;
+
+            IsShowPassBtnVisible = true;
+
+            hidePassword();
         }
 
         
@@ -253,6 +282,18 @@ namespace TrafficPoliceDesktopApp
             }
         }
 
+        //IsShowPassBtnVisible property
+        private bool _isShowPassBtnVisible;
+        public bool IsShowPassBtnVisible
+        {
+            get { return _isShowPassBtnVisible; }
+            set
+            {
+                _isShowPassBtnVisible = value;
+                RaisePropertyChangedEvent("IsShowPassBtnVisible");
+            }
+        }
+
         //IsPswdTxtBoxEnabled property
         private bool _isPswdTxtBoxEnabled;
         public bool IsPswdTxtBoxEnabled
@@ -278,40 +319,8 @@ namespace TrafficPoliceDesktopApp
         }
 
 
-        private void enableEdit()
-        {
-            IsFirstNameTxtBoxEnabled = true;
-            IsSecondNameTxtBoxEnabled = true;
-            IsLastNameTxtBoxEnabled = true;
-            IsCheckBoxTrafficPolicemanEnabled = true;
 
-            IsCanceEditBtnVisible = true;
-            IsSaveEditBtnVisible = true;
 
-            IsEditBtnEnabled = false;
-
-            IsPswdTxtBoxEnabled = true;
-
-            showPassword();
-        }
-
-        private void disableEdit()
-        {
-            IsFirstNameTxtBoxEnabled = false;
-            IsSecondNameTxtBoxEnabled = false;
-            IsLastNameTxtBoxEnabled = false;
-            IsCheckBoxTrafficPolicemanEnabled = false;
-
-            IsEditBtnEnabled = true;
-
-            IsCanceEditBtnVisible = false;
-            IsSaveEditBtnVisible = false;
-
-            IsPswdTxtBoxEnabled = false;
-
-            hidePassword();
-           
-        }
 
         public ICommand UpdateUserCommand
         {
@@ -359,7 +368,7 @@ namespace TrafficPoliceDesktopApp
                         case 0:
                            MessageBox.Show("Данните за потребителя бяха успешно обновени", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             LoggedUserGreeting = String.Format("Здравейте, {0} {1}", User.FirstName, User.LastName);
-                            disableEdit();
+                            CancelEdit();
                             break;
 
                     }

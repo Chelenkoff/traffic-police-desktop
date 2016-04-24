@@ -128,5 +128,77 @@ namespace WCFDBService
         public DateTime? mExpiryDate { get; set; }
         [DataMember]
         public string mRestrictions { get; set; }
+
+        [OperationBehavior]
+        void Clr()
+        {
+            a1AcquiryDate = null;
+            a1ExpiryDate = null;
+            a1Restrictions = "";
+
+            aAcquiryDate = null;
+            aExpiryDate = null;
+            aRestrictions = "";
+
+            b1AcquiryDate = null;
+            b1ExpiryDate = null;
+            b1Restrictions = "";
+
+            bAcquiryDate = null;
+            bExpiryDate = null;
+            bRestrictions = "";
+
+            c1AcquiryDate = null;
+            c1ExpiryDate = null;
+            c1Restrictions = "";
+
+            cAcquiryDate = null;
+            cExpiryDate = null;
+            cRestrictions = "";
+
+            d1AcquiryDate = null;
+            d1ExpiryDate = null;
+            d1Restrictions = "";
+
+            dAcquiryDate = null;
+            dExpiryDate = null;
+            dRestrictions = "";
+
+            beAcquiryDate = null;
+            beExpiryDate = null;
+            beRestrictions = "";
+
+            c1eAcquiryDate = null;
+            c1eExpiryDate = null;
+            c1eRestrictions = "";
+
+            ceAcquiryDate = null;
+            ceExpiryDate = null;
+            ceRestrictions = "";
+
+            d1eAcquiryDate = null;
+            d1eExpiryDate = null;
+            d1eRestrictions = "";
+
+            deAcquiryDate = null;
+            deExpiryDate = null;
+            deRestrictions = "";
+
+            ttbAcquiryDate = null;
+            ttbExpiryDate = null;
+            ttbRestrictions = "";
+
+            ttmAcquiryDate = null;
+            ttmExpiryDate = null;
+            ttmRestrictions = "";
+
+            tktAcquiryDate = null;
+            tktExpiryDate = null;
+            tktRestrictions = "";
+
+            mAcquiryDate = null;
+            mExpiryDate = null;
+            mRestrictions = "";
+        }
     }
 }

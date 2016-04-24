@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using TrafficPoliceDesktopApp.ServiceReference1;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel
 {
@@ -21,8 +22,8 @@ namespace TrafficPoliceDesktopApp.ViewModel
             _messageTitle = String.Format("Лични данни на {0} {1}", _driverOwner.FirstName, _driverOwner.LastName);
             _countriesList = getCountryList();
 
-            IsManChecked = (_driverOwner.Sex == Sex.Man) ? true : false;
-            IsWomanChecked = (_driverOwner.Sex == Sex.Woman) ? true : false;
+            IsManChecked = (_driverOwner.Sex == SexEnum.Man) ? true : false;
+            IsWomanChecked = (_driverOwner.Sex == SexEnum.Woman) ? true : false;
         }
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)

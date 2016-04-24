@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
 {

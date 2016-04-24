@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
+using TrafficPoliceDesktopApp.View;
 using TrafficPoliceDesktopApp.ViewModel;
+using WCFDBService;
 
 namespace TrafficPoliceDesktopApp
 {
@@ -24,11 +29,15 @@ namespace TrafficPoliceDesktopApp
             MyProfileViewModel = new MyProfileViewModel(User);
             NewUserViewModel = new NewUserViewModel();
             SearchUserViewViewModel = new SearchUserViewViewModel();
+            AddDriverOwnerViewViewModel = new AddDriverOwnerViewViewModel();
             SearchDriverOwnerViewViewModel = new SearchDriverOwnerViewViewModel();
+            AddRegistrationViewViewModel = new AddRegistrationViewViewModel();
+
 
         }
 
-         //Get/Set User Property
+
+        //Get/Set User Property
         private User _user;
         public User User
         {
@@ -38,6 +47,37 @@ namespace TrafficPoliceDesktopApp
                 _user = value;
                 RaisePropertyChangedEvent("User");
             }
+        }
+
+        //Get/Set User CanWindowClose
+        private bool? _canWindowClose;
+        public bool? CanWindowClose
+        {
+            private get { return _canWindowClose; }
+            set
+            {
+                _canWindowClose = value;
+                RaisePropertyChangedEvent("CanWindowClose");
+            }
+        }
+
+
+
+        //CloseWindowCommand 
+        public ICommand CloseWindowCommand
+        {
+            get { return new DelegateCommand(CloseWindow); }
+        }
+
+        //Login func
+        private void CloseWindow()
+        {
+            Login login = new Login();
+            CanWindowClose = true;
+
+            login.Show();
+
+
         }
 
         private string _loggedUserName;
@@ -73,6 +113,17 @@ namespace TrafficPoliceDesktopApp
             }
         }
 
+        private AddDriverOwnerViewViewModel _addDriverOwnerViewViewModel;
+        public AddDriverOwnerViewViewModel AddDriverOwnerViewViewModel
+        {
+            private get { return _addDriverOwnerViewViewModel; }
+            set
+            {
+                _addDriverOwnerViewViewModel = value;
+                RaisePropertyChangedEvent("AddDriverOwnerViewViewModel");
+            }
+        }
+
         private SearchDriverOwnerViewViewModel _searchDriverOwnerViewViewModel;
         public SearchDriverOwnerViewViewModel SearchDriverOwnerViewViewModel
         {
@@ -81,6 +132,17 @@ namespace TrafficPoliceDesktopApp
             {
                 _searchDriverOwnerViewViewModel = value;
                 RaisePropertyChangedEvent("SearchDriverOwnerViewViewModel");
+            }
+        }
+
+        private AddRegistrationViewViewModel _addRegistrationViewViewModel;
+        public AddRegistrationViewViewModel AddRegistrationViewViewModel
+        {
+            private get { return _addRegistrationViewViewModel; }
+            set
+            {
+                _addRegistrationViewViewModel = value;
+                RaisePropertyChangedEvent("AddRegistrationViewViewModel");
             }
         }
 
