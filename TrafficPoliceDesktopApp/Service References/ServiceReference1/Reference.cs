@@ -44,6 +44,9 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAvailableCarTypes", ReplyAction="http://tempuri.org/IService1/getAvailableCarTypesResponse")]
         string[] getAvailableCarTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRegByRegNum", ReplyAction="http://tempuri.org/IService1/getRegByRegNumResponse")]
+        WCFDBService.Registration getRegByRegNum(string regNum);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +114,10 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         
         public string[] getAvailableCarTypes() {
             return base.Channel.getAvailableCarTypes();
+        }
+        
+        public WCFDBService.Registration getRegByRegNum(string regNum) {
+            return base.Channel.getRegByRegNum(regNum);
         }
     }
 }

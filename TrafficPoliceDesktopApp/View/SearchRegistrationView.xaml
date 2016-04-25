@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="TrafficPoliceDesktopApp.View.SearchRegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:local="clr-namespace:TrafficPoliceDesktopApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="467" d:DesignWidth="471">
+    <!--Window resources-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Label x:Name="lblViewMessage" Content="Справка за регистрация" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
+        <GroupBox Header="Търси регистрация" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
+            <Grid>
+                <Label Content="Номер на превозното средство:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,82,0,0" VerticalAlignment="Top" Width="381" Foreground="#CC119EDA" FontSize="25"/>
+                <TextBox x:Name="txtBoxId" MaxLength="13" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding RegNum}" HorizontalAlignment="Left" Height="49" Margin="26,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" FontSize="24" IsEnabled="True" Controls:TextBoxHelper.Watermark="Пример:  С1234АН"/>
+
+                <Button x:Name="btnSearch" Content="Търси"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="170,196,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding SearchRegCommand}" />
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="194,255,195,61" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
+
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" TextWrapping="Wrap" Text="Всяка заявки ще бъде показвана в отделен прозорец, за да може обработката на заявките да се осъществява паралелно."  Height="44" Width="419" Foreground="#FFFF2C2C" FontSize="14" FontStyle="Italic"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

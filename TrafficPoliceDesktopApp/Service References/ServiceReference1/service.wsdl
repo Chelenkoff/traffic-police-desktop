@@ -68,6 +68,12 @@
   <wsdl:message name="IService1_getAvailableCarTypes_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAvailableCarTypesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getRegByRegNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRegByRegNum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRegByRegNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRegByRegNumResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
@@ -108,6 +114,10 @@
     <wsdl:operation name="getAvailableCarTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAvailableCarTypes" message="tns:IService1_getAvailableCarTypes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAvailableCarTypesResponse" message="tns:IService1_getAvailableCarTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegByRegNum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRegByRegNum" message="tns:IService1_getRegByRegNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRegByRegNumResponse" message="tns:IService1_getRegByRegNum_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -195,6 +205,15 @@
     </wsdl:operation>
     <wsdl:operation name="getAvailableCarTypes">
       <soap:operation soapAction="http://tempuri.org/IService1/getAvailableCarTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegByRegNum">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRegByRegNum" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

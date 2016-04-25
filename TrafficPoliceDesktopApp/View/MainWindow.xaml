@@ -71,6 +71,7 @@
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Справка по номер" Controls:ControlsHelper.HeaderFontSize="22" Margin="-327,124,332,-124" >
                 <Grid Margin="224,-38,671,-3">
+                    <View:SearchRegistrationView DataContext="{Binding SearchRegistrationViewViewModel}"/>
 
                 </Grid>
             </Controls:MetroTabItem>

@@ -32,6 +32,8 @@ namespace TrafficPoliceDesktopApp
             AddDriverOwnerViewViewModel = new AddDriverOwnerViewViewModel();
             SearchDriverOwnerViewViewModel = new SearchDriverOwnerViewViewModel();
             AddRegistrationViewViewModel = new AddRegistrationViewViewModel();
+            SearchRegistrationViewViewModel = new SearchRegistrationViewViewModel();
+            
 
 
         }
@@ -99,6 +101,17 @@ namespace TrafficPoliceDesktopApp
             {
                 _myProfileViewModel = value;
                 RaisePropertyChangedEvent("MyProfileViewModel");
+            }
+        }
+
+        private SearchRegistrationViewViewModel _searchRegistrationViewViewModel;
+        public SearchRegistrationViewViewModel SearchRegistrationViewViewModel
+        {
+            private get { return _searchRegistrationViewViewModel; }
+            set
+            {
+                _searchRegistrationViewViewModel = value;
+                RaisePropertyChangedEvent("SearchRegistrationViewViewModel");
             }
         }
 

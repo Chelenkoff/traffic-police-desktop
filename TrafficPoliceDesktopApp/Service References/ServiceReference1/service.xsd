@@ -141,4 +141,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getRegByRegNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="regNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegByRegNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="getRegByRegNumResult" nillable="true" type="q11:Registration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -44,6 +44,10 @@ namespace WCFDBService
        List<string> getAvailableCarTypes();
 
 
+        [OperationContract]
+        Registration getRegByRegNum(string regNum);
+
+
 
     }
 

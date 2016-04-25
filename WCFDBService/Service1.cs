@@ -643,6 +643,71 @@ namespace WCFDBService
             
         }
 
+        public Registration getRegByRegNum(string regNum)
+        {
+            string query = String.Format("CALL get_reg_by_regnum(\"{0}\")", regNum);
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                Registration reg = new Registration();
+                MySqlDataReader dataReader;
+                try
+                {
+                    //Create Command
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    //Create a data reader and Execute the command                    
+                    dataReader = cmd.ExecuteReader();
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        reg.RegNum = dataReader["reg_num"] + "";
+                        reg.DriverOwnerId = Convert.ToInt64(dataReader["driver_owner_id"]);
+                        reg.CarManufacturer = dataReader["car_manufacturer"] + "";
+                        reg.CarModel = dataReader["car_model"] + "";
+                        reg.CarColor = dataReader["car_color"] + "";
+                        reg.CarType = dataReader["car_type"] + "";
+                        reg.CarCubage = Convert.ToInt32(dataReader["car_cubage"]);
+                        reg.CarHp = Convert.ToInt32(dataReader["car_hp"]);
+                        reg.CarVin = dataReader["car_vin"] + "";
+                        reg.FirstRegDate = Convert.ToDateTime(dataReader["first_reg_date"]) ;
+                        reg.RecentRegDate = Convert.ToDateTime(dataReader["recent_certificate_reg_date"]);
+
+                        reg.HasCivilInsurance = Convert.ToBoolean(dataReader["civil_insurance"]);
+                        reg.CivilInsurer =dataReader["civil_insurer"] +"";
+                        reg.CivilInsuranceStartDate = dataReader["civil_insurance_start_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["civil_insurance_start_date"]);
+                        reg.CivilInsuranceEndDate = dataReader["civil_insurance_end_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["civil_insurance_end_date"]);
+
+                        reg.HasVignette = Convert.ToBoolean(dataReader["has_vignette"]);
+                        reg.VignetteValidUntil = dataReader["vignette_valid_until"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["vignette_valid_until"]);
+
+                        reg.HasDamageInsurance = Convert.ToBoolean(dataReader["damage_insurance"]);
+                        reg.DamageInsurer = dataReader["damage_insurer"] + "";
+                        reg.DamageInsuranceStartDate = dataReader["damage_insurance_start_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["damage_insurance_start_date"]);
+                        reg.DamageInsuranceEndDate = dataReader["damage_insurance_end_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["damage_insurance_end_date"]);
+
+
+                    }
+                    dataReader.Close();
+                    return reg;
+                }
+                catch
+                {   //Returning empty reg with uninitialized properties (regNum = null)
+                    return new Registration();
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
 
         public int removePenalty(Penalty pen)
       {
