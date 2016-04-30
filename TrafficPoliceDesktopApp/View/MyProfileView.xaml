@@ -29,17 +29,24 @@
         <GroupBox Header="Данни за вашия профил" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
             <Grid>
                 <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label HorizontalContentAlignment="Left" Content="{Binding User.FirstName}"  HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="236" FontSize="20" Height="37" Foreground="Black"/>
+
                 <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,63,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label HorizontalContentAlignment="Left" Content="{Binding User.SecondName}"  HorizontalAlignment="Left" Margin="170,63,0,0" VerticalAlignment="Top" Width="236" FontSize="20" Height="37" Foreground="Black"/>
+
                 <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="53,115,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="Служебен номер:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="159" Foreground="#CC119EDA" FontSize="18"/>
-                <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsEnabled="{Binding IsCheckBoxTrafficPolicemanEnabled}" IsChecked="{Binding User.IsTrafficPoliceman}" Content="Пътен полицай" HorizontalAlignment="Left" Margin="169,272,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA"/>
-                <TextBox x:Name="txtBoxSecondName" MaxLength="20" Text="{Binding User.SecondName}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="170,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsSecondNameTxtBoxEnabled}"/>
-                <TextBox x:Name="txtBoxFirstName" MaxLength="20" Text="{Binding User.FirstName}"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsFirstNameTxtBoxEnabled}"/>
-                <TextBox x:Name="txtBoxLastName" MaxLength="20" Text="{Binding User.LastName}"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsLastNameTxtBoxEnabled}"/>
-                <TextBox x:Name="txtBoxId" Text="{Binding User.UserId}" MaxLength="10"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+                <Label HorizontalContentAlignment="Left" Content="{Binding User.LastName}"  HorizontalAlignment="Left" Margin="170,115,0,0" VerticalAlignment="Top" Width="236" FontSize="20" Height="37" Foreground="Black"/>
+
+
+                <Label Content="Служебен номер:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="0,167,0,0" VerticalAlignment="Top" Width="162" Foreground="#CC119EDA" FontSize="18"/>
+                <Label HorizontalContentAlignment="Left" Content="{Binding User.UserId}"  HorizontalAlignment="Left" Margin="170,167,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Height="34" Foreground="Black"/>
+
+
+                <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsEnabled="{Binding IsCheckBoxTrafficPolicemanEnabled}" IsChecked="{Binding IsTrafficPoliceman}" Content="Пътен полицай" HorizontalAlignment="Left" Margin="169,272,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA"/>
+
                 <Label Content="Парола:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,218,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-                <PasswordBox x:Name="pswdBoxPassword" local:PasswordHelper.Attach="True"  local:PasswordHelper.Password="{Binding User.UserPassword}"    MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" Visibility="{Binding IsPswdBoxVisible, Converter={StaticResource BoolToVis}}" IsEnabled="False"/>
-                <TextBox x:Name="txtBoxVisiblePassword" MaxLength="12" Text="{Binding User.UserPassword}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsPswdTxtBoxEnabled}" Visibility="{Binding IsPswdTxtBoxVisible, Converter={StaticResource BoolToVis}}"/>
+                <PasswordBox x:Name="pswdBoxPassword" local:PasswordHelper.Attach="True"  local:PasswordHelper.Password="{Binding UserPass,Mode=TwoWay}"    MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" Visibility="{Binding IsPswdBoxVisible, Converter={StaticResource BoolToVis}}" IsEnabled="False"/>
+                <TextBox x:Name="txtBoxVisiblePassword" MaxLength="12" Text="{Binding UserPass,Mode=TwoWay}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,218,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsPswdTxtBoxEnabled}" Visibility="{Binding IsPswdTxtBoxVisible, Converter={StaticResource BoolToVis}}"/>
 
                 <Button x:Name="btnEdit" Content="Редактирай" IsEnabled="{Binding IsEditBtnEnabled}" Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="327,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding EditCommand}" />
                 <Button x:Name="btnSave" Content="Запамети"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding UpdateUserCommand}" Visibility ="{Binding IsSaveEditBtnVisible, Converter={StaticResource BoolToVis}}" />
@@ -61,8 +68,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button HorizontalAlignment="Left" Margin="272,311,0,0" Content="{DynamicResource appbar_page_png}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Click="Button_Click" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PNG формат на компютъра"></Button>
-                <Button x:Name="btnExportToPdf" HorizontalAlignment="Left" Margin="217,311,0,0" Content="{DynamicResource appbar_page_file_pdf_tag}" Command="{Binding ExportDataToPdfCommand}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PDF формат на компютъра" />
+                <Button x:Name="btnExportToPdf" HorizontalAlignment="Left" Margin="262,311,0,0" Content="{DynamicResource appbar_page_file_pdf_tag}" Command="{Binding ExportDataToPdfCommand}" Style="{DynamicResource MetroCircleButtonStyle}" VerticalAlignment="Top" Width="55" Height="55" ClickMode="Press" ToolTip="Съхранете данните си в PDF формат на компютъра" />
 
             </Grid>
         </GroupBox>

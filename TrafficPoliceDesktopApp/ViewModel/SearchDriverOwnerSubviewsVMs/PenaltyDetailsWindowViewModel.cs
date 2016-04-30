@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -115,6 +116,39 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
                     stamper.FormFlattening = true;
                     stamper.Close();
                 }
+            }
+        }
+
+
+        public ICommand SendEmailCommand
+        {
+            get { return new DelegateCommand(sendEmail); }
+        }
+        private void sendEmail()
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                mail.From = new MailAddress("resiloveca94@gmail.com");
+                mail.To.Add("sroreg@abv.bg");
+                mail.Subject = "Test Mail - 1";
+                mail.Body = "Specialno za bat gorgi";
+
+                //System.Net.Mail.Attachment attachment;
+                //attachment = new System.Net.Mail.Attachment("your attachment file");
+                //mail.Attachments.Add(attachment);
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("resiloveca94@gmail.com", "parola");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("mail Send");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
 

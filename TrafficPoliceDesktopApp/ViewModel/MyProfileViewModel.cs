@@ -19,12 +19,24 @@ namespace TrafficPoliceDesktopApp
     public class MyProfileViewModel : INotifyPropertyChanged
     {
         Service1Client service;
+        private string _originalPass;
+        private bool _originalIsTrafficPoliceman;
+
         //VM Constructor
         public MyProfileViewModel(User user)
         {
             service = new Service1Client();
-            _user = user;
-            LoggedUserGreeting = String.Format("Здравейте, {0} {1}", user.FirstName, user.LastName);
+
+            //Initiaising properties
+            User = user;
+            UserPass = _user.UserPassword;
+            IsTrafficPoliceman = _user.IsTrafficPoliceman;
+
+            _originalPass = _user.UserPassword;
+            _originalIsTrafficPoliceman = _user.IsTrafficPoliceman;
+
+
+            LoggedUserGreeting = string.Format("Здравейте, {0} {1}", user.FirstName, user.LastName);
 
 
             CancelEdit();
@@ -45,6 +57,18 @@ namespace TrafficPoliceDesktopApp
             }
         }
 
+        private bool _isTrafficPoliceman;
+        public bool IsTrafficPoliceman
+        {
+            private get { return _isTrafficPoliceman; }
+            set
+            {
+                _isTrafficPoliceman = value;
+                User.IsTrafficPoliceman = _isTrafficPoliceman;
+                RaisePropertyChangedEvent("IsTrafficPoliceman");
+            }
+        }
+
         //Get/Set user
         private User _user;
         public User User
@@ -56,6 +80,22 @@ namespace TrafficPoliceDesktopApp
                 RaisePropertyChangedEvent("User");
             }
         }
+
+        //Get/Set userPassword
+        private string _userPass;
+        public string UserPass
+        {
+            private get { return _userPass; }
+            set
+            {
+                _userPass = value;
+                _user.UserPassword = _userPass;
+                RaisePropertyChangedEvent("UserPass");
+            }
+        }
+
+
+
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)
         public event PropertyChangedEventHandler PropertyChanged;
@@ -78,17 +118,7 @@ namespace TrafficPoliceDesktopApp
             }
         }
 
-        //IsFirstNameTextboxEnabled set/get
-        private bool _isFirstNameTxtBoxEnabled;
-        public bool IsFirstNameTxtBoxEnabled
-        {
-            private get { return _isFirstNameTxtBoxEnabled; }
-            set
-            {
-                _isFirstNameTxtBoxEnabled = value;
-                RaisePropertyChangedEvent("IsFirstNameTxtBoxEnabled");
-            }
-        }
+
 
         //IsEditBtnEnabled set/get
         private bool _isEditBtnEnabled;
@@ -102,29 +132,7 @@ namespace TrafficPoliceDesktopApp
             }
         }
 
-        //IsSecondNameTextboxEnabled set/get
-        private bool _isSecondNameTxtBoxEnabled;
-        public bool IsSecondNameTxtBoxEnabled
-        {
-            private get { return _isSecondNameTxtBoxEnabled; }
-            set
-            {
-                _isSecondNameTxtBoxEnabled = value;
-                RaisePropertyChangedEvent("IsSecondNameTxtBoxEnabled");
-            }
-        }
 
-        //IsLastNameTextboxEnabled set/get
-        private bool _isLastNameTxtBoxEnabled;
-        public bool IsLastNameTxtBoxEnabled
-        {
-            private get { return _isLastNameTxtBoxEnabled; }
-            set
-            {
-                _isLastNameTxtBoxEnabled = value;
-                RaisePropertyChangedEvent("IsLastNameTxtBoxEnabled");
-            }
-        }
 
 
         //IsCheckBoxTrafficPolicemanEnabled set/get
@@ -172,9 +180,7 @@ namespace TrafficPoliceDesktopApp
         //Edit func
         private void Edit()
         {
-            IsFirstNameTxtBoxEnabled = true;
-            IsSecondNameTxtBoxEnabled = true;
-            IsLastNameTxtBoxEnabled = true;
+
             IsCheckBoxTrafficPolicemanEnabled = true;
 
             IsCanceEditBtnVisible = true;
@@ -198,9 +204,7 @@ namespace TrafficPoliceDesktopApp
         //CancelEdit func
         private void CancelEdit()
         {
-            IsFirstNameTxtBoxEnabled = false;
-            IsSecondNameTxtBoxEnabled = false;
-            IsLastNameTxtBoxEnabled = false;
+
             IsCheckBoxTrafficPolicemanEnabled = false;
 
             IsEditBtnEnabled = true;
@@ -212,7 +216,11 @@ namespace TrafficPoliceDesktopApp
 
             IsShowPassBtnVisible = true;
 
+            UserPass = _originalPass;
+            IsTrafficPoliceman = _originalIsTrafficPoliceman;
+            
             hidePassword();
+
         }
 
         
@@ -368,6 +376,8 @@ namespace TrafficPoliceDesktopApp
                         case 0:
                            MessageBox.Show("Данните за потребителя бяха успешно обновени", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             LoggedUserGreeting = String.Format("Здравейте, {0} {1}", User.FirstName, User.LastName);
+                            _originalPass = User.UserPassword;
+                            _originalIsTrafficPoliceman = User.IsTrafficPoliceman;
                             CancelEdit();
                             break;
 
@@ -428,7 +438,6 @@ namespace TrafficPoliceDesktopApp
             IsPswdTxtBoxVisible = true;
             IsPswdBoxVisible = false;
 
-            //txtBoxVisiblePassword.Text = pswdBoxPassword.Password;
 
         }
 

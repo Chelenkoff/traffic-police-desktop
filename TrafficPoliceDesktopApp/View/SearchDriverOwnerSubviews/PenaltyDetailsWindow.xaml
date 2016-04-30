@@ -45,7 +45,9 @@
                 <TextBox x:Name="txtBoxIssuerId" Text="{Binding Penalty.IssuerId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="181,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="18" IsEnabled="False"/>
                 <Label Content="Съставител служебен №:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" Width="173" Foreground="#CC119EDA" Height="33" FontSize="14"/>
                 <Button x:Name="btnGenerateDisagreementTemplate" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="375,281,0,0" VerticalAlignment="Top" Width="72" Command="{Binding GenerateDisagreementDocumentCommand}" Height="72" ToolTip="Генерирай документ - възражение на нарушителя"/>
-                <Button  Content="{DynamicResource appbar_user_tie}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="394,130,0,0" VerticalAlignment="Top" Width="33" Command="{Binding ShowIssuerDetailsCommand}" Height="33" ToolTip="Справка за сужителя-съставител"/>
+                <Button  Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="385,225,0,0" VerticalAlignment="Top" Width="51" Command="{Binding SendEmailCommand}" Height="51" ToolTip="Генерирай документ - възражение на нарушителя"/>
+
+                <Button  Content="{DynamicResource appbar_user_tie}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="385,130,0,0" VerticalAlignment="Top" Width="33" Command="{Binding ShowIssuerDetailsCommand}" Height="33" ToolTip="Справка за сужителя-съставител"/>
 
             </Grid>
 

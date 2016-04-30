@@ -6,7 +6,7 @@
                       Title="{Binding Title}"
                       Height="600" Width="500"
                       ResizeMode="CanMinimize"     
-                         GlowBrush="{DynamicResource AccentColorBrush}" >
+                         GlowBrush="{DynamicResource AccentColorBrush}" FontSize="12" >
 
     <!--Window resources-->
     <Controls:MetroWindow.Resources>
@@ -17,7 +17,26 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
-    
+
+    <!--Window Top Right Menu Items-->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button  Command="{Binding CloseWindowCommand}" ToolTip="Прати мейл на лицето">
+                <StackPanel Orientation="Horizontal">
+
+                    <Rectangle Width="30"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_email}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </StackPanel>
+            </Button>
+
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
     <Grid>
         <TabControl Name="tabControl" >
             <Controls:MetroTabItem Name="driverOwnerPersonalDataTabItem" Header="Лични данни" Controls:ControlsHelper.HeaderFontSize="20" >

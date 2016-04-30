@@ -232,8 +232,8 @@ namespace WCFDBService
 
         public string InsertUserAndGetGeneratedId(User usr)
         {
-            string query = String.Format(("CALL add_user_and_get_id(\"{0}\",\"{1}\",\"{2}\",{3},\"{4}\")"),
-                                               usr.FirstName,usr.SecondName,usr.LastName,usr.IsTrafficPoliceman,usr.UserPassword);
+            string query = "CALL add_user_and_get_id(@FirstName,@SecondName,@LastName,@IsTrafficPoliceman,@Password)";
+         
             //DB - Connected
             if (this.OpenConnection() == true)
             {
@@ -243,6 +243,20 @@ namespace WCFDBService
                 {
                     //Create Command
                     MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    //Declaring query params
+                    cmd.Parameters.Add("@FirstName", MySqlDbType.VarChar, 20);
+                    cmd.Parameters.Add("@SecondName", MySqlDbType.VarChar, 20);
+                    cmd.Parameters.Add("@LastName", MySqlDbType.VarChar,20);
+                    cmd.Parameters.Add("@IsTrafficPoliceman", MySqlDbType.Bit, 1);
+                    cmd.Parameters.Add("@Password", MySqlDbType.VarChar, 12);
+                    //Setting params
+                    cmd.Parameters["@FirstName"].Value = usr.FirstName;
+                    cmd.Parameters["@SecondName"].Value = usr.SecondName;
+                    cmd.Parameters["@LastName"].Value = usr.LastName;
+                    cmd.Parameters["@IsTrafficPoliceman"].Value = usr.IsTrafficPoliceman;
+                    cmd.Parameters["@Password"].Value = usr.UserPassword;
+
                     //Create a data reader and Execute the command                    
                     dataReader = cmd.ExecuteReader();
 
