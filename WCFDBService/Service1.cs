@@ -230,23 +230,33 @@ namespace WCFDBService
 
 
 
-        public int InsertUser(User usr)
+        public string InsertUserAndGetGeneratedId(User usr)
         {
-            string insertQuery = String.Format(("INSERT INTO users (user_id,first_name,second_name,last_name,is_traffic_policeman,password)"+
-                                               " VALUES({0},\"{1}\",\"{2}\",\"{3}\",{4},\"{5}\")"),
-                                                usr.UserId,usr.FirstName,usr.SecondName,usr.LastName,usr.IsTrafficPoliceman,usr.UserPassword);
+            string query = String.Format(("CALL add_user_and_get_id(\"{0}\",\"{1}\",\"{2}\",{3},\"{4}\")"),
+                                               usr.FirstName,usr.SecondName,usr.LastName,usr.IsTrafficPoliceman,usr.UserPassword);
             //DB - Connected
             if (this.OpenConnection() == true)
             {
+                MySqlDataReader dataReader;
+                string id ="";
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);                 
-                    cmd.ExecuteNonQuery();
-                    return 0;
+                    //Create Command
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    //Create a data reader and Execute the command                    
+                    dataReader = cmd.ExecuteReader();
+
+                    //Read the data
+                    while (dataReader.Read())
+                    {
+                        id = dataReader["user_id"] + "";
+                    }
+                    dataReader.Close();
+                    return id;
                 }
                 catch
-                {   //User is already present with the given credentials
-                    return 2;
+                {   
+                    return "QUERY_ERROR";
                 }
                 finally
                 {
@@ -257,7 +267,7 @@ namespace WCFDBService
             else
             {
                 //DB - Not connected
-                return 1;
+                return "DB_NOT_CONNECTED";
             }                              
 
         }

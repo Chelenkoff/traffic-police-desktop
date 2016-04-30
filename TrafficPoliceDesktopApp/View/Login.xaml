@@ -6,7 +6,7 @@
         xmlns:vm ="clr-namespace:TrafficPoliceDesktopApp"
         xmlns:behaviors ="clr-namespace:TrafficPoliceDesktopApp.Behaviors"
         behaviors:CloseDialog.DialogResult="{Binding CanWindowClose}"
-        Title="КАТ - Вход" Height="300" Width="500"
+        Title="КАТ - Вход" Height="300" Width="600"
         ResizeMode="CanMinimize"     
         GlowBrush="{DynamicResource AccentColorBrush}"
         WindowStartupLocation="CenterScreen" VerticalAlignment="Top">
@@ -18,21 +18,21 @@
     </Window.DataContext>
 
     <Grid>
-        <Label Content="Вход в системата"  HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,234,0" VerticalAlignment="Top" Height="41" Width="250" Foreground="#FF2D75DE" FontSize="24"/>
+        <Label Content="Вход в системата"  HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="172,10,180,0" VerticalAlignment="Top" Height="41" Width="242" Foreground="#FF2D75DE" FontSize="24"/>
 
-        <TextBox x:Name="txtBoxEGN" MaxLength="10" IsEnabled="{Binding IsTxtBoxEGNEnabled}" Controls:TextBoxHelper.Watermark="Въведете вашето ЕГН" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,70,166,164" TextWrapping="Wrap"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding UserId, Mode=TwoWay}"/>
+        <TextBox x:Name="txtBoxEGN" MaxLength="10" IsEnabled="{Binding IsTxtBoxEGNEnabled}" Controls:TextBoxHelper.Watermark="Въведете служебен номер" Controls:TextBoxHelper.ClearTextButton="True" Margin="172,70,180,164" TextWrapping="Wrap"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding UserId, Mode=TwoWay}"/>
 
-        <PasswordBox x:Name="pswdBoxPass" MaxLength="12" IsEnabled="{Binding IsPswdBoxPassEnabled}" Controls:TextBoxHelper.Watermark="Въведете вашата парола" Controls:TextBoxHelper.ClearTextButton="True" Margin="109,130,166,104"  HorizontalContentAlignment="Center" vm:PasswordHelper.Attach="True"  vm:PasswordHelper.Password="{Binding Password, Mode=TwoWay}" VerticalContentAlignment="Center" FontSize="16"   />
+        <PasswordBox x:Name="pswdBoxPass" MaxLength="12" IsEnabled="{Binding IsPswdBoxPassEnabled}" Controls:TextBoxHelper.Watermark="Въведете вашата парола" Controls:TextBoxHelper.ClearTextButton="True" Margin="172,130,180,104"  HorizontalContentAlignment="Center" vm:PasswordHelper.Attach="True"  vm:PasswordHelper.Password="{Binding Password, Mode=TwoWay}" VerticalContentAlignment="Center" FontSize="16"   />
 
 
-        <Label Content="ЕГН" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="60" Foreground="#FF2D75DE" FontSize="20"/>
-        <Label Content="Парола" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="90" Foreground="#FF2D75DE" FontSize="20"/>
+        <Label Content="Служебен номер" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="3,70,0,0" VerticalAlignment="Top" Width="169" Foreground="#FF2D75DE" FontSize="20"/>
+        <Label Content="Парола" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="3,130,0,0" VerticalAlignment="Top" Width="169" Foreground="#FF2D75DE" FontSize="20"/>
 
-        <Button x:Name="btnLogin" Command="{Binding LoginCommand}" IsEnabled="{Binding IsBtnLoginEnabled}" Style="{StaticResource AccentedSquareButtonStyle}" Content="Влез" HorizontalContentAlignment="Center" Margin="188,211,166,10" VerticalContentAlignment="Center" Width="140" Height="50" FontSize="25" Controls:ButtonHelper.PreserveTextCase="True" ClickMode="Press"/>
-        <Controls:ProgressRing x:Name="progressRingLoading" IsActive="{Binding IsProgressRingActive}" Margin="133,211,311,10" Height="50" Width="50" />
+        <Button x:Name="btnLogin" Command="{Binding LoginCommand}" IsEnabled="{Binding IsBtnLoginEnabled}" Style="{StaticResource AccentedSquareButtonStyle}" Content="Вход" HorizontalContentAlignment="Center" Margin="172,202,180,19" VerticalContentAlignment="Center" Height="50" FontSize="25" Controls:ButtonHelper.PreserveTextCase="True" ClickMode="Press" Controls:ControlsHelper.ContentCharacterCasing="Upper"/>
+        <Controls:ProgressRing x:Name="progressRingLoading" IsActive="{Binding IsProgressRingActive}" Margin="117,202,427,19" Height="50" Width="50" />
 
-        <Image HorizontalAlignment="Left" Height="98" Margin="373,163,0,0" VerticalAlignment="Top" Width="98" Source="/TrafficPoliceDesktopApp;component/Resources/Images/kat.png"/>
-        <Image HorizontalAlignment="Left" Height="138" Margin="391,15,0,0" VerticalAlignment="Top" Width="57" Source="/TrafficPoliceDesktopApp;component/Resources/Images/mvr.png" Stretch="UniformToFill"/>
+        <Image HorizontalAlignment="Left" Height="110" Margin="459,151,0,0" VerticalAlignment="Top" Width="108" Source="/TrafficPoliceDesktopApp;component/Resources/Images/kat.png"/>
+        <Image HorizontalAlignment="Left" Height="138" Margin="483,10,0,0" VerticalAlignment="Top" Width="57" Source="/TrafficPoliceDesktopApp;component/Resources/Images/mvr.png" Stretch="UniformToFill"/>
 
     </Grid>
 </Controls:MetroWindow>

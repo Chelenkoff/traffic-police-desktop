@@ -26,12 +26,12 @@
 
                 <Label Content="Контролен номер:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,11,0,0" VerticalAlignment="Top" Width="166" Foreground="#CC119EDA" FontSize="18" Height="33"/>
 
-                <Controls:ProgressRing x:Name="progressRingLoading" Margin="395,124,13,192" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
-                
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="394,168,22,156" Height="42" Width="42" IsActive="{Binding IsProgressRingActive}" />
+
                 <Label Content="Дата на извършване:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="168" Foreground="#CC119EDA" FontSize="16" Height="31"/>
                 <DatePicker x:Name="datePickerHappenedDate" SelectedDate="{Binding Penalty.HappenedDateTime}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="31" Focusable="False"  IsEnabled="False" FontSize="15" Width="161"/>
-                <Label Content="Местопроизшествие:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,168,0,0" VerticalAlignment="Top" Width="166" Foreground="#CC119EDA" FontSize="16"/>
-                <TextBox x:Name="txtBoxLocation" Text="{Binding Penalty.Location}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="181,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="False"/>
+                <Label Content="Местопроизшествие:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="5,168,0,0" VerticalAlignment="Top" Width="173" Foreground="#CC119EDA" FontSize="16"/>
+                <TextBox x:Name="txtBoxLocation" Text="{Binding Penalty.Location}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="181,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="16" IsEnabled="False"/>
                 <Label Content="Описание:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,204,0,0" VerticalAlignment="Top" Width="90" Foreground="#CC119EDA" FontSize="16"/>
 
 
@@ -42,10 +42,10 @@
                 <Label Content="Дата на регистрация:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="201,49,0,0" VerticalAlignment="Top" Width="168" Foreground="#CC119EDA" FontSize="16" Height="31"/>
                 <DatePicker x:Name="datePickeIssuedDate" SelectedDate="{Binding Penalty.IssuedDateTime}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="201,85,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="31" Focusable="False"  IsEnabled="False" FontSize="15" Width="168"/>
                 <Label Content="Възражение:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,281,0,0" VerticalAlignment="Top" Width="109" Foreground="#CC119EDA" FontSize="16"/>
-                <TextBox x:Name="txtBoxIssuerId" Text="{Binding Penalty.IssuerId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="181,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="18" IsEnabled="False"/>
-                <Label Content="Съставител ЕГН:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" Width="166" Foreground="#CC119EDA" FontSize="18" Height="33"/>
+                <TextBox x:Name="txtBoxIssuerId" Text="{Binding Penalty.IssuerId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="181,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="18" IsEnabled="False"/>
+                <Label Content="Съставител служебен №:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" Width="173" Foreground="#CC119EDA" Height="33" FontSize="14"/>
                 <Button x:Name="btnGenerateDisagreementTemplate" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="375,281,0,0" VerticalAlignment="Top" Width="72" Command="{Binding GenerateDisagreementDocumentCommand}" Height="72" ToolTip="Генерирай документ - възражение на нарушителя"/>
-                <Button  Content="{DynamicResource appbar_user_tie}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="338,130,0,0" VerticalAlignment="Top" Width="33" Command="{Binding ShowIssuerDetailsCommand}" Height="33" ToolTip="Справка за сужителя-съставител"/>
+                <Button  Content="{DynamicResource appbar_user_tie}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="394,130,0,0" VerticalAlignment="Top" Width="33" Command="{Binding ShowIssuerDetailsCommand}" Height="33" ToolTip="Справка за сужителя-съставител"/>
 
             </Grid>
 

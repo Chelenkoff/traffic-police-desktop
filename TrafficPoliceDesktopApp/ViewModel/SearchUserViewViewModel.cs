@@ -76,7 +76,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
 
             if (idValidation != null)
             {
-                MessageBox.Show(idValidation, "Невалидно ЕГН", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show(idValidation, "Невалиден 'Служебен номер'", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                 return false;
             }

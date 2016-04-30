@@ -15,29 +15,27 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    
+
     <Grid>
         <Label x:Name="lblViewMessage" Content="Добавяне на нов служител" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
-        
+
         <GroupBox Header="Данни на служителя" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
             <Grid>
-                <TextBox x:Name="txtBoxId" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.UserId}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="171,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
-                <PasswordBox x:Name="pswdBoxPassword" Controls:TextBoxHelper.ClearTextButton="True" local:PasswordHelper.Attach="True"  local:PasswordHelper.Password="{Binding User.UserPassword, Mode=TwoWay}" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="171,68,0,0"  VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
-                <TextBox x:Name="txtBoxFirstName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.FirstName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="0,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
-                <TextBox x:Name="txtBoxSecondName" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.SecondName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="252,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
-                <TextBox x:Name="txtBoxLastName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.LastName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="38" Margin="133,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="True"/>
-                <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsChecked="{Binding User.IsTrafficPoliceman}" IsEnabled="True" Content="Пътен полицай" HorizontalAlignment="Left" Margin="133,322,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA" Width="187"/>
+                <TextBox x:Name="txtBoxFirstName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.FirstName, Mode=TwoWay}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="156,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете име"/>
+                <TextBox x:Name="txtBoxSecondName" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.SecondName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="156,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете презиме"/>
+                <TextBox x:Name="txtBoxLastName" MaxLength="20"  Controls:TextBoxHelper.ClearTextButton="True" Text="{Binding User.LastName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="38" Margin="156,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете фамилия"/>
+                <PasswordBox x:Name="pswdBoxPassword" Controls:TextBoxHelper.ClearTextButton="True" local:PasswordHelper.Attach="True"  local:PasswordHelper.Password="{Binding User.UserPassword, Mode=TwoWay}" MaxLength="12"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="156,178,0,0"  VerticalAlignment="Top" Width="219" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете парола"/>
+                <CheckBox x:Name="checkBoxIsTrafficPoliceman"  HorizontalContentAlignment="Center" IsChecked="{Binding User.IsTrafficPoliceman}" IsEnabled="True" Content="Пътен полицай" HorizontalAlignment="Left" Margin="156,232,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#CC119EDA" Width="219"/>
 
                 <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding SaveUserCommand}" />
                 <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="327,318,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding Clear}" />
+                <Label Content="Парола:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="39,178,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="39,23,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="20" Height="36"/>
+                <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="39,68,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="20" Height="37"/>
+                <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="39,114,0,0" VerticalAlignment="Top" Width="112" Foreground="#CC119EDA" FontSize="20"/>
 
-                <Label Content="ЕГН:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="56,10,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="Парола:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="54,68,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="Име:" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="187" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="Презиме:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="252,135,0,0" VerticalAlignment="Top" Width="187" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="169,218,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-
-                <Controls:ProgressRing x:Name="progressRingLoading" Margin="10,249,379,67" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
+                <Controls:ProgressRing x:Name="progressRingLoading" Margin="196,318,209,10" Height="38" Width="34" IsActive="{Binding IsProgressRingActive}" Focusable="False" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,52" TextWrapping="Wrap" Text="На всеки новорегистриран служител ще  бъде генериран автоматично служебен номер"  Height="44" Width="419" Foreground="#FFFF2C2C" FontSize="14" FontStyle="Italic" TextAlignment="Justify"/>
 
             </Grid>
         </GroupBox>

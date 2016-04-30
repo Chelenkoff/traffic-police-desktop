@@ -21,8 +21,8 @@
         <Label x:Name="lblViewMessage" Content="Справка за служител" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
         <GroupBox Header="Търси служител" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="405" Width="451">
             <Grid>
-                <Label Content="ЕГН на служител:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="98,82,0,0" VerticalAlignment="Top" Width="247" Foreground="#CC119EDA" FontSize="25"/>
-                <TextBox x:Name="txtBoxId" Controls:TextBoxHelper.Watermark="Въведете ЕГН на служител" Text="{Binding UserId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="49" Margin="66,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" FontSize="20" IsEnabled="True"/>
+                <Label Content="Служебен номер на служителя:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="419" Foreground="#CC119EDA" FontSize="25"/>
+                <TextBox x:Name="txtBoxId" Controls:TextBoxHelper.Watermark="Въведете Служебен номер" Text="{Binding UserId}" MaxLength="10" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="49" Margin="40,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="365" FontSize="20" IsEnabled="True"/>
 
                 <Button x:Name="btnSearch" Content="Търси"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="170,196,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding SearchUserCommand}"  />
                 <Controls:ProgressRing x:Name="progressRingLoading" Margin="194,255,195,61" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />

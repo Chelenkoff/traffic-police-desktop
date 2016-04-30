@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
-            
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Icons.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -31,7 +31,7 @@
                 <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
                 <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,63,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
                 <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="53,115,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-                <Label Content="ЕГН:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="52,167,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
+                <Label Content="Служебен номер:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="159" Foreground="#CC119EDA" FontSize="18"/>
                 <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsEnabled="{Binding IsCheckBoxTrafficPolicemanEnabled}" IsChecked="{Binding User.IsTrafficPoliceman}" Content="Пътен полицай" HorizontalAlignment="Left" Margin="169,272,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA"/>
                 <TextBox x:Name="txtBoxSecondName" MaxLength="20" Text="{Binding User.SecondName}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="170,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsSecondNameTxtBoxEnabled}"/>
                 <TextBox x:Name="txtBoxFirstName" MaxLength="20" Text="{Binding User.FirstName}"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="169,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="{Binding IsFirstNameTxtBoxEnabled}"/>

@@ -18,7 +18,6 @@ namespace TrafficPoliceDesktopApp
 {
     public class LoginViewModel : INotifyPropertyChanged
     {
-        const int MAX_ID_LENGTH = 10;
         Service1Client service;
         
 
@@ -104,10 +103,7 @@ namespace TrafficPoliceDesktopApp
 
             DispatchService.Invoke(() =>
             {
-                DispatchService.Invoke(() =>
-                {
                     stopLoading();
-                });
 
                 if (!dbResponseValidation(user)) return;
 
@@ -137,15 +133,10 @@ namespace TrafficPoliceDesktopApp
             //Digit check
             else if (!id.All(char.IsDigit))
             {
-               MessageBox.Show("Некоректен формат на ЕГН! \nМоже да съдържа само цифри!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+               MessageBox.Show("Некоректен формат на 'Служебен номер'! \nМоже да съдържа само цифри!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
-            //Id length check
-            else if (id.Length != MAX_ID_LENGTH)
-            {
-                MessageBox.Show("ЕГН трябва да съдържа точно 10 цифри!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                return false;
-            }
+
             else return true;
         }
 

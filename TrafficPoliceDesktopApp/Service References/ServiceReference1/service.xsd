@@ -45,17 +45,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertUser">
+  <xs:element name="InsertUserAndGetGeneratedId">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFDBService" minOccurs="0" name="usr" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertUserResponse">
+  <xs:element name="InsertUserAndGetGeneratedIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="InsertUserResult" type="xs:int" />
+        <xs:element minOccurs="0" name="InsertUserAndGetGeneratedIdResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -20,7 +20,7 @@ namespace TrafficPoliceDesktopApp
        public NewUserViewModel()
        {
            service = new Service1Client();
-           User = new User();
+            initDefaultUser();
        }
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)
@@ -76,6 +76,12 @@ namespace TrafficPoliceDesktopApp
         }
        private void clear()
         {
+            initDefaultUser();
+        }
+
+        private void initDefaultUser()
+        {
+            User = new User();
             User.UserId = 0;
             User.FirstName = "";
             User.SecondName = "";
@@ -84,23 +90,10 @@ namespace TrafficPoliceDesktopApp
             User.IsTrafficPoliceman = false;
         }
 
-       private bool uiDataValidation(string id, string firstName, string secondName, string lastName, string pass)
+       private bool uiDataValidation(string firstName, string secondName, string lastName, string pass)
        {
-           string idValidation = InputValidator.validateId(id);
-           //Id validation
-           if (idValidation != null)
-           {
-               //System.Windows.MessageBox.Show(idValidation,"Грешка в ЕГН");
-                MessageBox.Show(idValidation,"Грешка в ЕГН",MessageBoxButton.OK, MessageBoxImage.Error);
-                
-               return false;
-           }
-           string passValidation = InputValidator.validatePass(pass);
-           if (passValidation != null)
-           {
-               MessageBox.Show(passValidation, "Грешка в паролата", MessageBoxButton.OK, MessageBoxImage.Error);
-               return false;
-           }
+
+
            string firstNameValidation = InputValidator.validateName(firstName);
            if (firstNameValidation != null)
            {
@@ -119,10 +112,16 @@ namespace TrafficPoliceDesktopApp
                MessageBox.Show(lastNameValidation, "Грешка във фамилията", MessageBoxButton.OK, MessageBoxImage.Error);
                return false;
            }
+            string passValidation = InputValidator.validatePass(pass);
+            if (passValidation != null)
+            {
+                MessageBox.Show(passValidation, "Грешка в паролата", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
 
 
 
-           return true;
+            return true;
        }
 
        public ICommand SaveUserCommand
@@ -133,12 +132,12 @@ namespace TrafficPoliceDesktopApp
        {
            
 
-           if (!uiDataValidation(User.UserId.ToString(),User.FirstName, User.SecondName, User.LastName, User.UserPassword))
+           if (!uiDataValidation(User.FirstName, User.SecondName, User.LastName, User.UserPassword))
                return;
 
 
 
-           int check;
+           string dbResponse;
            //Starting new non-blocking-ui task
            Task.Factory.StartNew(() =>
            {
@@ -150,7 +149,7 @@ namespace TrafficPoliceDesktopApp
                });
 
                //Receiving REST response
-               check = service.InsertUser(User);
+               dbResponse = service.InsertUserAndGetGeneratedId(User);
 
                DispatchService.Invoke(() =>
                {
@@ -159,17 +158,17 @@ namespace TrafficPoliceDesktopApp
                        stopLoading();
                    });
 
-                   switch (check)
+                   switch (dbResponse)
                    {
-                       case 1:
+                       case "DB_NOT_CONNECTED":
                            MessageBox.Show("Възникна проблем при свързването с базата данни ", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
-                       case 2:
-                           string message = String.Format("Съществува потребител с ЕГН: {0}",User.UserId);
-                           MessageBox.Show(message, "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+                       case "QUERY_ERROR":
+                           MessageBox.Show("Възникна проблем при добавянето на служителя ", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
-                       case 0:
-                           MessageBox.Show("Потребителят бе успешно добавен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                       default:
+                           MessageBox.Show(String.Format("Служителят бе успешно добавен\n Неговият служебен номер е {0}",dbResponse), "Внимание", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                            break;
 
                    }

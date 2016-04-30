@@ -24,8 +24,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetReadOnlyUserById", ReplyAction="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse")]
         WCFDBService.User GetReadOnlyUserById(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUser", ReplyAction="http://tempuri.org/IService1/InsertUserResponse")]
-        int InsertUser(WCFDBService.User usr);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertUserAndGetGeneratedId", ReplyAction="http://tempuri.org/IService1/InsertUserAndGetGeneratedIdResponse")]
+        string InsertUserAndGetGeneratedId(WCFDBService.User usr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCat", ReplyAction="http://tempuri.org/IService1/InsertCatResponse")]
         int InsertCat(WCFDBService.Categories categ);
@@ -88,8 +88,8 @@ namespace TrafficPoliceDesktopApp.ServiceReference1 {
             return base.Channel.GetReadOnlyUserById(id);
         }
         
-        public int InsertUser(WCFDBService.User usr) {
-            return base.Channel.InsertUser(usr);
+        public string InsertUserAndGetGeneratedId(WCFDBService.User usr) {
+            return base.Channel.InsertUserAndGetGeneratedId(usr);
         }
         
         public int InsertCat(WCFDBService.Categories categ) {

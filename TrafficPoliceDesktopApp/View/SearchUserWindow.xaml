@@ -9,17 +9,17 @@
         <Label Content="Справка за служител" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="241,3,0,0" VerticalAlignment="Top" Width="214" Foreground="#CC119EDA" FontSize="20"/>
 
         <Label Content="Име:" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="73,60,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-        <Label x:Name="lblFirstName"  HorizontalContentAlignment="Left" Content="{Binding User.FirstName}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="190,60,0,0" VerticalAlignment="Top" Width="187" FontSize="16" />
+        <Label x:Name="lblFirstName"  HorizontalContentAlignment="Left" Content="{Binding User.FirstName}"  HorizontalAlignment="Left" Height="37" Margin="194,60,0,0" VerticalAlignment="Top" Width="186" FontSize="20" />
 
         <Label Content="Презиме:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="73,113,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-        <Label x:Name="lblSecondName"  HorizontalContentAlignment="Left" Content="{Binding User.SecondName}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="191,113,0,0" VerticalAlignment="Top" Width="187" FontSize="16" />
+        <Label x:Name="lblSecondName"  HorizontalContentAlignment="Left" Content="{Binding User.SecondName}"  HorizontalAlignment="Left" Height="37" Margin="194,113,0,0" VerticalAlignment="Top" Width="186" FontSize="20" />
 
         <Label Content="Фамилия:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="74,165,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-        <Label x:Name="lblLastName" Content="{Binding User.LastName}"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="190,165,0,0" VerticalAlignment="Top" Width="187" FontSize="16"/>
+        <Label x:Name="lblLastName" Content="{Binding User.LastName}"  Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="37" Margin="194,165,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
 
-        <Label Content="ЕГН:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="73,217,0,0" VerticalAlignment="Top" Width="110" Foreground="#CC119EDA" FontSize="20"/>
-        <Label x:Name="lblId" HorizontalContentAlignment="Left" Content="{Binding User.UserId}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="190,217,0,0"  VerticalAlignment="Top" Width="187" FontSize="16"/>
-        <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsChecked="{Binding User.IsTrafficPoliceman}" IsEnabled="False" Content="Пътен полицай" HorizontalAlignment="Left" Margin="191,273,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#CC119EDA"/>
+        <Label Content="Служебен номер:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="173" Foreground="#CC119EDA" FontSize="20"/>
+        <Label x:Name="lblId" HorizontalContentAlignment="Left" Content="{Binding User.UserId}" HorizontalAlignment="Left" Height="37" Margin="194,217,0,0"  VerticalAlignment="Top" Width="186" FontSize="20"/>
+        <CheckBox x:Name="checkBoxIsTrafficPoliceman" IsChecked="{Binding User.IsTrafficPoliceman}" IsEnabled="False" Content="Пътен полицай" HorizontalAlignment="Left" Margin="194,259,0,0" VerticalAlignment="Top" FontSize="29" Foreground="#CC119EDA" Width="234"/>
 
     </Grid>
 </Controls:MetroWindow>

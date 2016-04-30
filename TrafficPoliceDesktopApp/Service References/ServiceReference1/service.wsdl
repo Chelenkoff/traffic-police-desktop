@@ -26,11 +26,11 @@
   <wsdl:message name="IService1_GetReadOnlyUserById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetReadOnlyUserByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_InsertUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertUser" />
+  <wsdl:message name="IService1_InsertUserAndGetGeneratedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserAndGetGeneratedId" />
   </wsdl:message>
-  <wsdl:message name="IService1_InsertUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  <wsdl:message name="IService1_InsertUserAndGetGeneratedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserAndGetGeneratedIdResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_InsertCat_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCat" />
@@ -87,9 +87,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetReadOnlyUserById" message="tns:IService1_GetReadOnlyUserById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetReadOnlyUserByIdResponse" message="tns:IService1_GetReadOnlyUserById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="InsertUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUser" message="tns:IService1_InsertUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUserResponse" message="tns:IService1_InsertUser_OutputMessage" />
+    <wsdl:operation name="InsertUserAndGetGeneratedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUserAndGetGeneratedId" message="tns:IService1_InsertUserAndGetGeneratedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUserAndGetGeneratedIdResponse" message="tns:IService1_InsertUserAndGetGeneratedId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCat">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCat" message="tns:IService1_InsertCat_InputMessage" />
@@ -149,8 +149,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertUser">
-      <soap:operation soapAction="http://tempuri.org/IService1/InsertUser" style="document" />
+    <wsdl:operation name="InsertUserAndGetGeneratedId">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertUserAndGetGeneratedId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

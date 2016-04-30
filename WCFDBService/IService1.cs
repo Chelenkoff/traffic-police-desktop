@@ -24,7 +24,7 @@ namespace WCFDBService
       User GetReadOnlyUserById(string id);
 
       [OperationContract]
-      int InsertUser(User usr);
+      string InsertUserAndGetGeneratedId(User usr);
 
       [OperationContract]
       int InsertCat(Categories categ);
