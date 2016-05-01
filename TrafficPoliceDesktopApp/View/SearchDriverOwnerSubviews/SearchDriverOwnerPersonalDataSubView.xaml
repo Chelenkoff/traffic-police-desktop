@@ -8,36 +8,44 @@
     <Grid>
         <Label x:Name="lblViewMessage" Content="{Binding MessageTitle}" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
-        <GroupBox Header="Лични данни" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="477" Width="470">
+        <GroupBox Header="Лични данни" HorizontalAlignment="Left" Margin="10,37,0,-240" VerticalAlignment="Top" Height="477" Width="470">
+            <!--477 height-->
+            <ScrollViewer>
+                <Grid Height="571">
+                    <TextBox x:Name="txtBoxId" MaxLength="10" Text="{Binding DriverOwner.DriverOwnerId}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="False"/>
 
-            <Grid >
-                <TextBox x:Name="txtBoxId" MaxLength="10" Text="{Binding DriverOwner.DriverOwnerId}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="False"/>
+                    <Label Content="ЕГН:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="114" Foreground="#CC119EDA" FontSize="18" Height="33"/>
 
-                <Label Content="ЕГН:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="114" Foreground="#CC119EDA" FontSize="18" Height="33"/>
+                    <Controls:ProgressRing x:Name="progressRingLoading" Margin="196,502,198,144" Height="50" Width="50" IsActive="False" />
+                    <TextBox x:Name="txtBoxFirstName" Text="{Binding DriverOwner.FirstName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
+                    <Label Content="Име:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,56,0,0" VerticalAlignment="Top" Width="60" Foreground="#CC119EDA" FontSize="16" Height="30"/>
+                    <TextBox x:Name="txtBoxSecondName" Text="{Binding DriverOwner.SecondName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
+                    <Label Content="Презиме:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,97,0,0" VerticalAlignment="Top" Width="85" Foreground="#CC119EDA" FontSize="16"/>
+                    <TextBox x:Name="txtBoxLastName" Text="{Binding DriverOwner.LastName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
+                    <Label Content="Фамилия:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,136,0,0" VerticalAlignment="Top" Width="85" Foreground="#CC119EDA" FontSize="16" Height="29"/>
+                    <RadioButton x:Name="radioBtnMan" IsChecked="{Binding IsManChecked}" Content="Мъж" GroupName="sex" HorizontalAlignment="Left" Margin="289,57,0,0" VerticalAlignment="Top" Foreground="#CC119EDA" FontSize="16" Height="33" Width="63" IsEnabled="False"/>
+                    <RadioButton x:Name="radioBtnWoman" IsChecked="{Binding IsWomanChecked}" Content="Жена" GroupName="sex" HorizontalAlignment="Left" Margin="357,59,0,0" VerticalAlignment="Top" Foreground="#CC119EDA" FontSize="16" Height="31" Width="68" IsEnabled="False"/>
+                    <ComboBox x:Name="comboBoxCountries" ItemsSource="{Binding CountriesList}" SelectedItem="{Binding DriverOwner.Nationality}" HorizontalAlignment="Left" Margin="313,136,0,0" VerticalAlignment="Top" Width="120" Height="29" IsEnabled="False"/>
+                    <Label Content="Гражданство:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="313,100,0,0" VerticalAlignment="Top" Width="120" Foreground="#CC119EDA" FontSize="16"/>
+                    <Label Content="Дата на раждане:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,190,0,0" VerticalAlignment="Top" Width="140" Foreground="#CC119EDA" FontSize="16" Height="31"/>
+                    <DatePicker x:Name="datePickerBirthDate" SelectedDate="{Binding DriverOwner.BirthDate}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="173,190,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="31" Focusable="False"  IsEnabled="False" FontSize="15"/>
+                    <Label Content="Месторождение:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,259,0,0" VerticalAlignment="Top" Width="135" Foreground="#CC119EDA" FontSize="16"/>
+                    <TextBox x:Name="txtBoxBirthPlace" Text="{Binding DriverOwner.BirthPlace}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="173,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="False"/>
+                    <Label Content="Постоянен адрес:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,304,0,0" VerticalAlignment="Top" Width="145" Foreground="#CC119EDA" FontSize="16"/>
+                    <TextBox x:Name="txtBoxResidence" Text="{Binding DriverOwner.Residence}"  MaxLength="50" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalAlignment="Left" Height="72" Margin="173,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" FontSize="16" IsEnabled="False"/>
 
-                <Controls:ProgressRing x:Name="progressRingLoading" Margin="184,1580,191,20" Height="50" Width="50" IsActive="False" />
-                <TextBox x:Name="txtBoxFirstName" Text="{Binding DriverOwner.FirstName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
-                <Label Content="Име:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,56,0,0" VerticalAlignment="Top" Width="60" Foreground="#CC119EDA" FontSize="16" Height="30"/>
-                <TextBox x:Name="txtBoxSecondName" Text="{Binding DriverOwner.SecondName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
-                <Label Content="Презиме:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,97,0,0" VerticalAlignment="Top" Width="85" Foreground="#CC119EDA" FontSize="16"/>
-                <TextBox x:Name="txtBoxLastName" Text="{Binding DriverOwner.LastName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="90,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="16" IsEnabled="False"/>
-                <Label Content="Фамилия:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,136,0,0" VerticalAlignment="Top" Width="85" Foreground="#CC119EDA" FontSize="16" Height="29"/>
-                <RadioButton x:Name="radioBtnMan" IsChecked="{Binding IsManChecked}" Content="Мъж" GroupName="sex" HorizontalAlignment="Left" Margin="289,57,0,0" VerticalAlignment="Top" Foreground="#CC119EDA" FontSize="16" Height="33" Width="63" IsEnabled="False"/>
-                <RadioButton x:Name="radioBtnWoman" IsChecked="{Binding IsWomanChecked}" Content="Жена" GroupName="sex" HorizontalAlignment="Left" Margin="357,59,0,0" VerticalAlignment="Top" Foreground="#CC119EDA" FontSize="16" Height="31" Width="68" IsEnabled="False"/>
-                <ComboBox x:Name="comboBoxCountries" ItemsSource="{Binding CountriesList}" SelectedItem="{Binding DriverOwner.Nationality}" HorizontalAlignment="Left" Margin="313,136,0,0" VerticalAlignment="Top" Width="120" Height="29" IsEnabled="False"/>
-                <Label Content="Гражданство:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="313,100,0,0" VerticalAlignment="Top" Width="120" Foreground="#CC119EDA" FontSize="16"/>
-                <Label Content="Дата на раждане:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,190,0,0" VerticalAlignment="Top" Width="140" Foreground="#CC119EDA" FontSize="16" Height="31"/>
-                <DatePicker x:Name="datePickerBirthDate" SelectedDate="{Binding DriverOwner.BirthDate}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="173,190,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="31" Focusable="False"  IsEnabled="False" FontSize="15"/>
-                <Label Content="Месторождение:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,259,0,0" VerticalAlignment="Top" Width="135" Foreground="#CC119EDA" FontSize="16"/>
-                <TextBox x:Name="txtBoxBirthPlace" Text="{Binding DriverOwner.BirthPlace}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="31" Margin="173,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16" IsEnabled="False"/>
-                <Label Content="Постоянен адрес:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="5,304,0,0" VerticalAlignment="Top" Width="145" Foreground="#CC119EDA" FontSize="16"/>
-                <TextBox x:Name="txtBoxResidence" Text="{Binding DriverOwner.Residence}"  MaxLength="50" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalAlignment="Left" Height="72" Margin="173,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" FontSize="16" IsEnabled="False"/>
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="45" Margin="55,390,0,0" VerticalAlignment="Top" Width="45" Source="/TrafficPoliceDesktopApp;component/Resources/Images/phone_icon.png" Stretch="Fill"/>
+                    <TextBox  Text="{Binding DriverOwner.TelNum}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="117,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="16" IsEnabled="False"/>
 
-                <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="28,394,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
-                <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="331,394,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
+                    <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="45" Margin="55,435,0,0" VerticalAlignment="Top" Width="45" Source="/TrafficPoliceDesktopApp;component/Resources/Images/mail_icon.png" Stretch="Fill"/>
+                    <TextBox  Text="{Binding DriverOwner.Email}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="117,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="16" IsEnabled="False"/>
 
-            </Grid>
 
+                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="20,514,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
+                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="323,514,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
+
+                </Grid>
+            </ScrollViewer>
         </GroupBox>
     </Grid>
 </UserControl>

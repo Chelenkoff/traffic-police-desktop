@@ -10,7 +10,8 @@ namespace WCFDBService
     [DataContract]
     public class DriverOwner
     {
-
+        private const string DEFAULT_NATIONALITY = "България";
+        private const byte DEFAULT_PTS = 39;
 
 
         [DataMember]
@@ -31,6 +32,10 @@ namespace WCFDBService
         public string BirthPlace { get; set; }
         [DataMember]
         public string Residence { get; set; }
+        [DataMember]
+        public string TelNum { get; set; }
+        [DataMember]
+        public string Email { get; set; }
 
         [DataMember]
         public byte RemainingPts { get; set; }
@@ -46,24 +51,33 @@ namespace WCFDBService
          public List<Penalty> Penalties { get; set; }
 
 
-        [OperationBehavior]
-        public void Clear()
+        //Constructor
+        public  DriverOwner()
         {
             DriverOwnerId = 0;
-            FirstName = "";
-            SecondName = "";
-            LastName = "";
+            FirstName =string.Empty;
+            SecondName = string.Empty;
+            LastName = string.Empty;
+
             Sex = SexEnum.Man;
-            Nationality = "България";
+
+
+            Nationality = DEFAULT_NATIONALITY;
             BirthDate = new DateTime();
-            BirthPlace = "";
-            Residence = "";
-            RemainingPts = 39;
-            LicenceIssueDate = new DateTime();
-            LicenceExpiryDate = new DateTime();
-            LicenceIssuedBy = "";
+            BirthPlace = string.Empty;
+            Residence = string.Empty;
+            TelNum = string.Empty;
+            Email = string.Empty;
+            RemainingPts = DEFAULT_PTS;
+            LicenceIssueDate = DateTime.Now;
+            LicenceExpiryDate = LicenceIssueDate.AddYears(10);
+            LicenceIssuedBy = string.Empty;
+
+            Categories = new Categories();
+
 
         }
+
 
     }
 

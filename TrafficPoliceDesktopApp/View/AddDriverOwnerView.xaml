@@ -17,14 +17,14 @@
     <Grid >
         <Label x:Name="lblViewMessage" Content="Добавяне на водач" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="451" Foreground="#CC119EDA" FontSize="20"/>
 
-        <GroupBox Header="Данни на водач/собственик" HorizontalAlignment="Left" Margin="10,52,0,-112" VerticalAlignment="Top" Height="405" Width="451">
+        <GroupBox Header="Данни на водач/собственик" HorizontalAlignment="Left" Margin="10,52,0,-1474" VerticalAlignment="Top" Height="405" Width="451">
             <ScrollViewer>
-                <Grid Height="1650" >
-                    <TextBox x:Name="txtBoxId" MaxLength="10" Text="{Binding DriverOwner.DriverOwnerId}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="100,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="True"/>
+                <Grid Height="1762" >
+                    <TextBox x:Name="txtBoxId" MaxLength="10" Text="{Binding DriverOwner.DriverOwnerId}" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="100,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="18" IsEnabled="True"/>
 
-                    <Label Content="ЕГН на водач:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="100,13,0,0" VerticalAlignment="Top" Width="208" Foreground="#CC119EDA" FontSize="18"/>
+                    <Label Content="ЕГН на водач:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="100,7,0,0" VerticalAlignment="Top" Width="208" Foreground="#CC119EDA" FontSize="18"/>
 
-                    <Controls:ProgressRing x:Name="progressRingLoading" Margin="184,1580,191,20" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
+                    <Controls:ProgressRing x:Name="progressRingLoading" Margin="184,1692,191,20" Height="50" Width="50" IsActive="{Binding IsProgressRingActive}" />
                     <TextBox x:Name="txtBoxFirstName" Text="{Binding DriverOwner.FirstName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="87,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете име"/>
                     <Label Content="Име:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="3,95,0,0" VerticalAlignment="Top" Width="60" Foreground="#CC119EDA" FontSize="16" Height="28"/>
                     <TextBox x:Name="txtBoxSecondName" Text="{Binding DriverOwner.SecondName}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="87,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете презиме"/>
@@ -41,15 +41,23 @@
                     <TextBox x:Name="txtBoxBirthPlace" Text="{Binding DriverOwner.BirthPlace}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="164,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете месторождение"/>
                     <Label Content="Постоянен адрес:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="3,295,0,0" VerticalAlignment="Top" Width="145" Foreground="#CC119EDA" FontSize="16"/>
                     <TextBox x:Name="txtBoxResidence" Text="{Binding DriverOwner.Residence}"  MaxLength="50" Controls:TextBoxHelper.ClearTextButton="True"  HorizontalAlignment="Left" Height="62" Margin="164,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете постоянен адрес"/>
-                    <Controls:NumericUpDown x:Name="upDownRemainingPts" Minimum = "0" Maximum = "39" InterceptMouseWheel="True" Interval = "1"  Margin="204,382,134.333,1237"  FontSize="16" Value="{Binding DriverOwner.RemainingPts}" UseLayoutRounding="False" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="86.667" IsManipulationEnabled="True"/>
-                    <Label Content="Контролни точки:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="3,382,0,0" VerticalAlignment="Top" Width="145" Foreground="#CC119EDA" FontSize="16"/>
-                    <Label Content="Документът е издаден от:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="3,418,0,0" VerticalAlignment="Top" Width="205" Foreground="#CC119EDA" FontSize="16" Height="32"/>
-                    <TextBox x:Name="txtBoxIssuedBy" Text="{Binding DriverOwner.LicenceIssuedBy}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="204,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете МВР клон"/>
-                    <Label Content="Издаден на:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="56,470,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerIssuedDate" HorizontalContentAlignment="Center" SelectedDate="{Binding DriverOwner.LicenceIssueDate}" HorizontalAlignment="Left" Margin="56,510,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False"/>
-                    <Label Content="Валиден до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="260,470,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
-                    <DatePicker x:Name="datePickerExpiryDate" HorizontalContentAlignment="Center" SelectedDate="{Binding DriverOwner.LicenceExpiryDate}"  HorizontalAlignment="Left" Margin="260,510,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Focusable="False"/>
-                    <GroupBox Header="Категории" HorizontalAlignment="Left" Margin="3,552,0,0" VerticalAlignment="Top" Height="1018" Width="422">
+
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="45" Margin="65,378,0,0" VerticalAlignment="Top" Width="45" Source="/TrafficPoliceDesktopApp;component/Resources/Images/phone_icon.png" Stretch="Fill"/>
+                    <TextBox  Text="{Binding DriverOwner.TelNum}" MaxLength="20" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="127,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="16" Controls:TextBoxHelper.Watermark="Въведете телефонен номер"/>
+
+                    <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="45" Margin="65,423,0,0" VerticalAlignment="Top" Width="45" Source="/TrafficPoliceDesktopApp;component/Resources/Images/mail_icon.png" Stretch="Fill"/>
+                    <TextBox  Text="{Binding DriverOwner.Email}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="127,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="16" Controls:TextBoxHelper.Watermark="Въведете мейл"/>
+
+
+                    <Controls:NumericUpDown x:Name="upDownRemainingPts" Minimum = "0" Maximum = "39" InterceptMouseWheel="True" Interval = "1"  Margin="204,483,134.333,1248"  FontSize="16" Value="{Binding DriverOwner.RemainingPts}" UseLayoutRounding="False" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False" Height="31" Width="86.667" IsManipulationEnabled="True"/>
+                    <Label Content="Контролни точки:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="13,483,0,0" VerticalAlignment="Top" Width="191" Foreground="#CC119EDA" FontSize="16"/>
+                    <Label Content="Документът е издаден от:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="3,531,0,0" VerticalAlignment="Top" Width="201" Foreground="#CC119EDA" FontSize="16" Height="32"/>
+                    <TextBox x:Name="txtBoxIssuedBy" Text="{Binding DriverOwner.LicenceIssuedBy}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="204,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontSize="16" IsEnabled="True" Controls:TextBoxHelper.Watermark="Въведете МВР клон"/>
+                    <Label Content="Издаден на:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="47,568,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
+                    <DatePicker x:Name="datePickerIssuedDate" HorizontalContentAlignment="Center" SelectedDate="{Binding DriverOwner.LicenceIssueDate}" HorizontalAlignment="Left" Margin="47,608,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Height="18" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                    <Label Content="Валиден до:" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="251,568,0,0" VerticalAlignment="Top" Width="100" Foreground="#CC119EDA" FontSize="16" Height="40"/>
+                    <DatePicker x:Name="datePickerExpiryDate" HorizontalContentAlignment="Center" SelectedDate="{Binding DriverOwner.LicenceExpiryDate}"  HorizontalAlignment="Left" Margin="251,608,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Focusable="False" Controls:TextBoxHelper.Watermark="Въведете дата"/>
+                    <GroupBox Header="Категории" HorizontalAlignment="Left" Margin="3,652,0,0" VerticalAlignment="Top" Height="1018" Width="422">
                         <Grid>
                             <Label Content="Категория" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Foreground="#CC119EDA" Height="28"/>
                             <Label Content="Придобита на" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Foreground="#CC119EDA" Height="28" Margin="81,0,0,0"/>
@@ -161,8 +169,8 @@
 
                         </Grid>
                     </GroupBox>
-                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="10,1592,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding AddDriverOwnerCommand}" />
-                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="313,1592,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding Clear}"  />
+                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="13,1714,0,-23" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding AddDriverOwnerCommand}" />
+                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="316,1714,0,-23" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press" Command="{Binding Clear}"  />
 
                 </Grid>
             </ScrollViewer>

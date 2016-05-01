@@ -100,6 +100,7 @@
       <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Categories" nillable="true" type="tns:Categories" />
       <xs:element minOccurs="0" name="DriverOwnerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LicenceExpiryDate" type="xs:dateTime" />
@@ -111,6 +112,7 @@
       <xs:element minOccurs="0" name="Residence" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sex" type="tns:Sex" />
+      <xs:element minOccurs="0" name="TelNum" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DriverOwner" nillable="true" type="tns:DriverOwner" />

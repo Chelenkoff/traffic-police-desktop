@@ -496,6 +496,8 @@ namespace WCFDBService
                       drOwner.BirthDate = Convert.ToDateTime(dataReader["birth_date"]);
                       drOwner.BirthPlace = dataReader["birth_place"] + "";
                       drOwner.Residence = dataReader["residence"] + "";
+                      drOwner.TelNum = dataReader["tel_num"] + "";
+                      drOwner.Email = dataReader["email"] + "";
                       drOwner.RemainingPts =Convert.ToByte(dataReader["remaining_pts"]);
                       drOwner.LicenceIssueDate =Convert.ToDateTime(dataReader["licence_issue_date"]);
                       drOwner.LicenceExpiryDate =Convert.ToDateTime(dataReader["licence_expiry_date"]);

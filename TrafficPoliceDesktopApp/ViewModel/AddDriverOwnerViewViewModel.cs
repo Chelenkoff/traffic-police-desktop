@@ -15,8 +15,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
 {
     public class AddDriverOwnerViewViewModel : INotifyPropertyChanged
     {
-        private const string DEFAULT_NATIONALITY = "България";
-        private const byte DEFAULT_PTS = 39;
+
         Service1Client service;
         //Constructor
         public AddDriverOwnerViewViewModel()
@@ -99,93 +98,8 @@ namespace TrafficPoliceDesktopApp.ViewModel
         private void initDefaultDriverOwner()
         {
             DriverOwner = new DriverOwner();
-            DriverOwner.Categories = new Categories();
-
-            DriverOwner.DriverOwnerId = 0;
-            DriverOwner.FirstName = "";
-            DriverOwner.SecondName = "";
-            DriverOwner.LastName = "";
-
-            DriverOwner.Sex = SexEnum.Man;
             IsManChecked = true;
-
-            DriverOwner.Nationality = DEFAULT_NATIONALITY;
-            DriverOwner.BirthDate = new DateTime();
-            DriverOwner.BirthPlace = "";
-            DriverOwner.Residence = "";
-            DriverOwner.RemainingPts = DEFAULT_PTS;
-            DriverOwner.LicenceIssueDate = DateTime.Now;
-            DriverOwner.LicenceExpiryDate = _driverOwner.LicenceIssueDate.AddYears(10);
-            DriverOwner.LicenceIssuedBy = "";
-
-
-            DriverOwner.Categories.a1AcquiryDate = null;
-            DriverOwner.Categories.a1ExpiryDate = null;
-            DriverOwner.Categories.a1Restrictions = "";
-
-            DriverOwner.Categories.aAcquiryDate = null;
-            DriverOwner.Categories.aExpiryDate = null;
-            DriverOwner.Categories.aRestrictions = "";
-
-            DriverOwner.Categories.b1AcquiryDate = null;
-            DriverOwner.Categories.b1ExpiryDate = null;
-            DriverOwner.Categories.b1Restrictions = "";
-
-            DriverOwner.Categories.bAcquiryDate = null;
-            DriverOwner.Categories.bExpiryDate = null;
-            DriverOwner.Categories.bRestrictions = "";
-
-            DriverOwner.Categories.c1AcquiryDate = null;
-            DriverOwner.Categories.c1ExpiryDate = null;
-            DriverOwner.Categories.c1Restrictions = "";
-
-            DriverOwner.Categories.cAcquiryDate = null;
-            DriverOwner.Categories.cExpiryDate = null;
-            DriverOwner.Categories.cRestrictions = "";
-
-            DriverOwner.Categories.d1AcquiryDate = null;
-            DriverOwner.Categories.d1ExpiryDate = null;
-            DriverOwner.Categories.d1Restrictions = "";
-
-            DriverOwner.Categories.dAcquiryDate = null;
-            DriverOwner.Categories.dExpiryDate = null;
-            DriverOwner.Categories.dRestrictions = "";
-
-            DriverOwner.Categories.beAcquiryDate = null;
-            DriverOwner.Categories.beExpiryDate = null;
-            DriverOwner.Categories.beRestrictions = "";
-
-            DriverOwner.Categories.c1eAcquiryDate = null;
-            DriverOwner.Categories.c1eExpiryDate = null;
-            DriverOwner.Categories.c1eRestrictions = "";
-
-            DriverOwner.Categories.ceAcquiryDate = null;
-            DriverOwner.Categories.ceExpiryDate = null;
-            DriverOwner.Categories.ceRestrictions = "";
-
-            DriverOwner.Categories.d1eAcquiryDate = null;
-            DriverOwner.Categories.d1eExpiryDate = null;
-            DriverOwner.Categories.d1eRestrictions = "";
-
-            DriverOwner.Categories.deAcquiryDate = null;
-            DriverOwner.Categories.deExpiryDate = null;
-            DriverOwner.Categories.deRestrictions = "";
-
-            DriverOwner.Categories.ttbAcquiryDate = null;
-            DriverOwner.Categories.ttbExpiryDate = null;
-            DriverOwner.Categories.ttbRestrictions = "";
-
-            DriverOwner.Categories.ttmAcquiryDate = null;
-            DriverOwner.Categories.ttmExpiryDate = null;
-            DriverOwner.Categories.ttmRestrictions = "";
-
-            DriverOwner.Categories.tktAcquiryDate = null;
-            DriverOwner.Categories.tktExpiryDate = null;
-            DriverOwner.Categories.tktRestrictions = "";
-
-            DriverOwner.Categories.mAcquiryDate = null;
-            DriverOwner.Categories.mExpiryDate = null;
-            DriverOwner.Categories.mRestrictions = "";
+            
         }
 
 

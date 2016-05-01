@@ -129,8 +129,8 @@ namespace WCFDBService
         [DataMember]
         public string mRestrictions { get; set; }
 
-        [OperationBehavior]
-        void Clr()
+     
+        public Categories()
         {
             a1AcquiryDate = null;
             a1ExpiryDate = null;
