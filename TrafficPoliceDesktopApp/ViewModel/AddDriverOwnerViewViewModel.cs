@@ -22,9 +22,6 @@ namespace TrafficPoliceDesktopApp.ViewModel
         {
             service = new Service1Client();
             _countriesList = getCountryList();
-
-
-
             initDefaultDriverOwner();
 
         }
@@ -113,7 +110,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
             }
             catch
             {
-                MessageBox.Show("File does not exist!");
+                MessageBox.Show("Списъкът с държави не може да бъде зареден");
             }
 
 
@@ -149,11 +146,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
 
                 DispatchService.Invoke(() =>
                 {
-                    DispatchService.Invoke(() =>
-                    {
                         stopLoading();
-                    });
-
                     switch (checkResponse)
                     {
                         case 1:
@@ -164,7 +157,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
                             break;
                         case 0:
                             MessageBox.Show("Водачът бе успешно добавен", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                            initDefaultDriverOwner();
+                           
                             break;
 
                     }

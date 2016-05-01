@@ -63,7 +63,7 @@ namespace WCFDBService
 
 
             Nationality = DEFAULT_NATIONALITY;
-            BirthDate = new DateTime();
+            BirthDate = new DateTime(2000,1,1);
             BirthPlace = string.Empty;
             Residence = string.Empty;
             TelNum = string.Empty;
