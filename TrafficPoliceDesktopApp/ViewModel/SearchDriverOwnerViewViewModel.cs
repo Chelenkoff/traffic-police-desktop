@@ -16,11 +16,13 @@ namespace TrafficPoliceDesktopApp.ViewModel
     public class SearchDriverOwnerViewViewModel : INotifyPropertyChanged
     {
         Service1Client service;
+        User _user;
 
         //Default constructor
-        public SearchDriverOwnerViewViewModel()
+        public SearchDriverOwnerViewViewModel(User usr)
         {
             service = new Service1Client();
+            _user = usr;
         }
 
 
@@ -138,9 +140,7 @@ namespace TrafficPoliceDesktopApp.ViewModel
                     if (!dbResponseValidation(drOwner)) return;
 
                     //DB - OK, USER - FOUND
-                    SearchDriverOwnerWindowViewModel drOwnerWindowViewModel = new SearchDriverOwnerWindowViewModel(drOwner);
-                    SearchDriverOwnerWindow searchDrOwnerWindow = new SearchDriverOwnerWindow();
-                    searchDrOwnerWindow.DataContext = drOwnerWindowViewModel;
+                    SearchDriverOwnerWindow searchDrOwnerWindow = new SearchDriverOwnerWindow(drOwner, _user);
                     searchDrOwnerWindow.Show();
                 });
             });

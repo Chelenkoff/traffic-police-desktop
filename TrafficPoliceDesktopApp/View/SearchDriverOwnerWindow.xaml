@@ -21,7 +21,7 @@
     <!--Window Top Right Menu Items-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button  Command="{Binding CloseWindowCommand}" ToolTip="Прати мейл на лицето">
+            <Button  Command="{Binding ContactPersonCommand}" ToolTip="Прати мейл на лицето">
                 <StackPanel Orientation="Horizontal">
 
                     <Rectangle Width="30"

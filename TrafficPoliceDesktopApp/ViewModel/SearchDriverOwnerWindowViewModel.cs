@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
 using TrafficPoliceDesktopApp.ServiceReference1;
+using TrafficPoliceDesktopApp.View.SearchDriverOwnerSubviews;
 using TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs;
 using WCFDBService;
 
@@ -12,11 +14,13 @@ namespace TrafficPoliceDesktopApp.ViewModel
     public class SearchDriverOwnerWindowViewModel : INotifyPropertyChanged
     {
         Service1Client service;
-
+        private User _user;
         //Default constructor
-        public SearchDriverOwnerWindowViewModel(DriverOwner drOwner)
+        public SearchDriverOwnerWindowViewModel(DriverOwner drOwner, User usr)
         {
             _driverOwner = drOwner;
+            _user = usr;
+
             service = new Service1Client();
 
             _title = String.Format("{0} {1} - Справка за водач", DriverOwner.FirstName, DriverOwner.LastName);
@@ -84,6 +88,17 @@ namespace TrafficPoliceDesktopApp.ViewModel
                 _searchDriverOwnerLicenceDataSubViewViewModel = value;
                 RaisePropertyChangedEvent("SearchDriverOwnerLicenceDataSubViewViewModel");
             }
+        }
+
+        public ICommand ContactPersonCommand
+        {
+            get { return new DelegateCommand(contactPerson); }
+        }
+        private void contactPerson()
+        {
+            MailServiceWindow mailServiceWindow = new MailServiceWindow(DriverOwner,_user);
+            mailServiceWindow.Show();
+           
         }
 
         //Get/Set window title

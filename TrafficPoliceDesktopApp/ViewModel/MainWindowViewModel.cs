@@ -30,7 +30,7 @@ namespace TrafficPoliceDesktopApp
             NewUserViewModel = new NewUserViewModel();
             SearchUserViewViewModel = new SearchUserViewViewModel();
             AddDriverOwnerViewViewModel = new AddDriverOwnerViewViewModel();
-            SearchDriverOwnerViewViewModel = new SearchDriverOwnerViewViewModel();
+            SearchDriverOwnerViewViewModel = new SearchDriverOwnerViewViewModel(usr);
             AddRegistrationViewViewModel = new AddRegistrationViewViewModel();
             SearchRegistrationViewViewModel = new SearchRegistrationViewViewModel();
             
