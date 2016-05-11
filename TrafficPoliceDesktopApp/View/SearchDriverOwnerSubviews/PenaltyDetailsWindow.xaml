@@ -48,8 +48,8 @@
                 <Button x:Name="btnGenerateDisagreementTemplate" Content="{DynamicResource appbar_page_file_pdf_tag}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="34,308,0,0" VerticalAlignment="Top" Width="54" Command="{Binding GenerateDisagreementDocumentCommand}" Height="54" ToolTip="Генерирай документ - възражение на нарушителя"/>
 
                 <Button  Content="{DynamicResource appbar_user_tie}" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="335,129,0,0" VerticalAlignment="Top" Width="33" Command="{Binding ShowIssuerDetailsCommand}" Height="33" ToolTip="Справка за сужителя-съставител"/>
-                <m:Map Margin="404,0,0,0"   CredentialsProvider="AsZ4AF2YP5GKxkR54lIXGeVrqYs_wCMEnNS4vARiOllTAyj8JyFM0xiM20xDjivs" Center="42.766102,25.283733"    ZoomLevel="6">
-                    <m:Pushpin Location="{Binding LocationCenter}"  />
+                <m:Map Margin="404,0,0,0"   CredentialsProvider="AsZ4AF2YP5GKxkR54lIXGeVrqYs_wCMEnNS4vARiOllTAyj8JyFM0xiM20xDjivs" Center="{Binding LocationCenter,Mode=TwoWay}"    ZoomLevel="13">
+                    <m:Pushpin Location="{Binding LocationCenter,Mode=OneTime}"  />
                 </m:Map>
             </Grid>
 

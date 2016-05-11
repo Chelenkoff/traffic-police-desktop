@@ -31,10 +31,8 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
             _title = String.Format("Нарушение № {0} - {1} {2}", _penalty.PenaltyId, drOwner.FirstName, drOwner.LastName);
             _viewMessage = String.Format("Нарушение на {0} {1}", drOwner.FirstName, drOwner.LastName);
 
-            LocationCenter = new Location();
-            
-            LocationCenter.Latitude = penalty.Latitude;
-            LocationCenter.Longitude = penalty.Longtitude;
+            LocationCenter = new Location(penalty.Latitude,penalty.Longtitude);
+
 
         }
 
@@ -58,6 +56,8 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
                 RaisePropertyChangedEvent("ViewMessage");
             }
         }
+
+
 
 
         //Get/Set LocationCenter
