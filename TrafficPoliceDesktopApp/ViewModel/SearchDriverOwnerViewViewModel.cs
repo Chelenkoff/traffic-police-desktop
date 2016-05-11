@@ -89,10 +89,10 @@ namespace TrafficPoliceDesktopApp.ViewModel
 
         }
 
-        private bool uiDataValidation(string id)
+        private bool uiDataValidation(string egn)
         {
-            //Name validation
-            string idValidation = InputValidator.validateId(id);
+            //ID validation
+            string idValidation = InputValidator.validateEGN(egn);
 
             if (idValidation != null)
             {

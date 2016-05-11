@@ -27,6 +27,10 @@ namespace WCFDBService
 
         [DataMember]
         public string Location { get; set; }
+        [DataMember]
+        public double Latitude { get; set; }
+        [DataMember]
+        public double Longtitude { get; set; }
 
         [DataMember]
         public string Description { get; set; }

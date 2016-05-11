@@ -27,7 +27,7 @@ namespace TrafficPoliceDesktopApp
             }
 
 
-            public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged;
 
     }
 }

@@ -53,7 +53,7 @@ namespace WCFDBService
                 connection.Open();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 return false;
             }
@@ -67,7 +67,7 @@ namespace WCFDBService
                 connection.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 return false;
             }
@@ -671,6 +671,8 @@ namespace WCFDBService
                       penalty.IssuedDateTime = Convert.ToDateTime(dataReader["date_time_issued"]);
                       penalty.HappenedDateTime = Convert.ToDateTime(dataReader["penalty_date_time"]);
                       penalty.Location = dataReader["location"].ToString();
+                      penalty.Latitude = Convert.ToDouble(dataReader["latitude"]);
+                      penalty.Longtitude = Convert.ToDouble(dataReader["longtitude"]);
                       penalty.Description = dataReader["description"].ToString();
                       penalty.Disagreement = dataReader["disagreement"].ToString();
 

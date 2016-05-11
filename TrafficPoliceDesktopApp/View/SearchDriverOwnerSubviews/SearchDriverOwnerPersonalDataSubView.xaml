@@ -41,9 +41,6 @@
                     <TextBox  Text="{Binding DriverOwner.Email}" MaxLength="30" Controls:TextBoxHelper.ClearTextButton="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="117,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" FontSize="16" IsEnabled="False"/>
 
 
-                    <Button x:Name="btnSave" Content="Добави"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="20,514,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
-                    <Button x:Name="btnClear" Content="Изчисти"  Style="{DynamicResource SquareButtonStyle}" HorizontalAlignment="Left" Margin="323,514,0,0" VerticalAlignment="Top" Width="102" Controls:ButtonHelper.PreserveTextCase="True" Height="38" FontSize="16" ClickMode="Press"   />
-
                 </Grid>
             </ScrollViewer>
         </GroupBox>

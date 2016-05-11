@@ -1,4 +1,5 @@
 ﻿using iTextSharp.text.pdf;
+using Microsoft.Maps.MapControl.WPF;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,12 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
             driverOwner = drOwner;
             _title = String.Format("Нарушение № {0} - {1} {2}", _penalty.PenaltyId, drOwner.FirstName, drOwner.LastName);
             _viewMessage = String.Format("Нарушение на {0} {1}", drOwner.FirstName, drOwner.LastName);
+
+            LocationCenter = new Location();
+            
+            LocationCenter.Latitude = penalty.Latitude;
+            LocationCenter.Longitude = penalty.Longtitude;
+
         }
 
         //RaisePropertyChangedEvent implementation (.net 4.0, for 4.5 we can use CallerMemberName)
@@ -53,7 +60,17 @@ namespace TrafficPoliceDesktopApp.ViewModel.SearchDriverOwnerSubviewsVMs
         }
 
 
-
+        //Get/Set LocationCenter
+        private Location _locationCenter;
+        public Location LocationCenter
+        {
+            private get { return _locationCenter; }
+            set
+            {
+                _locationCenter = value;
+                RaisePropertyChangedEvent("LocationCenter");
+            }
+        }
 
         //Get/Set Title
         private string _title;
