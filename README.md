@@ -5,6 +5,8 @@ TrafficPolice Desktop
 * Search/Register Driver/Owner by PID
 * Search/Register an employee (policeman/administrator)
 * Penalty reports
+It's created using WPF in combination with WCF SOAP Service.
+The DB script (MySQL) can be seen here:
 
 #### Screenshot
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")
