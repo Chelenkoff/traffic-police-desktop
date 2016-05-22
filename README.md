@@ -20,8 +20,7 @@ In the [Documentation](https://github.com/Chelenkoff/traffic-police-desktop/blob
 * Other Versions
 
 ## Usage
-```$ git clone https://github.com/Chelenkoff/traffic-police-desktop.git
-```
+```$ git clone https://github.com/Chelenkoff/traffic-police-desktop.git```
 
 ## Contributors
 
