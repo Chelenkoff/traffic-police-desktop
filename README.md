@@ -5,6 +5,7 @@ TrafficPolice Desktop
 * Search/Register Driver/Owner by PID
 * Search/Register an employee (policeman/administrator)
 * Penalty reports
+
 #### Screenshot
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")
 
