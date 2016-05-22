@@ -6,7 +6,7 @@ TrafficPolice Desktop
 * Search/Register an employee (policeman/administrator)
 * Penalty reports
 
-*It's created using WPF in combination with WCF SOAP Service.
+It's created using WPF in combination with WCF SOAP Service.
 
 The DB script (MySQL) can be seen here:[MySQL DB Script](https://github.com/Chelenkoff/traffic-police-desktop/blob/master/db_script.sql)
 
