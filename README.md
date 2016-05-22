@@ -20,7 +20,7 @@ More detailed info about the product can be seen in the [Documentation](https://
 * Other Versions
 
 ## Usage
-```$ git clone https://github.com/username/software-project.git
+```$ git clone https://github.com/Chelenkoff/traffic-police-desktop.git
 ...```
 
 ## Contributors
