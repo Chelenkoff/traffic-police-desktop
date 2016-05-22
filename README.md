@@ -1,7 +1,10 @@
-Software Name as Headline
+TrafficPolice Desktop
 ======
-**Software Name** is a software for things. Short description here.
-
+**TrafficPolice Desktop** is a software that helps administrators in police stations to do their day-to-day duties aka:
+* Search/Register Registration by ID
+* Search/Register Driver/Owner by PID
+* Search/Register an employee (policeman/administrator)
+* Penalty reports
 #### Screenshot
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")
 
